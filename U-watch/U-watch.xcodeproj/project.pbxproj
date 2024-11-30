@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		216D796AE312620A00172695 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1A073B9F4F6C03F488345 /* Pods_U_watch.framework */; };
-		E775D5652CFAFAF6005A804E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E775D5642CFAFAF6005A804E /* MainTabBarController.swift */; };
 		E775D5662CFB048C005A804E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F53FB72CB5B92300FD76B0 /* Main.storyboard */; };
+		E775D56A2CFB109F005A804E /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = E775D5692CFB109F005A804E /* Info.swift */; };
 		E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */; };
 		E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53FB32CB5B92300FD76B0 /* SceneDelegate.swift */; };
 		E7F53FB62CB5B92300FD76B0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53FB52CB5B92300FD76B0 /* HomeViewController.swift */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		A983986DE012A6F12EAC479A /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
 		B9D1A073B9F4F6C03F488345 /* Pods_U_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_U_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E775D5642CFAFAF6005A804E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		E775D5692CFB109F005A804E /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		E7F53FAE2CB5B92300FD76B0 /* U-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "U-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F53FB32CB5B92300FD76B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,12 +61,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E77957412CF89BC1006FF707 /* ViewControllers */ = {
+		E775D5672CFB0D61005A804E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E775D5692CFB109F005A804E /* Info.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E775D5682CFB0D69005A804E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E77957412CF89BC1006FF707 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E7F53FB52CB5B92300FD76B0 /* HomeViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		E77957422CF89DC4006FF707 /* Views */ = {
@@ -97,15 +112,16 @@
 		E7F53FB02CB5B92300FD76B0 /* U-watch */ = {
 			isa = PBXGroup;
 			children = (
+				E775D5682CFB0D69005A804E /* New Group */,
+				E775D5672CFB0D61005A804E /* Models */,
 				E77957422CF89DC4006FF707 /* Views */,
+				E77957412CF89BC1006FF707 /* Controllers */,
+				E7F53FB72CB5B92300FD76B0 /* Main.storyboard */,
 				E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */,
 				E7F53FB32CB5B92300FD76B0 /* SceneDelegate.swift */,
-				E77957412CF89BC1006FF707 /* ViewControllers */,
-				E7F53FB72CB5B92300FD76B0 /* Main.storyboard */,
 				E7F53FBA2CB5B92400FD76B0 /* Assets.xcassets */,
 				E7F53FBC2CB5B92400FD76B0 /* LaunchScreen.storyboard */,
 				E7F53FBF2CB5B92400FD76B0 /* Info.plist */,
-				E775D5642CFAFAF6005A804E /* MainTabBarController.swift */,
 			);
 			path = "U-watch";
 			sourceTree = "<group>";
@@ -226,8 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F53FB62CB5B92300FD76B0 /* HomeViewController.swift in Sources */,
+				E775D56A2CFB109F005A804E /* Info.swift in Sources */,
 				E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */,
-				E775D5652CFAFAF6005A804E /* MainTabBarController.swift in Sources */,
 				E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

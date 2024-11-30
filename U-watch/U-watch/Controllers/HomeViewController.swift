@@ -25,11 +25,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
 
-        //샘플 테스트
-        let chartView = LineChartView()
-        chartView.frame = CGRect(x: 20, y: 100, width: view.frame.size.width - 40, height: 300)
-        chartView.backgroundColor = .lightGray
-        view.addSubview(chartView)
 
 
         // 스크롤뷰와 콘텐츠 설정

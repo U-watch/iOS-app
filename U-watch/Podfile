@@ -1,0 +1,8 @@
+platform :ios, '16.0'
+
+target 'U-watch' do
+  use_frameworks!
+
+  # Charts 대신 DGCharts
+  pod 'DGCharts'
+end

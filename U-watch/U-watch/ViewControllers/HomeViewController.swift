@@ -6,14 +6,31 @@
 //
 
 import UIKit
+import DGCharts
+
 
 class HomeViewController: UIViewController {
+
+
+
+
+
+
+
     // 스크롤뷰와 콘텐츠 뷰 선언
     private let scrollView = UIScrollView()
     private let contentView = UIStackView() // 콘텐츠를 담을 StackView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        //샘플 테스트
+        let chartView = LineChartView()
+        chartView.frame = CGRect(x: 20, y: 100, width: view.frame.size.width - 40, height: 300)
+        chartView.backgroundColor = .lightGray
+        view.addSubview(chartView)
+
 
         // 스크롤뷰와 콘텐츠 설정
         setupScrollView()

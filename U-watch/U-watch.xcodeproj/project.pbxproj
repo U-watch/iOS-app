@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		216D796AE312620A00172695 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D1A073B9F4F6C03F488345 /* Pods_U_watch.framework */; };
+		95923F563D494FF31A3A8CA8 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B170304F207EC5129BEDF227 /* Pods_U_watch.framework */; };
 		E775D5662CFB048C005A804E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F53FB72CB5B92300FD76B0 /* Main.storyboard */; };
 		E775D56A2CFB109F005A804E /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = E775D5692CFB109F005A804E /* Info.swift */; };
 		E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */; };
@@ -18,8 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A983986DE012A6F12EAC479A /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
-		B9D1A073B9F4F6C03F488345 /* Pods_U_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_U_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
+		88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.debug.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.debug.xcconfig"; sourceTree = "<group>"; };
+		B170304F207EC5129BEDF227 /* Pods_U_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_U_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E775D5692CFB109F005A804E /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		E7F53FAE2CB5B92300FD76B0 /* U-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "U-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		E7F53FBA2CB5B92400FD76B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7F53FBD2CB5B92400FD76B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7F53FBF2CB5B92400FD76B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F80D0F530420E767277059FA /* Pods-U-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.debug.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +37,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				216D796AE312620A00172695 /* Pods_U_watch.framework in Frameworks */,
+				95923F563D494FF31A3A8CA8 /* Pods_U_watch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		75E22EA89DC5041CD33CDA87 /* Frameworks */ = {
+		A7AC71C3BB74A9007D3B772E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B9D1A073B9F4F6C03F488345 /* Pods_U_watch.framework */,
+				B170304F207EC5129BEDF227 /* Pods_U_watch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -55,8 +55,8 @@
 		DCBD67B9E984F5750C99F2C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F80D0F530420E767277059FA /* Pods-U-watch.debug.xcconfig */,
-				A983986DE012A6F12EAC479A /* Pods-U-watch.release.xcconfig */,
+				88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */,
+				5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -67,13 +67,6 @@
 				E775D5692CFB109F005A804E /* Info.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		E775D5682CFB0D69005A804E /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E77957412CF89BC1006FF707 /* Controllers */ = {
@@ -97,7 +90,7 @@
 				E7F53FB02CB5B92300FD76B0 /* U-watch */,
 				E7F53FAF2CB5B92300FD76B0 /* Products */,
 				DCBD67B9E984F5750C99F2C3 /* Pods */,
-				75E22EA89DC5041CD33CDA87 /* Frameworks */,
+				A7AC71C3BB74A9007D3B772E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,7 +105,6 @@
 		E7F53FB02CB5B92300FD76B0 /* U-watch */ = {
 			isa = PBXGroup;
 			children = (
-				E775D5682CFB0D69005A804E /* New Group */,
 				E775D5672CFB0D61005A804E /* Models */,
 				E77957422CF89DC4006FF707 /* Views */,
 				E77957412CF89BC1006FF707 /* Controllers */,
@@ -133,11 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7F53FC22CB5B92400FD76B0 /* Build configuration list for PBXNativeTarget "U-watch" */;
 			buildPhases = (
-				6BB61564E413FD1F3E85892A /* [CP] Check Pods Manifest.lock */,
+				84F2951FB4215CD43751105A /* [CP] Check Pods Manifest.lock */,
 				E7F53FAA2CB5B92300FD76B0 /* Sources */,
 				E7F53FAB2CB5B92300FD76B0 /* Frameworks */,
 				E7F53FAC2CB5B92300FD76B0 /* Resources */,
-				EC882C911C03C42F91D291F8 /* [CP] Embed Pods Frameworks */,
+				EF5BEA4FDD1820FB1EA5A8CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,7 +187,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6BB61564E413FD1F3E85892A /* [CP] Check Pods Manifest.lock */ = {
+		84F2951FB4215CD43751105A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -217,7 +209,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EC882C911C03C42F91D291F8 /* [CP] Embed Pods Frameworks */ = {
+		EF5BEA4FDD1820FB1EA5A8CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,7 +383,7 @@
 		};
 		E7F53FC32CB5B92400FD76B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F80D0F530420E767277059FA /* Pods-U-watch.debug.xcconfig */;
+			baseConfigurationReference = 88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -422,7 +414,7 @@
 		};
 		E7F53FC42CB5B92400FD76B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A983986DE012A6F12EAC479A /* Pods-U-watch.release.xcconfig */;
+			baseConfigurationReference = 5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -36,12 +36,18 @@
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조회수 125만회 / 1일전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpa-MU-Gzx">
                                                     <rect key="frame" x="20" y="35" width="130" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aaI-y1-X7s" customClass="AnalyzeButton" customModule="U_watch" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="79" width="84" height="35"/>
@@ -51,6 +57,9 @@
                                                     <color key="tintColor" systemColor="systemBlueColor"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="분석"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="analyzeButton:" destination="aN3-Vs-2OT" eventType="touchUpInside" id="03j-Ap-vKT"/>
                                                     </connections>
@@ -65,6 +74,7 @@
                                                             <integer key="value" value="16"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
@@ -82,7 +92,13 @@
                                                 <constraint firstItem="9ZG-RF-DMR" firstAttribute="top" secondItem="x1i-oE-5TL" secondAttribute="topMargin" id="wNd-0F-jN7"/>
                                                 <constraint firstItem="uYc-nd-H8a" firstAttribute="top" secondItem="x1i-oE-5TL" secondAttribute="topMargin" constant="5" id="wsT-Ym-BmU"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="button" destination="aaI-y1-X7s" id="npB-tN-GTm"/>
                                             <outlet property="infoLabel" destination="Rpa-MU-Gzx" id="nY7-Ut-0Gk"/>
@@ -91,6 +107,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="Cze-VF-24h" id="9UF-yb-oxw"/>
                                     <outlet property="delegate" destination="Cze-VF-24h" id="KIf-Iu-gW0"/>

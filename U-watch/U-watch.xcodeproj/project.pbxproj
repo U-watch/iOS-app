@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2688F3ED2CFB5D8C007A9C24 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */; };
+		26D0A3BF2CFC2ECC00E01A52 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; };
+		26D0A3C02CFC2ECC00E01A52 /* Pods_U_watch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F4F5492CF9B9B200B5D215 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */; };
 		26F4F54B2CF9CDE200B5D215 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F54A2CF9CDD400B5D215 /* VideoTableViewCell.swift */; };
 		26F4F54E2CF9D77200B5D215 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 26F4F54D2CF9D77200B5D215 /* SDWebImage */; };
@@ -22,12 +24,28 @@
 		E7F53FBE2CB5B92400FD76B0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E7F53FBD2CB5B92400FD76B0 /* Base */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		26D0A3C12CFC2ECC00E01A52 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				26D0A3C02CFC2ECC00E01A52 /* Pods_U_watch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		094656F3650C11AE7668030B /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
 		2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		26F4F54A2CF9CDD400B5D215 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		26F4F5512CF9D8DF00B5D215 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		26F4F5562CF9EB1900B5D215 /* AnalyzeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeButton.swift; sourceTree = "<group>"; };
+		AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_U_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F53FAE2CB5B92300FD76B0 /* U-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "U-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7F53FB32CB5B92300FD76B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +54,7 @@
 		E7F53FBA2CB5B92400FD76B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7F53FBD2CB5B92400FD76B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7F53FBF2CB5B92400FD76B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB07151C3CF4BBAA7ADC67CA /* Pods-U-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.debug.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D0A3BF2CFC2ECC00E01A52 /* Pods_U_watch.framework in Frameworks */,
 				26F4F5502CF9D77200B5D215 /* SDWebImageMapKit in Frameworks */,
 				26F4F54E2CF9D77200B5D215 /* SDWebImage in Frameworks */,
 			);
@@ -85,11 +105,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		3505A83C2C61C23443BF1049 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E7F53FA52CB5B92300FD76B0 = {
 			isa = PBXGroup;
 			children = (
 				E7F53FB02CB5B92300FD76B0 /* U-watch */,
 				E7F53FAF2CB5B92300FD76B0 /* Products */,
+				F52B2B4C675F58485A5020EA /* Pods */,
+				3505A83C2C61C23443BF1049 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +148,15 @@
 			path = "U-watch";
 			sourceTree = "<group>";
 		};
+		F52B2B4C675F58485A5020EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB07151C3CF4BBAA7ADC67CA /* Pods-U-watch.debug.xcconfig */,
+				094656F3650C11AE7668030B /* Pods-U-watch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7F53FC22CB5B92400FD76B0 /* Build configuration list for PBXNativeTarget "U-watch" */;
 			buildPhases = (
+				C71C19B14336C399FE1F808E /* [CP] Check Pods Manifest.lock */,
 				E7F53FAA2CB5B92300FD76B0 /* Sources */,
 				E7F53FAB2CB5B92300FD76B0 /* Frameworks */,
 				E7F53FAC2CB5B92300FD76B0 /* Resources */,
+				9F786BCE68819E483F997C79 /* [CP] Embed Pods Frameworks */,
+				26D0A3C12CFC2ECC00E01A52 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +228,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F786BCE68819E483F997C79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-U-watch/Pods-U-watch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-U-watch/Pods-U-watch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-U-watch/Pods-U-watch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C71C19B14336C399FE1F808E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-U-watch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E7F53FAA2CB5B92300FD76B0 /* Sources */ = {
@@ -346,12 +430,14 @@
 		};
 		E7F53FC32CB5B92400FD76B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB07151C3CF4BBAA7ADC67CA /* Pods-U-watch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TY93WPN8JC;
+				DEVELOPMENT_TEAM = WAD38SLT2Y;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "U-watch/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -375,12 +461,14 @@
 		};
 		E7F53FC42CB5B92400FD76B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 094656F3650C11AE7668030B /* Pods-U-watch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TY93WPN8JC;
+				DEVELOPMENT_TEAM = WAD38SLT2Y;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "U-watch/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

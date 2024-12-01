@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 import SDWebImage
+import SkeletonView
 
-class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,26 +22,38 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
-        cell.video = videos[indexPath.row]
+        
+        if (!videos.isEmpty) {
+            cell.video = videos[indexPath.row]
+        }
+        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 125
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+       return "VideoTableViewCell"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 125
+        self.tableView.estimatedRowHeight = 125
         Task {
             let videos = try await VideoService.shared.fetchVideos()
             setVideos(videos: videos)
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.tableView.showAnimatedSkeleton()
+    }
+    
     func setVideos(videos: [Video]) {
         DispatchQueue.main.async {
             self.videos = videos
             self.tableView.reloadData()
+            self.tableView.stopSkeletonAnimation()
+            self.view.hideSkeleton()
         }
     }
 }

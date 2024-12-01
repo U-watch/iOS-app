@@ -11,15 +11,17 @@ import SDWebImage
 
 class VideoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var items: [Video] = []
+    @IBOutlet weak var tableView: UITableView!
+    
+    var videos: [Video] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return videos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
-        cell.video = items[indexPath.row]
+        cell.video = videos[indexPath.row]
         return cell
     }
     
@@ -29,6 +31,16 @@ class VideoViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = VideoService.shared.fetchVideos()
+        Task {
+            let videos = try await VideoService.shared.fetchVideos()
+            setVideos(videos: videos)
+        }
+    }
+    
+    func setVideos(videos: [Video]) {
+        DispatchQueue.main.async {
+            self.videos = videos
+            self.tableView.reloadData()
+        }
     }
 }

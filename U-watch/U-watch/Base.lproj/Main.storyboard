@@ -117,6 +117,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Videos" image="video.square.fill" catalog="system" selectedImage="video.square.fill" id="Y5e-sq-ZuL"/>
+                    <connections>
+                        <outlet property="tableView" destination="WAI-Kd-8xr" id="oeT-e4-JHg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uim-iJ-hUf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

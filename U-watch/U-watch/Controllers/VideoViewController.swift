@@ -38,13 +38,14 @@ class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITabl
         super.viewDidLoad()
         self.tableView.rowHeight = 125
         self.tableView.estimatedRowHeight = 125
-        Task {
-            let videos = try await VideoService.shared.fetchVideos()
-            setVideos(videos: videos)
+        
+        if (VideoService.shared.videos.count == 0) {
+            Task {
+                let videos = try await VideoService.shared.fetchVideos(atPage: 0)
+                setVideos(videos: videos)
+            }
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
         self.tableView.showAnimatedSkeleton()
     }
     

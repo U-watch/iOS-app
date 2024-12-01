@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WAI-Kd-8xr">
-                                <rect key="frame" x="0.0" y="168" width="393" height="650"/>
+                                <rect key="frame" x="0.0" y="105" width="393" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoTableViewCell" rowHeight="125" id="aN3-Vs-2OT" customClass="VideoTableViewCell" customModule="U_watch" customModuleProvider="target">
@@ -116,7 +116,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비디오" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkl-91-rC1">
-                                <rect key="frame" x="16" y="130" width="65" height="30"/>
+                                <rect key="frame" x="16" y="67" width="65" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -125,13 +125,13 @@
                         <viewLayoutGuide key="safeArea" id="WRi-fA-mU2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WAI-Kd-8xr" firstAttribute="top" secondItem="Wkl-91-rC1" secondAttribute="bottom" constant="8" id="6DJ-cJ-pMk"/>
                             <constraint firstItem="WAI-Kd-8xr" firstAttribute="bottom" secondItem="WRi-fA-mU2" secondAttribute="bottom" id="907-sd-Un4"/>
-                            <constraint firstItem="Wkl-91-rC1" firstAttribute="top" secondItem="WRi-fA-mU2" secondAttribute="top" constant="71" id="BUd-ds-cbt"/>
                             <constraint firstItem="Wkl-91-rC1" firstAttribute="leading" secondItem="WRi-fA-mU2" secondAttribute="leading" constant="16" id="C4t-2u-gwa"/>
-                            <constraint firstItem="WAI-Kd-8xr" firstAttribute="top" secondItem="WRi-fA-mU2" secondAttribute="top" constant="109" id="ZdS-p0-SHX"/>
                             <constraint firstItem="WRi-fA-mU2" firstAttribute="trailing" secondItem="WAI-Kd-8xr" secondAttribute="trailing" id="bxa-zE-K09"/>
                             <constraint firstItem="WAI-Kd-8xr" firstAttribute="leading" secondItem="WRi-fA-mU2" secondAttribute="leading" id="d5q-Dd-RAE"/>
                             <constraint firstItem="WRi-fA-mU2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wkl-91-rC1" secondAttribute="trailing" symbolic="YES" id="f25-yH-Qq9"/>
+                            <constraint firstItem="Wkl-91-rC1" firstAttribute="top" secondItem="WRi-fA-mU2" secondAttribute="top" constant="8" id="kfM-Ps-hxZ"/>
                             <constraint firstItem="WAI-Kd-8xr" firstAttribute="leading" secondItem="WRi-fA-mU2" secondAttribute="leading" id="ydI-FR-TY8"/>
                         </constraints>
                     </view>

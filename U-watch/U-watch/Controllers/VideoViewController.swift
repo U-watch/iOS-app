@@ -51,9 +51,11 @@ class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITabl
     func setVideos(videos: [Video]) {
         DispatchQueue.main.async {
             self.videos = videos
-            self.tableView.reloadData()
+            
             self.tableView.stopSkeletonAnimation()
             self.view.hideSkeleton()
+            
+            self.tableView.reloadData()
         }
     }
 }

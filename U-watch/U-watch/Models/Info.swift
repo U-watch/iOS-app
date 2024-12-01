@@ -11,7 +11,7 @@ import Foundation
 struct Info: Codable {
     let channelName: String
     let username: String
-    let profileImage: String
+    let profileImage: URL
     let subscriberCount: Int
     let videoCount: Int
     let totalViews: Int

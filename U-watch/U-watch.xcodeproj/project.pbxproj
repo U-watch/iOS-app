@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2688F3ED2CFB5D8C007A9C24 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */; };
+		26953FD02CFD744100E64706 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26953FCF2CFD743B00E64706 /* DetailViewController.swift */; };
 		26D0A3BF2CFC2ECC00E01A52 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; };
 		26D0A3C02CFC2ECC00E01A52 /* Pods_U_watch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F4F5492CF9B9B200B5D215 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		094656F3650C11AE7668030B /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
 		2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		26953FCF2CFD743B00E64706 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		26F4F54A2CF9CDD400B5D215 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		26F4F5512CF9D8DF00B5D215 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		26F4F5542CF9EA5400B5D215 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26953FCF2CFD743B00E64706 /* DetailViewController.swift */,
 				E7F53FB52CB5B92300FD76B0 /* ViewController.swift */,
 				26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */,
 			);
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26953FD02CFD744100E64706 /* DetailViewController.swift in Sources */,
 				E7F53FB62CB5B92300FD76B0 /* ViewController.swift in Sources */,
 				26F4F5522CF9D8E400B5D215 /* Video.swift in Sources */,
 				26F4F54B2CF9CDE200B5D215 /* VideoTableViewCell.swift in Sources */,

@@ -8,6 +8,7 @@
 import Foundation
 
 struct Video {
+    var id: Int64
     var title: String
     var viewCount: Int
     var uploadDate: Date

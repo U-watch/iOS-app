@@ -90,6 +90,14 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1by-o2-mDq">
+                                                    <rect key="frame" x="112" y="86" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uYc-nd-H8a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aaI-y1-X7s" secondAttribute="trailing" constant="8" symbolic="YES" id="18H-T0-h5M"/>
@@ -113,6 +121,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="1by-o2-mDq" id="vsq-Uu-DL2"/>
                                             <outlet property="button" destination="aaI-y1-X7s" id="npB-tN-GTm"/>
                                             <outlet property="infoLabel" destination="Rpa-MU-Gzx" id="nY7-Ut-0Gk"/>
                                             <outlet property="thumbnail" destination="uYc-nd-H8a" id="Q50-gR-sXt"/>

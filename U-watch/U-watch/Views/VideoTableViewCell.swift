@@ -25,6 +25,7 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var button: AnalyzeButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -66,6 +67,14 @@ class VideoTableViewCell: UITableViewCell {
         thumbnail.sd_setImage(with: video.thumbnail, placeholderImage: UIImage(named: "placeholder"))
         
         button.status = video.status
+        
+        if (video.status == Status.analyzing) {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+        }
     }
     
     @objc func buttonTapped() {

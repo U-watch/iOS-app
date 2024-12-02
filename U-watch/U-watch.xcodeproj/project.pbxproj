@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95923F563D494FF31A3A8CA8 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B170304F207EC5129BEDF227 /* Pods_U_watch.framework */; };
+		E7528EE52CFDE76C0095CD12 /* WordCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7528EE42CFDE76C0095CD12 /* WordCloud.swift */; };
 		E775D5662CFB048C005A804E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F53FB72CB5B92300FD76B0 /* Main.storyboard */; };
 		E775D56A2CFB109F005A804E /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = E775D5692CFB109F005A804E /* Info.swift */; };
 		E7BEE0022CFC7C730063718F /* CommentTrend.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BEE0012CFC7C730063718F /* CommentTrend.swift */; };
@@ -22,6 +23,7 @@
 		5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
 		88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.debug.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.debug.xcconfig"; sourceTree = "<group>"; };
 		B170304F207EC5129BEDF227 /* Pods_U_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_U_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7528EE42CFDE76C0095CD12 /* WordCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCloud.swift; sourceTree = "<group>"; };
 		E775D5692CFB109F005A804E /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		E7BEE0012CFC7C730063718F /* CommentTrend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTrend.swift; sourceTree = "<group>"; };
 		E7F53FAE2CB5B92300FD76B0 /* U-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "U-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 			children = (
 				E775D5692CFB109F005A804E /* Info.swift */,
 				E7BEE0012CFC7C730063718F /* CommentTrend.swift */,
+				E7528EE42CFDE76C0095CD12 /* WordCloud.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				E775D56A2CFB109F005A804E /* Info.swift in Sources */,
 				E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */,
 				E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */,
+				E7528EE52CFDE76C0095CD12 /* WordCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

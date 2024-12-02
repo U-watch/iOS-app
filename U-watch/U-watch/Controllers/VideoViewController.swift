@@ -21,7 +21,8 @@ class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITabl
                 self.completeLoading()
             }
         } else if (video.status == Status.analyzed) {
-            if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") {
+            if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+                detailVC.video = video
                 navigationController?.pushViewController(detailVC, animated: true)
             }
         }

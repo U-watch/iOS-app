@@ -175,18 +175,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-k8-JJE">
-                                <rect key="frame" x="154" y="416" width="85" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-k8-JJE">
+                                <rect key="frame" x="8" y="67" width="377" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U2p-mg-Wam"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aKF-k8-JJE" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" constant="8" id="Ype-EW-y53"/>
+                            <constraint firstItem="U2p-mg-Wam" firstAttribute="trailing" secondItem="aKF-k8-JJE" secondAttribute="trailing" constant="8" id="dt3-pb-coq"/>
+                            <constraint firstItem="aKF-k8-JJE" firstAttribute="top" secondItem="U2p-mg-Wam" secondAttribute="top" constant="8" id="zRR-Lf-yju"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HkF-F5-xhB"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="aKF-k8-JJE" id="08n-1F-Mxg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hda-6H-iaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

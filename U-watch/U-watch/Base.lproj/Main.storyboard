@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F5m-rv-qZT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IoX-XK-5r0">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -167,7 +167,7 @@
             </objects>
             <point key="canvasLocation" x="361" y="365"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="wOW-n9-aeC">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="IoX-XK-5r0" customClass="DetailViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,29 +175,124 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-k8-JJE">
-                                <rect key="frame" x="8" y="67" width="377" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 분석일: 2024/10/23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLh-ae-K3S">
+                                <rect key="frame" x="8" y="75" width="377" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-GC-zGf">
+                                <rect key="frame" x="16" y="112" width="172.66666666666666" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 댓글" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9a-WW-LlP">
+                                        <rect key="frame" x="24.000000000000007" y="24" width="124.66666666666669" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6S-oI-fgR">
+                                        <rect key="frame" x="24.000000000000007" y="57" width="124.66666666666669" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="W9a-WW-LlP" secondAttribute="trailing" constant="24" id="PlQ-x0-TEc"/>
+                                    <constraint firstItem="P6S-oI-fgR" firstAttribute="leading" secondItem="xiY-GC-zGf" secondAttribute="leading" constant="24" id="ViH-lZ-zib"/>
+                                    <constraint firstAttribute="trailing" secondItem="P6S-oI-fgR" secondAttribute="trailing" constant="24" id="Ww7-Mb-ftG"/>
+                                    <constraint firstItem="W9a-WW-LlP" firstAttribute="top" secondItem="xiY-GC-zGf" secondAttribute="top" constant="24" id="cPa-K3-PRI"/>
+                                    <constraint firstAttribute="bottom" secondItem="P6S-oI-fgR" secondAttribute="bottom" constant="24" id="jmA-PH-G9y"/>
+                                    <constraint firstAttribute="height" constant="110" id="nBG-p5-wsO"/>
+                                    <constraint firstItem="W9a-WW-LlP" firstAttribute="leading" secondItem="xiY-GC-zGf" secondAttribute="leading" constant="24" id="wNz-74-OMq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d56-S1-8aF">
+                                <rect key="frame" x="204.66666666666663" y="112" width="172.33333333333337" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 조회수" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92t-Nt-kWh">
+                                        <rect key="frame" x="23.999999999999993" y="24" width="124.33333333333331" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.8k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-c0-VeF">
+                                        <rect key="frame" x="23.999999999999993" y="57" width="124.33333333333331" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="92t-Nt-kWh" firstAttribute="leading" secondItem="d56-S1-8aF" secondAttribute="leading" constant="24" id="6X9-5q-q6d"/>
+                                    <constraint firstAttribute="height" constant="110" id="N5o-aK-ind"/>
+                                    <constraint firstAttribute="trailing" secondItem="92t-Nt-kWh" secondAttribute="trailing" constant="24" id="RhW-zt-gNI"/>
+                                    <constraint firstItem="92t-Nt-kWh" firstAttribute="top" secondItem="d56-S1-8aF" secondAttribute="top" constant="24" id="YQs-fp-5vg"/>
+                                    <constraint firstAttribute="trailing" secondItem="nBz-c0-VeF" secondAttribute="trailing" constant="24" id="hYd-wK-4Q9"/>
+                                    <constraint firstAttribute="bottom" secondItem="nBz-c0-VeF" secondAttribute="bottom" constant="24" id="vEz-dE-FEc"/>
+                                    <constraint firstItem="nBz-c0-VeF" firstAttribute="leading" secondItem="d56-S1-8aF" secondAttribute="leading" constant="24" id="vXE-z0-DZG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8j-mg-Wio" customClass="DetailTabBar" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="246" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="개요" id="2iA-Zk-Fjc">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </barButtonItem>
+                                    <barButtonItem title="전체댓글" id="glj-oE-Vu5">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </barButtonItem>
+                                    <barButtonItem title="감정별" id="dW8-D6-IwD">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </barButtonItem>
+                                    <barButtonItem title="카테고리별" id="7G3-CW-ajP">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSelected" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U2p-mg-Wam"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aKF-k8-JJE" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" constant="8" id="Ype-EW-y53"/>
-                            <constraint firstItem="U2p-mg-Wam" firstAttribute="trailing" secondItem="aKF-k8-JJE" secondAttribute="trailing" constant="8" id="dt3-pb-coq"/>
-                            <constraint firstItem="aKF-k8-JJE" firstAttribute="top" secondItem="U2p-mg-Wam" secondAttribute="top" constant="8" id="zRR-Lf-yju"/>
+                            <constraint firstItem="xiY-GC-zGf" firstAttribute="top" secondItem="kLh-ae-K3S" secondAttribute="bottom" constant="16" id="M5r-eN-f6w"/>
+                            <constraint firstItem="d56-S1-8aF" firstAttribute="top" secondItem="kLh-ae-K3S" secondAttribute="bottom" constant="16" id="N9G-YQ-4fo"/>
+                            <constraint firstItem="xiY-GC-zGf" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" constant="16" id="TZz-7i-Bgj"/>
+                            <constraint firstItem="kLh-ae-K3S" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" constant="8" id="V2t-WB-f2l"/>
+                            <constraint firstItem="U2p-mg-Wam" firstAttribute="trailing" secondItem="d56-S1-8aF" secondAttribute="trailing" constant="16" id="X1e-J7-w9F"/>
+                            <constraint firstItem="kLh-ae-K3S" firstAttribute="top" secondItem="U2p-mg-Wam" secondAttribute="top" constant="16" id="dT9-NA-Rw3"/>
+                            <constraint firstItem="U2p-mg-Wam" firstAttribute="trailing" secondItem="kLh-ae-K3S" secondAttribute="trailing" constant="8" id="e6d-X5-KuJ"/>
+                            <constraint firstItem="d56-S1-8aF" firstAttribute="width" secondItem="xiY-GC-zGf" secondAttribute="width" id="j1R-xv-zCW"/>
+                            <constraint firstItem="d56-S1-8aF" firstAttribute="leading" secondItem="xiY-GC-zGf" secondAttribute="trailing" constant="16" id="k33-y8-Txk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HkF-F5-xhB"/>
-                    <connections>
-                        <outlet property="titleLabel" destination="aKF-k8-JJE" id="08n-1F-Mxg"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Title" id="fJl-tx-wWw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hda-6H-iaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="365"/>
+            <point key="canvasLocation" x="1174.8091603053435" y="364.78873239436621"/>
         </scene>
     </scenes>
     <resources>
@@ -207,6 +302,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

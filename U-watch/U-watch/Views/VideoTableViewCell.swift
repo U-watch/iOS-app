@@ -8,7 +8,12 @@
 import UIKit
 import SDWebImage
 
+protocol VideoTableViewCellDelegate: AnyObject {
+    func cellButtonPressed(forVideo video: Video)
+}
+
 class VideoTableViewCell: UITableViewCell {
+    weak var delegate: VideoTableViewCellDelegate?
     
     var video: Video? {
         didSet {
@@ -21,7 +26,22 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var button: AnalyzeButton!
     
-    @IBAction func analyzeButton(_ sender: Any) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    func setup() {
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     func updateUI() {
@@ -46,5 +66,9 @@ class VideoTableViewCell: UITableViewCell {
         thumbnail.sd_setImage(with: video.thumbnail, placeholderImage: UIImage(named: "placeholder"))
         
         button.status = video.status
+    }
+    
+    @objc func buttonTapped() {
+        delegate?.cellButtonPressed(forVideo: video!)
     }
 }

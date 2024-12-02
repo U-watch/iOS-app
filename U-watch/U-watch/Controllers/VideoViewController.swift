@@ -10,25 +10,41 @@ import UIKit
 import SDWebImage
 import SkeletonView
 
-class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate {
+class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate, VideoTableViewCellDelegate {
+    
+    func cellButtonPressed(forVideo video: Video) {
+        if (video.status == Status.notAnalyzed) {
+            Task {
+                VideoService.shared.analyzeVideo(withId: video.id, executeAfterFinished: {
+                    self.completeLoading()
+                })
+                self.completeLoading()
+            }
+        } else if (video.status == Status.analyzed) {
+            if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") {
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
     
-    var videos: [Video] = []
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return videos.count
+        return VideoService.shared.videos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell", for: indexPath) as! VideoTableViewCell
         
+        let videos = VideoService.shared.videos
         if (!videos.isEmpty) {
             cell.video = videos[indexPath.row]
         }
-        
+        cell.delegate = self
+
         return cell
     }
+    
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
        return "VideoTableViewCell"
@@ -41,18 +57,16 @@ class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITabl
         
         if (VideoService.shared.videos.count == 0) {
             Task {
-                let videos = try await VideoService.shared.fetchVideos(atPage: 0)
-                setVideos(videos: videos)
+                try await VideoService.shared.fetchVideos(atPage: 0)
+                completeLoading()
             }
         }
         
         self.tableView.showAnimatedSkeleton()
     }
     
-    func setVideos(videos: [Video]) {
+    func completeLoading() {
         DispatchQueue.main.async {
-            self.videos = videos
-            
             self.tableView.stopSkeletonAnimation()
             self.view.hideSkeleton()
             

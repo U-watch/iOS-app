@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IoX-XK-5r0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F5m-rv-qZT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="361" y="365"/>
         </scene>
-        <!--Title-->
+        <!--Detail-->
         <scene sceneID="wOW-n9-aeC">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="IoX-XK-5r0" customClass="DetailViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="IoX-XK-5r0" userLabel="Detail" customClass="DetailViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wYa-99-orN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,9 +247,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8j-mg-Wio" customClass="DetailTabBar" customModule="U_watch" customModuleProvider="target">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8j-mg-Wio" customClass="DetailTabBar" customModule="U_watch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="246" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="개요" id="2iA-Zk-Fjc">
                                         <userDefinedRuntimeAttributes>
@@ -273,26 +272,168 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyy-Uy-Q7U" userLabel="Overview Container View">
+                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <connections>
+                                    <segue destination="bdn-wC-y0u" kind="embed" id="wll-Ki-kuP"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-I5-C7X" userLabel="All Comments Container View">
+                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <connections>
+                                    <segue destination="FSh-65-Vua" kind="embed" id="kxX-cR-jau"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eof-CQ-bPa" userLabel="Category Container View">
+                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <connections>
+                                    <segue destination="3Wu-i9-Vxc" kind="embed" id="Rjq-zH-iV2"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1p4-ZU-QBG" userLabel="Emotion Container View">
+                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <connections>
+                                    <segue destination="wdM-y6-8kr" kind="embed" id="jV6-c3-5Lc"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U2p-mg-Wam"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WBU-I5-C7X" firstAttribute="trailing" secondItem="U2p-mg-Wam" secondAttribute="trailing" id="14H-4f-XWw"/>
+                            <constraint firstItem="U2p-mg-Wam" firstAttribute="bottom" secondItem="1p4-ZU-QBG" secondAttribute="bottom" id="1SP-wd-AoQ"/>
+                            <constraint firstItem="Nyy-Uy-Q7U" firstAttribute="top" secondItem="Q8j-mg-Wio" secondAttribute="bottom" id="1j7-1M-TVk"/>
+                            <constraint firstItem="eof-CQ-bPa" firstAttribute="trailing" secondItem="U2p-mg-Wam" secondAttribute="trailing" id="2dC-mM-9VI"/>
+                            <constraint firstItem="1p4-ZU-QBG" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" id="7fu-eH-KYR"/>
+                            <constraint firstItem="U2p-mg-Wam" firstAttribute="bottom" secondItem="eof-CQ-bPa" secondAttribute="bottom" id="8m5-jj-ogh"/>
+                            <constraint firstItem="Q8j-mg-Wio" firstAttribute="top" secondItem="xiY-GC-zGf" secondAttribute="bottom" constant="24" id="Ipo-dp-YjZ"/>
+                            <constraint firstItem="U2p-mg-Wam" firstAttribute="bottom" secondItem="Nyy-Uy-Q7U" secondAttribute="bottom" id="Kwx-ZP-wqV"/>
                             <constraint firstItem="xiY-GC-zGf" firstAttribute="top" secondItem="kLh-ae-K3S" secondAttribute="bottom" constant="16" id="M5r-eN-f6w"/>
+                            <constraint firstItem="Nyy-Uy-Q7U" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" id="Mxp-KX-SPh"/>
                             <constraint firstItem="d56-S1-8aF" firstAttribute="top" secondItem="kLh-ae-K3S" secondAttribute="bottom" constant="16" id="N9G-YQ-4fo"/>
+                            <constraint firstItem="eof-CQ-bPa" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" id="RDF-vt-GsZ"/>
                             <constraint firstItem="xiY-GC-zGf" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" constant="16" id="TZz-7i-Bgj"/>
+                            <constraint firstItem="WBU-I5-C7X" firstAttribute="top" secondItem="Q8j-mg-Wio" secondAttribute="bottom" id="Uwb-5s-NPD"/>
                             <constraint firstItem="kLh-ae-K3S" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" constant="8" id="V2t-WB-f2l"/>
+                            <constraint firstItem="Nyy-Uy-Q7U" firstAttribute="trailing" secondItem="U2p-mg-Wam" secondAttribute="trailing" id="W17-8U-qIK"/>
                             <constraint firstItem="U2p-mg-Wam" firstAttribute="trailing" secondItem="d56-S1-8aF" secondAttribute="trailing" constant="16" id="X1e-J7-w9F"/>
                             <constraint firstItem="kLh-ae-K3S" firstAttribute="top" secondItem="U2p-mg-Wam" secondAttribute="top" constant="16" id="dT9-NA-Rw3"/>
                             <constraint firstItem="U2p-mg-Wam" firstAttribute="trailing" secondItem="kLh-ae-K3S" secondAttribute="trailing" constant="8" id="e6d-X5-KuJ"/>
+                            <constraint firstItem="1p4-ZU-QBG" firstAttribute="trailing" secondItem="U2p-mg-Wam" secondAttribute="trailing" id="ewo-R0-XNP"/>
+                            <constraint firstItem="eof-CQ-bPa" firstAttribute="top" secondItem="Q8j-mg-Wio" secondAttribute="bottom" id="gzV-dg-PLn"/>
                             <constraint firstItem="d56-S1-8aF" firstAttribute="width" secondItem="xiY-GC-zGf" secondAttribute="width" id="j1R-xv-zCW"/>
+                            <constraint firstItem="WBU-I5-C7X" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" id="j93-sY-DOT"/>
                             <constraint firstItem="d56-S1-8aF" firstAttribute="leading" secondItem="xiY-GC-zGf" secondAttribute="trailing" constant="16" id="k33-y8-Txk"/>
+                            <constraint firstItem="U2p-mg-Wam" firstAttribute="bottom" secondItem="WBU-I5-C7X" secondAttribute="bottom" id="ryH-Ze-XfT"/>
+                            <constraint firstItem="Q8j-mg-Wio" firstAttribute="trailing" secondItem="U2p-mg-Wam" secondAttribute="trailing" id="w1N-5j-yTH"/>
+                            <constraint firstItem="Q8j-mg-Wio" firstAttribute="leading" secondItem="U2p-mg-Wam" secondAttribute="leading" id="y1i-ql-UFg"/>
+                            <constraint firstItem="1p4-ZU-QBG" firstAttribute="top" secondItem="Q8j-mg-Wio" secondAttribute="bottom" id="yNt-Sz-1O9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="fJl-tx-wWw"/>
+                    <connections>
+                        <outlet property="tabbar" destination="Q8j-mg-Wio" id="YsS-Lw-BHo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hda-6H-iaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174.8091603053435" y="364.78873239436621"/>
+            <point key="canvasLocation" x="1171.7557251908397" y="364.78873239436621"/>
+        </scene>
+        <!--Overview-->
+        <scene sceneID="9w4-SR-z4f">
+            <objects>
+                <viewController id="bdn-wC-y0u" userLabel="Overview" customClass="OverviewViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CTi-hF-tKk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdw-1g-a15">
+                                <rect key="frame" x="181" y="271" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="amG-TD-jFw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNW-fX-o2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104.58015267175573" y="1000.7042253521128"/>
+        </scene>
+        <!--Category-->
+        <scene sceneID="i2P-RX-gDr">
+            <objects>
+                <viewController id="3Wu-i9-Vxc" userLabel="Category" customClass="CategoryViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sBw-CL-zML">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카테고리별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQz-Za-1ax">
+                                <rect key="frame" x="159" y="271" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wpD-Ol-ZJ4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IuB-Gn-ffY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2305" y="1001"/>
+        </scene>
+        <!--Emotion-->
+        <scene sceneID="hpI-6V-ioq">
+            <objects>
+                <viewController id="wdM-y6-8kr" userLabel="Emotion" customClass="EmotionViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P6H-V0-mg0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="감정별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7h-Ro-m7w">
+                                <rect key="frame" x="174" y="271" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dm8-MT-JsP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdf-zw-D5P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1555" y="1001"/>
+        </scene>
+        <!--All Comments-->
+        <scene sceneID="uDI-cz-lPp">
+            <objects>
+                <viewController id="FSh-65-Vua" userLabel="All Comments" customClass="AllCommentsViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hzW-jz-4vv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전체댓글" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBF-qH-XjH">
+                                <rect key="frame" x="167" y="271" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2R9-QH-WXQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfM-BP-ZMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="810" y="1001"/>
         </scene>
     </scenes>
     <resources>

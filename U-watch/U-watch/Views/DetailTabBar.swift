@@ -86,6 +86,7 @@ class DetailTabBar: UIToolbar {
     private func updateIndex(_ index: Int) {
         selectedIndex = index
         updateItems()
+        tabBarDelegate?.switchIndex(index)
     }
     
     private func setup() {

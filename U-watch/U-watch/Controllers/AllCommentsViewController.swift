@@ -15,6 +15,7 @@ class AllCommentsViewController:
     
     var video: Video?
     var comments = [Comment]()
+    let cellIdentifier = "CommentViewCell"
     
     @IBOutlet weak var header: CommentListHeader!
     @IBOutlet weak var tableView: UITableView!
@@ -27,8 +28,11 @@ class AllCommentsViewController:
         tableView.rowHeight = 72
         tableView.estimatedRowHeight = 72
         
+        let nib = UINib(nibName: cellIdentifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        
         tableView.reloadData()
     }
 
@@ -37,14 +41,14 @@ class AllCommentsViewController:
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentViewCell", for: indexPath) as! CommentViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CommentViewCell
         cell.comment = comments[indexPath.row]
         cell.cellDelegate = self
         return cell
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "CommentViewCell"
+        return cellIdentifier
     }
     
     func moreButtonPushed(for comment: Comment) {

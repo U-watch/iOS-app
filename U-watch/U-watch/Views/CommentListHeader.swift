@@ -23,6 +23,7 @@ class CommentListHeader: UIView, UITextFieldDelegate {
     @IBOutlet weak var downloadButton: UIButton!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         setup()
     }
     

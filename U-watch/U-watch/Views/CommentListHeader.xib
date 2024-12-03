@@ -9,6 +9,9 @@
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentListHeader" customModule="U_watch" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="countLabel" destination="99x-my-GS7" id="cj5-VD-KmB"/>
                 <outlet property="curseSwitch" destination="0mv-cV-DTF" id="Lxi-TF-LiW"/>

@@ -15,19 +15,20 @@ class CommentViewCell: UITableViewCell {
     
     var comment: Comment? {
         didSet {
-            updateUI()
+             updateUI()
         }
     }
     
     var cellDelegate: CommentViewCellDelegate?
     
     @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         setup()
     }
     
@@ -35,6 +36,7 @@ class CommentViewCell: UITableViewCell {
         let rotationAngle = CGFloat.pi / 2
         moreButton.transform = CGAffineTransform(rotationAngle: rotationAngle)
         moreButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        // isSkeletonable = true
     }
     
     private func updateUI() {

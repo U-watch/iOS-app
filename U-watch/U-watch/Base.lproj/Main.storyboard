@@ -433,77 +433,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-po-lDM">
                                 <rect key="frame" x="0.0" y="153" width="393" height="375"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentViewCell" id="2qj-zC-3B1" customClass="CommentViewCell" customModule="U_watch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2qj-zC-3B1" id="E3R-3p-23Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xem-Dc-8rZ">
-                                                    <rect key="frame" x="20" y="16" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="ehM-XT-5N9"/>
-                                                        <constraint firstAttribute="width" constant="40" id="tSh-dZ-s5z"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="20"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xia-Yl-AUg">
-                                                    <rect key="frame" x="76" y="16" width="26" height="17"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 내용입니다." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgO-P1-PU0">
-                                                    <rect key="frame" x="76" y="37" width="270" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMa-7B-2V3">
-                                                    <rect key="frame" x="354" y="18.666666666666671" width="35" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="BlA-Zg-6gZ"/>
-                                                    </constraints>
-                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1일 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rj-7H-ISo">
-                                                    <rect key="frame" x="110" y="16" width="33" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="xem-Dc-8rZ" secondAttribute="bottom" constant="5" id="2iF-ZE-loy"/>
-                                                <constraint firstItem="Xia-Yl-AUg" firstAttribute="top" secondItem="E3R-3p-23Y" secondAttribute="topMargin" constant="5" id="EET-aS-bTb"/>
-                                                <constraint firstItem="7rj-7H-ISo" firstAttribute="leading" secondItem="Xia-Yl-AUg" secondAttribute="trailing" constant="8" id="M0r-jN-9d9"/>
-                                                <constraint firstItem="IgO-P1-PU0" firstAttribute="leading" secondItem="xem-Dc-8rZ" secondAttribute="trailing" constant="16" id="Vi2-MF-zN8"/>
-                                                <constraint firstItem="xem-Dc-8rZ" firstAttribute="leading" secondItem="E3R-3p-23Y" secondAttribute="leadingMargin" id="Zcz-cu-QHB"/>
-                                                <constraint firstItem="BMa-7B-2V3" firstAttribute="centerY" secondItem="E3R-3p-23Y" secondAttribute="centerY" id="doY-c8-YWv"/>
-                                                <constraint firstItem="IgO-P1-PU0" firstAttribute="top" secondItem="Xia-Yl-AUg" secondAttribute="bottom" constant="4" id="gb6-el-GTP"/>
-                                                <constraint firstItem="Xia-Yl-AUg" firstAttribute="leading" secondItem="xem-Dc-8rZ" secondAttribute="trailing" constant="16" id="i4c-yN-1tk"/>
-                                                <constraint firstItem="7rj-7H-ISo" firstAttribute="top" secondItem="E3R-3p-23Y" secondAttribute="topMargin" constant="5" id="kyo-Jm-LGa"/>
-                                                <constraint firstItem="BMa-7B-2V3" firstAttribute="leading" secondItem="IgO-P1-PU0" secondAttribute="trailing" constant="8" id="qtU-7Y-szm"/>
-                                                <constraint firstAttribute="trailing" secondItem="BMa-7B-2V3" secondAttribute="trailing" constant="4" id="xbS-I5-ecb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="contentLabel" destination="IgO-P1-PU0" id="R3s-4A-VRU"/>
-                                            <outlet property="dateLabel" destination="7rj-7H-ISo" id="bA2-jy-3ho"/>
-                                            <outlet property="idLabel" destination="Xia-Yl-AUg" id="b71-3G-9rF"/>
-                                            <outlet property="moreButton" destination="BMa-7B-2V3" id="10I-6p-qa8"/>
-                                            <outlet property="profileImage" destination="xem-Dc-8rZ" id="Vet-9D-EmE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-0X-vlD" userLabel="Header" customClass="CommentListHeader" customModule="U_watch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
@@ -557,101 +486,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3mH-uB-TTK">
                                 <rect key="frame" x="0.0" y="107" width="393" height="421"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentViewCell" id="hoe-km-Xwi" customClass="CommentViewCell" customModule="U_watch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hoe-km-Xwi" id="uWN-RC-cLQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="72"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wlo-7A-4fO">
-                                                    <rect key="frame" x="20" y="16" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="4lp-nC-YPl"/>
-                                                        <constraint firstAttribute="width" constant="40" id="x4W-hM-mxI"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="20"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5N-J2-mvn">
-                                                    <rect key="frame" x="76" y="16" width="26" height="17"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 내용입니다." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkS-vg-Zck">
-                                                    <rect key="frame" x="76" y="37" width="270" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="skeletonLineSpacing">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWr-ZW-a84">
-                                                    <rect key="frame" x="354" y="18.666666666666671" width="35" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="35" id="juG-yY-Vlz"/>
-                                                    </constraints>
-                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="ellipsis" catalog="system"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1일 전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="And-Fc-etU">
-                                                    <rect key="frame" x="110" y="16" width="33" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHiddenWhenSkeletonIsActive" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qkS-vg-Zck" firstAttribute="top" secondItem="a5N-J2-mvn" secondAttribute="bottom" constant="4" id="1Ic-me-G4t"/>
-                                                <constraint firstItem="Wlo-7A-4fO" firstAttribute="leading" secondItem="uWN-RC-cLQ" secondAttribute="leadingMargin" id="4G4-2K-xDw"/>
-                                                <constraint firstItem="And-Fc-etU" firstAttribute="leading" secondItem="a5N-J2-mvn" secondAttribute="trailing" constant="8" id="8D0-OE-QUr"/>
-                                                <constraint firstAttribute="trailing" secondItem="SWr-ZW-a84" secondAttribute="trailing" constant="4" id="P1u-6x-lGC"/>
-                                                <constraint firstItem="SWr-ZW-a84" firstAttribute="centerY" secondItem="uWN-RC-cLQ" secondAttribute="centerY" id="TLp-Pr-2KF"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Wlo-7A-4fO" secondAttribute="bottom" constant="5" id="Y0W-gS-CJH"/>
-                                                <constraint firstItem="a5N-J2-mvn" firstAttribute="leading" secondItem="Wlo-7A-4fO" secondAttribute="trailing" constant="16" id="d4c-2d-QPO"/>
-                                                <constraint firstItem="SWr-ZW-a84" firstAttribute="leading" secondItem="qkS-vg-Zck" secondAttribute="trailing" constant="8" id="fjg-3D-miR"/>
-                                                <constraint firstItem="qkS-vg-Zck" firstAttribute="leading" secondItem="Wlo-7A-4fO" secondAttribute="trailing" constant="16" id="rp3-1i-6xi"/>
-                                                <constraint firstItem="And-Fc-etU" firstAttribute="top" secondItem="uWN-RC-cLQ" secondAttribute="topMargin" constant="5" id="sV6-Ji-d7T"/>
-                                                <constraint firstItem="a5N-J2-mvn" firstAttribute="top" secondItem="uWN-RC-cLQ" secondAttribute="topMargin" constant="5" id="xkK-LM-6ec"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </tableViewCellContentView>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="contentLabel" destination="qkS-vg-Zck" id="1ZS-iv-v6D"/>
-                                            <outlet property="dateLabel" destination="And-Fc-etU" id="zpZ-BZ-dDN"/>
-                                            <outlet property="idLabel" destination="a5N-J2-mvn" id="SO1-4A-2pS"/>
-                                            <outlet property="moreButton" destination="SWr-ZW-a84" id="9Fn-bK-SkW"/>
-                                            <outlet property="profileImage" destination="Wlo-7A-4fO" id="8xr-cz-G9d"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -687,11 +521,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="video.square.fill" catalog="system" width="128" height="114"/>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

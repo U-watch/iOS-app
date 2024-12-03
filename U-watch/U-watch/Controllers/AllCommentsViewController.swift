@@ -52,6 +52,28 @@ class AllCommentsViewController:
     }
     
     func moreButtonPushed(for comment: Comment) {
+        let wrongClassificationAction = UIAlertAction(title: "잘못된 분류", style: .default) { (action) in
+         // Respond to user selection of the action
+        }
+        let reportAction = UIAlertAction(title: "신고하기", style: .default) { (action) in
+         // Respond to user selection of the action
+        }
+        let blockAction = UIAlertAction(title: "댓글 차단", style: .default) { (action) in
+         // Respond to user selection of the action
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+         // Respond to user selection of the action
+        }
+             
+        let alert = UIAlertController(title: "댓글", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(wrongClassificationAction)
+        alert.addAction(reportAction)
+        alert.addAction(blockAction)
+        alert.addAction(cancelAction)
+             
+        self.present(alert, animated: true) {
+           // The alert was presented
+        }
         print("More button pressed for \(comment.writerId)")
     }
     

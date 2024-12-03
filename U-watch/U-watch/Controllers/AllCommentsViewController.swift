@@ -18,9 +18,9 @@ class AllCommentsViewController: UIViewController, SkeletonTableViewDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 1...20 {
+        for _ in 1...20 {
             comments.append(Comment(
-                writerId: "asdf", content: "good video", profileUrl: URL(string: "sldkjfs")!, updatedAt: Date()
+                writerId: "@i_watch_you", content: "오늘 영상 꿀잼 ㅋㅋ", profileUrl: URL(string: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2Fcool-profile-picture-87h46gcobjl5e4xu.jpg&f=1&nofb=1&ipt=38b304b587c323cafbec5b5c1024649fc31c8977ca6050f6b9e35a420d5c79ae&ipo=images")!, updatedAt: Date()
             ))
         }
         
@@ -37,7 +37,8 @@ class AllCommentsViewController: UIViewController, SkeletonTableViewDataSource, 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentViewCell", for: indexPath) as! CommentViewCell
+        cell.comment = comments[indexPath.row]
         return cell
     }
     

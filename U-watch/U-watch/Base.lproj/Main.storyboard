@@ -423,7 +423,7 @@
                                 <rect key="frame" x="0.0" y="107" width="393" height="421"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentViewCell" id="hoe-km-Xwi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentViewCell" id="hoe-km-Xwi" customClass="CommentViewCell" customModule="U_watch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hoe-km-Xwi" id="uWN-RC-cLQ">
@@ -484,6 +484,13 @@
                                                 <constraint firstItem="a5N-J2-mvn" firstAttribute="top" secondItem="uWN-RC-cLQ" secondAttribute="topMargin" constant="5" id="xkK-LM-6ec"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="qkS-vg-Zck" id="1ZS-iv-v6D"/>
+                                            <outlet property="dateLabel" destination="And-Fc-etU" id="zpZ-BZ-dDN"/>
+                                            <outlet property="idLabel" destination="a5N-J2-mvn" id="SO1-4A-2pS"/>
+                                            <outlet property="moreButton" destination="SWr-ZW-a84" id="9Fn-bK-SkW"/>
+                                            <outlet property="profileImage" destination="Wlo-7A-4fO" id="8xr-cz-G9d"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

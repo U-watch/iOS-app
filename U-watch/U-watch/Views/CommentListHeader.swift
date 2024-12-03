@@ -67,6 +67,10 @@ class CommentListHeader: UIView, UITextFieldDelegate {
         return true
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchBar.resignFirstResponder()
+    }
+    
     @objc private func downloadButtonPressed() {
         headerDelegate?.downloadButtonPressed()
     }

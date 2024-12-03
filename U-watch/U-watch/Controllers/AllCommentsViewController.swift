@@ -55,10 +55,10 @@ class AllCommentsViewController:
         let wrongClassificationAction = UIAlertAction(title: "잘못된 분류", style: .default) { (action) in
          // Respond to user selection of the action
         }
-        let reportAction = UIAlertAction(title: "신고하기", style: .default) { (action) in
+        let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
          // Respond to user selection of the action
         }
-        let blockAction = UIAlertAction(title: "댓글 차단", style: .default) { (action) in
+        let blockAction = UIAlertAction(title: "댓글 차단", style: .destructive) { (action) in
          // Respond to user selection of the action
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in

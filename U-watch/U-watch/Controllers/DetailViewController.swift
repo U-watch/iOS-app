@@ -6,13 +6,108 @@
 //
 
 import UIKit
+import Foundation
 
-class DetailViewController: UIViewController {
-    var video: Video?
+protocol CommentHolder: AnyObject {
+    func updateComment(forVideoId id: Int64)
+    func startLoading()
+    func finishLoading()
+}
+
+class DetailViewController: UIViewController, DetailTabBarDelegate {
     
-    @IBOutlet weak var titleLabel: UILabel!
+    var video: Video?
+    var containers = [UIView]()
+    var controllers = [UIViewController]()
+    
+    @IBOutlet weak var analyzedDateLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    @IBOutlet weak var viewCountLabel: UILabel!
+    @IBOutlet weak var tabbar: DetailTabBar!
     
     override func viewDidLoad() {
-        titleLabel.text = video?.title
+        navigationItem.title = video!.title
+        
+        analyzedDateLabel.text = "최근 분석일: \(TextUtils.getFormattedDate(of: video!.uploadDate))"
+        commentCountLabel.text = TextUtils.getFormatedNumber(of: video!.commentCount)
+        viewCountLabel.text = TextUtils.getFormatedNumber(of: video!.viewCount)
+
+        // tag 1 means container
+        for container in view.subviews.filter({ $0.tag == 1 }) {
+            containers.append(container)
+        }
+        tabbar.tabBarDelegate = self
+        switchIndex(0)
+        
+        if CommentService.shared.commentDict[video!.id] == nil {
+            Task {
+                try await CommentService.shared.fetchComments(forVideoId: video!.id)
+                updateComments()
+                finishLoading()
+            }
+            startLoading()
+        }
+        
+        updateComments()
+    }
+    
+    func switchIndex(_ index: Int) {
+        for (i, container) in containers.enumerated() {
+            if i == index {
+                container.isHidden = false
+            } else {
+                container.isHidden = true
+            }
+        }
+    }
+    
+    func startLoading() {
+        DispatchQueue.main.async {
+            for controller in self.controllers {
+                if let commentHolder = controller as? CommentHolder {
+                    commentHolder.startLoading()
+                }
+            }
+        }
+    }
+    
+    func finishLoading() {
+        DispatchQueue.main.async {
+            for controller in self.controllers {
+                if let commentHolder = controller as? CommentHolder {
+                    commentHolder.finishLoading()
+                }
+            }
+        }
+    }
+
+    func updateComments() {
+        DispatchQueue.main.async {
+            for controller in self.controllers {
+                if let commentHolder = controller as? CommentHolder {
+                    commentHolder.updateComment(forVideoId: self.video!.id)
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.controllers.append(segue.destination)
+        if let destinationVC = segue.destination as? OverviewViewController {
+            destinationVC.video = video
+            // TODO: Pass Data
+        }
+        if let destinationVC = segue.destination as? AllCommentsViewController {
+            destinationVC.video = video
+            // TODO: Pass Data
+        }
+        if let destinationVC = segue.destination as? EmotionViewController {
+            destinationVC.video = video
+            // TODO: Pass Data
+        }
+        if let destinationVC = segue.destination as? CategoryViewController {
+            destinationVC.video = video
+            // TODO: Pass Data
+        }
     }
 }

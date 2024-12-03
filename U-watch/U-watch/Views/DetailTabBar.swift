@@ -33,23 +33,23 @@ class DetailTabBar: UIToolbar {
         super.layoutSubviews()
         
         if shadowView == nil {
-            addButtomShadow()
+            addBottomShadow()
         }
         
         updateItems()
     }
     
-    private func addButtomShadow() {
-        let shadowView = UIView(frame: CGRect(x: 0, y: self.bounds.height, width: self.bounds.width, height: 1))
+    private func addBottomShadow() {
+        let shadowView = UIView(frame: CGRect(x: 0, y: self.bounds.height - 1, width: self.bounds.width, height: 1))
         self.addSubview(shadowView)
         shadowView.backgroundColor = .systemGray5
-        
-        NSLayoutConstraint.activate([
-            shadowView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            shadowView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            shadowView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            shadowView.heightAnchor.constraint(equalToConstant: 1)
-        ])
+//
+//        NSLayoutConstraint.activate([
+//            shadowView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            shadowView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            shadowView.bottomAnchor.constraint(equalTo: bottomAnchor),
+//            shadowView.heightAnchor.constraint(equalToConstant: 1)
+//        ])
     }
     
     private func updateItems() {

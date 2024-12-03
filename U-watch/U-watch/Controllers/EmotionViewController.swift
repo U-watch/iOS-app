@@ -7,20 +7,7 @@
 
 import UIKit
 
-class EmotionViewController: UIViewController, CommentHolder {
+class EmotionViewController: AllCommentsViewController {
     
-    var video: Video?
-    var comments = [Comment]()
-    
-    func updateComment(forVideoId id: Int64) {
-        comments = CommentService.shared.commentDict[id] ?? []
-    }
-    
-    func startLoading() {
-        // TODO: start loading
-    }
-    
-    func finishLoading() {
-        // TODO: end loading
-    }
+    @IBOutlet weak var emotionSegmentControl: UISegmentedControl!
 }

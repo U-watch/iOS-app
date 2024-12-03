@@ -78,7 +78,7 @@ class AllCommentsViewController:
     }
     
     func searchBarTextChanged(to text: String?) {
-        print("SearchBar text changed to '\(text)'")
+        print("SearchBar text changed to '\(text ?? "")'")
     }
     
     func downloadButtonPressed() {

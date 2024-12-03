@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
-    var video: Video?
+class CategoryViewController: AllCommentsViewController {
 
+    @IBOutlet weak var categorySegmentControl: UISegmentedControl!
 }

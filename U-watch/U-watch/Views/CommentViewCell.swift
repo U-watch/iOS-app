@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CommentViewCellDelegate: AnyObject {
+    func moreButtonPushed(for comment: Comment)
+}
+
 class CommentViewCell: UITableViewCell {
     
     var comment: Comment? {
@@ -15,32 +19,22 @@ class CommentViewCell: UITableViewCell {
         }
     }
     
+    var cellDelegate: CommentViewCellDelegate?
+    
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var moreButton: UIButton!
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override func awakeFromNib() {
         setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    override func layoutSubviews() {
-        updateLayout()
     }
     
     private func setup() {
-    }
-    
-    private func updateLayout() {
         let rotationAngle = CGFloat.pi / 2
         moreButton.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        moreButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
     private func updateUI() {
@@ -52,5 +46,11 @@ class CommentViewCell: UITableViewCell {
         contentLabel.text = comment.content
         dateLabel.text = TextUtils.getDayPassed(from: comment.updatedAt)
         profileImage.sd_setImage(with: comment.profileUrl, placeholderImage: UIImage(named: "placeholder"))
+    }
+    
+    @objc private func buttonPressed() {
+        if let comment = self.comment {
+            cellDelegate?.moreButtonPushed(for: comment)
+        }
     }
 }

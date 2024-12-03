@@ -515,6 +515,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="header" destination="Wzm-tp-sk3" id="N8G-rn-Zku"/>
                         <outlet property="tableView" destination="3mH-uB-TTK" id="a7B-i4-1oz"/>
                     </connections>
                 </viewController>

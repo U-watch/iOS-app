@@ -7,31 +7,23 @@
 
 import UIKit
 
-class CommentListHeader: UIView {
+protocol CommentListHeaderDelegate: AnyObject {
+    func searchBarTextChanged(to text: String?)
+    func downloadButtonPressed()
+    func curseSwitchValueChanged(to value: Bool)
+}
+
+class CommentListHeader: UIView, UITextFieldDelegate {
+    
+    var headerDelegate: CommentListHeaderDelegate?
     
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var curseSwitch: UISwitch!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func awakeFromNib() {
         setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    override func layoutSubviews() {
-        updateLayout()
-    }
-    
-    private func updateLayout() {
-        curseSwitch.layer.cornerRadius = curseSwitch.frame.height / 2
-        curseSwitch.backgroundColor = .systemRed
-        curseSwitch.clipsToBounds = true
     }
     
     private func setup() {
@@ -58,5 +50,27 @@ class CommentListHeader: UIView {
         
         searchBar.leftView = iconContainer
         searchBar.leftViewMode = .always
+        searchBar.delegate = self
+        
+        downloadButton.addTarget(self, action: #selector(downloadButtonPressed), for: .touchUpInside)
+        
+        curseSwitch.addTarget(self, action: #selector(curseSwitchValueChanged(_:)), for: .valueChanged)
+        
+        curseSwitch.layer.cornerRadius = curseSwitch.frame.height / 2
+        curseSwitch.backgroundColor = .systemRed
+        curseSwitch.clipsToBounds = true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        headerDelegate?.searchBarTextChanged(to: searchBar.text)
+        return true
+    }
+    
+    @objc private func downloadButtonPressed() {
+        headerDelegate?.downloadButtonPressed()
+    }
+    
+    @objc private func curseSwitchValueChanged(_ sender: UISwitch) {
+        headerDelegate?.curseSwitchValueChanged(to: sender.isOn)
     }
 }

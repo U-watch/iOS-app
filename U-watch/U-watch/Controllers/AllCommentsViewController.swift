@@ -13,6 +13,7 @@ class AllCommentsViewController:
     UIViewController, SkeletonTableViewDataSource, UITableViewDelegate,
     CommentViewCellDelegate, CommentListHeaderDelegate, CommentHolder {
     
+    
     var video: Video?
     var comments = [Comment]()
     let cellIdentifier = "CommentViewCell"
@@ -47,6 +48,21 @@ class AllCommentsViewController:
         return cell
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+
+        // Trigger load more when the user is within 100 points of the bottom
+        if offsetY > contentHeight - height - 100 {
+            Task {
+                if (CommentService.shared.isFetching) { return }
+                try await CommentService.shared.fetchComments(forVideoId: self.video!.id, atPage: self.comments.count / 10)
+                self.updateComment(forVideoId: self.video!.id)
+            }
+        }
+    }
+
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
         return cellIdentifier
     }

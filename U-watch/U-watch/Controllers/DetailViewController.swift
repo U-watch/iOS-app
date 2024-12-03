@@ -41,7 +41,7 @@ class DetailViewController: UIViewController, DetailTabBarDelegate {
         
         if CommentService.shared.commentDict[video!.id] == nil {
             Task {
-                try await CommentService.shared.fetchComments(forVideoId: video!.id)
+                try await CommentService.shared.fetchComments(forVideoId: video!.id, atPage: 0)
                 updateComments()
                 finishLoading()
             }

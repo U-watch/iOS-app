@@ -7,6 +7,20 @@
 
 import UIKit
 
-class EmotionViewController: UIViewController {
+class EmotionViewController: UIViewController, CommentHolder {
+    
     var video: Video?
+    var comments = [Comment]()
+    
+    func updateComment(forVideoId id: Int64) {
+        comments = CommentService.shared.commentDict[id] ?? []
+    }
+    
+    func startLoading() {
+        // TODO: start loading
+    }
+    
+    func finishLoading() {
+        // TODO: end loading
+    }
 }

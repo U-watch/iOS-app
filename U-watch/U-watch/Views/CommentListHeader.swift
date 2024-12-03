@@ -10,6 +10,9 @@ import UIKit
 class CommentListHeader: UIView {
     
     @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var curseSwitch: UISwitch!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var downloadButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +22,16 @@ class CommentListHeader: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
+    }
+    
+    override func layoutSubviews() {
+        updateLayout()
+    }
+    
+    private func updateLayout() {
+        curseSwitch.layer.cornerRadius = curseSwitch.frame.height / 2
+        curseSwitch.backgroundColor = .systemRed
+        curseSwitch.clipsToBounds = true
     }
     
     private func setup() {
@@ -36,11 +49,12 @@ class CommentListHeader: UIView {
         icon.tintColor = .gray
         
         let iconSize: CGFloat = 24
-        let trailingGap: CGFloat = 12
-        let iconContainer = UIView(frame: CGRect(x: 0, y: 0, width: trailingGap + iconSize, height: iconSize))
+        let leadingGap: CGFloat = 12
+        let trailingGap: CGFloat = 4
+        let iconContainer = UIView(frame: CGRect(x: 0, y: 0, width: leadingGap + iconSize + trailingGap, height: iconSize))
         
         iconContainer.addSubview(icon)
-        icon.frame = CGRect(x: trailingGap, y: 0, width: iconSize, height: iconSize)
+        icon.frame = CGRect(x: leadingGap, y: 0, width: iconSize, height: iconSize)
         
         searchBar.leftView = iconContainer
         searchBar.leftViewMode = .always

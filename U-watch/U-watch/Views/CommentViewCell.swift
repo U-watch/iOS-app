@@ -31,8 +31,16 @@ class CommentViewCell: UITableViewCell {
         setup()
     }
     
+    override func layoutSubviews() {
+        updateLayout()
+    }
+    
     private func setup() {
-        // init
+    }
+    
+    private func updateLayout() {
+        let rotationAngle = CGFloat.pi / 2
+        moreButton.transform = CGAffineTransform(rotationAngle: rotationAngle)
     }
     
     private func updateUI() {

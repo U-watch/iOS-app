@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentListHeader" customModule="U_watch" customModuleProvider="target">
             <connections>
+                <outlet property="countLabel" destination="99x-my-GS7" id="cj5-VD-KmB"/>
+                <outlet property="curseSwitch" destination="0mv-cV-DTF" id="Lxi-TF-LiW"/>
+                <outlet property="downloadButton" destination="5ph-Ta-5eM" id="Zld-az-P0I"/>
                 <outlet property="searchBar" destination="fbi-cB-tHI" id="gam-Hr-9E7"/>
             </connections>
         </placeholder>
@@ -34,8 +37,9 @@
                 </button>
                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mv-cV-DTF">
                     <rect key="frame" x="332" y="68" width="51" height="31"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
                 </switch>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글 검색..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fbi-cB-tHI">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="댓글 검색..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fbi-cB-tHI">
                     <rect key="frame" x="8" y="8" width="327" height="48"/>
                     <color key="backgroundColor" red="0.91372549530000002" green="0.92941176889999999" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
@@ -43,6 +47,11 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 900개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99x-my-GS7">
                     <rect key="frame" x="12" y="73.666666666666671" width="87" height="22"/>
@@ -71,6 +80,9 @@
         <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

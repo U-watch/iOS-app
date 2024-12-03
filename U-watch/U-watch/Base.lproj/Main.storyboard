@@ -449,13 +449,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 내용입니다." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkS-vg-Zck">
-                                                    <rect key="frame" x="76" y="37" width="274" height="17"/>
+                                                    <rect key="frame" x="76" y="37" width="270" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWr-ZW-a84">
-                                                    <rect key="frame" x="358" y="18.666666666666671" width="35" height="35"/>
+                                                    <rect key="frame" x="354" y="18.666666666666671" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="juG-yY-Vlz"/>
                                                     </constraints>
@@ -474,7 +474,7 @@
                                                 <constraint firstItem="qkS-vg-Zck" firstAttribute="top" secondItem="a5N-J2-mvn" secondAttribute="bottom" constant="4" id="1Ic-me-G4t"/>
                                                 <constraint firstItem="Wlo-7A-4fO" firstAttribute="leading" secondItem="uWN-RC-cLQ" secondAttribute="leadingMargin" id="4G4-2K-xDw"/>
                                                 <constraint firstItem="And-Fc-etU" firstAttribute="leading" secondItem="a5N-J2-mvn" secondAttribute="trailing" constant="8" id="8D0-OE-QUr"/>
-                                                <constraint firstAttribute="trailing" secondItem="SWr-ZW-a84" secondAttribute="trailing" id="P1u-6x-lGC"/>
+                                                <constraint firstAttribute="trailing" secondItem="SWr-ZW-a84" secondAttribute="trailing" constant="4" id="P1u-6x-lGC"/>
                                                 <constraint firstItem="SWr-ZW-a84" firstAttribute="centerY" secondItem="uWN-RC-cLQ" secondAttribute="centerY" id="TLp-Pr-2KF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Wlo-7A-4fO" secondAttribute="bottom" constant="5" id="Y0W-gS-CJH"/>
                                                 <constraint firstItem="a5N-J2-mvn" firstAttribute="leading" secondItem="Wlo-7A-4fO" secondAttribute="trailing" constant="16" id="d4c-2d-QPO"/>

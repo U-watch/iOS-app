@@ -22,6 +22,7 @@ class DetailViewController: UIViewController, DetailTabBarDelegate {
             containers.append(container)
         }
         tabbar.tabBarDelegate = self
+        switchIndex(0)
     }
     
     func switchIndex(_ index: Int) {

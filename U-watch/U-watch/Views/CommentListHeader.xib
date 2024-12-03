@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentListHeader" customModule="U_watch" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="fbi-cB-tHI" id="gam-Hr-9E7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cGv-U3-ums">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ph-Ta-5eM">
+                    <rect key="frame" x="345" y="12" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="bBt-DM-n8h"/>
+                        <constraint firstAttribute="height" constant="40" id="kxs-TN-See"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.down" catalog="system"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0mv-cV-DTF">
+                    <rect key="frame" x="332" y="68" width="51" height="31"/>
+                </switch>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글 검색..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fbi-cB-tHI">
+                    <rect key="frame" x="8" y="8" width="327" height="48"/>
+                    <color key="backgroundColor" red="0.91372549530000002" green="0.92941176889999999" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="pvV-BW-BDD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 900개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99x-my-GS7">
+                    <rect key="frame" x="12" y="73.666666666666671" width="87" height="22"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="0mv-cV-DTF" firstAttribute="centerY" secondItem="cGv-U3-ums" secondAttribute="centerY" constant="30" id="0J9-sl-O7E"/>
+                <constraint firstAttribute="trailing" secondItem="0mv-cV-DTF" secondAttribute="trailing" constant="12" id="YbZ-Yf-Xun"/>
+                <constraint firstItem="5ph-Ta-5eM" firstAttribute="top" secondItem="cGv-U3-ums" secondAttribute="top" constant="12" id="euD-Hr-DzC"/>
+                <constraint firstAttribute="trailing" secondItem="5ph-Ta-5eM" secondAttribute="trailing" constant="8" id="hNf-SS-KI1"/>
+                <constraint firstItem="fbi-cB-tHI" firstAttribute="leading" secondItem="cGv-U3-ums" secondAttribute="leading" constant="8" id="mza-zJ-qMM"/>
+                <constraint firstItem="99x-my-GS7" firstAttribute="centerY" secondItem="cGv-U3-ums" secondAttribute="centerY" constant="31" id="pG7-Ae-meh"/>
+                <constraint firstItem="99x-my-GS7" firstAttribute="leading" secondItem="cGv-U3-ums" secondAttribute="leading" constant="12" id="raa-xO-Wdz"/>
+                <constraint firstItem="fbi-cB-tHI" firstAttribute="top" secondItem="cGv-U3-ums" secondAttribute="top" constant="8" id="se9-6A-jVc"/>
+                <constraint firstItem="5ph-Ta-5eM" firstAttribute="leading" secondItem="fbi-cB-tHI" secondAttribute="trailing" constant="10" id="w3o-qR-wBs"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-77.099236641221367" y="17.605633802816904"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -364,7 +364,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="fJl-tx-wWw"/>
                     <connections>
+                        <outlet property="analyzedDateLabel" destination="kLh-ae-K3S" id="ztY-o7-SU5"/>
+                        <outlet property="commentCountLabel" destination="P6S-oI-fgR" id="lvT-xI-ZGu"/>
                         <outlet property="tabbar" destination="Q8j-mg-Wio" id="YsS-Lw-BHo"/>
+                        <outlet property="viewCountLabel" destination="nBz-c0-VeF" id="nrO-xs-nXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hda-6H-iaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

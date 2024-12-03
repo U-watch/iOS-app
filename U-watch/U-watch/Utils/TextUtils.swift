@@ -17,4 +17,25 @@ class TextUtils {
             "\(components.day ?? 0)일전"
         }
     }
+    
+    static func getFormatedNumber(of number: Int) -> String {
+        let string = if (number < 1000) {
+            "\(number)"
+        } else if (number < 1_0000) {
+            "\(number / 1000)천"
+        } else if (number < 1_0000_0000) {
+            "\(number / 1_0000)만"
+        } else {
+            "\(number / 1_0000_0000)억"
+        }
+        
+        return string
+    }
+    
+    static func getFormattedDate(of date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        
+        return formatter.string(from: date)
+    }
 }

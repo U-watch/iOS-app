@@ -11,6 +11,7 @@ struct Video {
     var id: Int64
     var title: String
     var viewCount: Int
+    var commentCount: Int
     var uploadDate: Date
     var thumbnail: URL
     var status: Status

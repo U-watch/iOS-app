@@ -59,7 +59,13 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         if offsetY > contentHeight - height - 100 {
             Task {
                 if (await CommentService.shared.isFetching) { return }
-                self.comments = try await CommentService.shared.fetchComments(forVideoId: self.video!.id, atPage: self.comments.count / 10)
+                guard let id = video?.id else {
+                    return
+                }
+                self.comments = try await CommentService.shared.fetchComments(forVideoId: id,
+                                                                              forEmotion: emotion,
+                                                                              forCategory: category,
+                                                                              atPage: self.comments.count / 10)
                 tableView.reloadData()
             }
         }
@@ -121,9 +127,9 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
             guard let id = video?.id else {
                 return
             }
-            var comments = await CommentService.shared.commentDict[id] ?? []
+            var comments = await CommentService.shared.getComments(forVideoId: id, forEmotion: emotion, forCategory: category)
             if comments.count == 0 {
-                comments = try await CommentService.shared.fetchComments(forVideoId: id, atPage: 0)
+                comments = try await CommentService.shared.fetchComments(forVideoId: id, forEmotion: emotion, forCategory: category, atPage: 0)
             }
             updateComments(comments)
         }

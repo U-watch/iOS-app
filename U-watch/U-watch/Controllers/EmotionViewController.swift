@@ -10,4 +10,9 @@ import UIKit
 class EmotionViewController: CommonCommentViewController {
     
     @IBOutlet weak var emotionSegmentControl: UISegmentedControl!
+    
+    override func viewDidLoad() {
+        emotion = CommentEmotion.joy
+        super.viewDidLoad()
+    }
 }

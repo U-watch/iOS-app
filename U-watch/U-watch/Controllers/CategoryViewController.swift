@@ -10,4 +10,9 @@ import UIKit
 class CategoryViewController: CommonCommentViewController {
 
     @IBOutlet weak var categorySegmentControl: UISegmentedControl!
+    
+    override func viewDidLoad() {
+        category = CommentCategory.reaction
+        super.viewDidLoad()
+    }
 }

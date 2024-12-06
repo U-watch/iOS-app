@@ -29,10 +29,8 @@ class OverviewViewController: UIViewController {
         
         modalVC.modalPresentationStyle = .popover
         modalVC.modalTransitionStyle = .coverVertical
-        
-        present(modalVC, animated: true, completion: nil)
-        
         modalVC.video = video!
-        modalVC.updateComment(forVideoId: video!.id)
+
+        present(modalVC, animated: true, completion: nil)
     }
 }

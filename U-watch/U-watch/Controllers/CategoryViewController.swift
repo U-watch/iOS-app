@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryViewController: AllCommentsViewController {
+class CategoryViewController: CommonCommentViewController {
 
     @IBOutlet weak var categorySegmentControl: UISegmentedControl!
 }

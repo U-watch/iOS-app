@@ -12,4 +12,23 @@ struct Comment {
     var content: String
     var profileUrl: URL
     var updatedAt: Date
+    var emotion: CommentEmotion
+    var cateogry: CommentCategory
+}
+
+enum CommentEmotion {
+    case joy
+    case anger
+    case sadness
+    case suprise
+    case fear
+    case disgust
+}
+
+enum CommentCategory {
+    case reaction
+    case feedback
+    case question
+    case spam
+    case curse
 }

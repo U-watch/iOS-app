@@ -38,17 +38,6 @@ class DetailViewController: UIViewController, DetailTabBarDelegate {
         }
         tabbar.tabBarDelegate = self
         switchIndex(0)
-        
-        if CommentService.shared.commentDict[video!.id] == nil {
-            Task {
-                try await CommentService.shared.fetchComments(forVideoId: video!.id, atPage: 0)
-                updateComments()
-                finishLoading()
-            }
-            startLoading()
-        }
-        
-        updateComments()
     }
     
     func switchIndex(_ index: Int) {
@@ -57,36 +46,6 @@ class DetailViewController: UIViewController, DetailTabBarDelegate {
                 container.isHidden = false
             } else {
                 container.isHidden = true
-            }
-        }
-    }
-    
-    func startLoading() {
-        DispatchQueue.main.async {
-            for controller in self.controllers {
-                if let commentHolder = controller as? CommentHolder {
-                    commentHolder.startLoading()
-                }
-            }
-        }
-    }
-    
-    func finishLoading() {
-        DispatchQueue.main.async {
-            for controller in self.controllers {
-                if let commentHolder = controller as? CommentHolder {
-                    commentHolder.finishLoading()
-                }
-            }
-        }
-    }
-
-    func updateComments() {
-        DispatchQueue.main.async {
-            for controller in self.controllers {
-                if let commentHolder = controller as? CommentHolder {
-                    commentHolder.updateComment(forVideoId: self.video!.id)
-                }
             }
         }
     }

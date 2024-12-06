@@ -7,6 +7,6 @@
 
 import UIKit
 
-class KeywordCommentsViewController: AllCommentsViewController {
+class KeywordCommentsViewController: CommonCommentViewController {
     
 }

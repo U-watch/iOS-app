@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmotionViewController: AllCommentsViewController {
+class EmotionViewController: CommonCommentViewController {
     
     @IBOutlet weak var emotionSegmentControl: UISegmentedControl!
 }

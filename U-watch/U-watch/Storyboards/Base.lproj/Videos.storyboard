@@ -375,6 +375,80 @@
             </objects>
             <point key="canvasLocation" x="1171.7557251908397" y="364.78873239436621"/>
         </scene>
+        <!--Keyword Comments View Controller-->
+        <scene sceneID="d48-3e-qkR">
+            <objects>
+                <viewController storyboardIdentifier="KeywordCommentsViewController" id="Reo-ch-9J7" customClass="KeywordCommentsViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oVE-7K-h2x">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xV-Ql-7zF" customClass="DownloadButton" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="337" y="109" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7y9-Ak-HOe"/>
+                                    <constraint firstAttribute="height" constant="40" id="bQc-by-Iu0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.down" catalog="system"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 900개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5s-Rh-9CP">
+                                <rect key="frame" x="16" y="119" width="180" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Wif-1z-dNx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0O-YV-TN9">
+                                <rect key="frame" x="0.0" y="161" width="393" height="657"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-E1-367">
+                                <rect key="frame" x="116.66666666666669" y="67" width="160" height="4"/>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="BLP-IH-DrD"/>
+                                    <constraint firstAttribute="width" constant="160" id="nrG-WU-aFi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ddl-hn-9WL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q0O-YV-TN9" firstAttribute="leading" secondItem="Ddl-hn-9WL" secondAttribute="leading" id="34E-Oq-GOw"/>
+                            <constraint firstItem="Q0O-YV-TN9" firstAttribute="top" secondItem="7xV-Ql-7zF" secondAttribute="bottom" constant="12" id="946-zJ-uSC"/>
+                            <constraint firstItem="Q0O-YV-TN9" firstAttribute="trailing" secondItem="Ddl-hn-9WL" secondAttribute="trailing" id="Gw3-ip-Atv"/>
+                            <constraint firstItem="Ddl-hn-9WL" firstAttribute="bottom" secondItem="Q0O-YV-TN9" secondAttribute="bottom" id="Vu0-LD-qFW"/>
+                            <constraint firstItem="Q5s-Rh-9CP" firstAttribute="leading" secondItem="Ddl-hn-9WL" secondAttribute="leading" constant="16" id="Xke-R4-7Qk"/>
+                            <constraint firstItem="m1e-E1-367" firstAttribute="top" secondItem="Ddl-hn-9WL" secondAttribute="top" constant="8" id="nGW-bP-LkY"/>
+                            <constraint firstItem="Q5s-Rh-9CP" firstAttribute="top" secondItem="Ddl-hn-9WL" secondAttribute="top" constant="60" id="oha-XP-bnu"/>
+                            <constraint firstItem="Ddl-hn-9WL" firstAttribute="trailing" secondItem="7xV-Ql-7zF" secondAttribute="trailing" constant="16" id="rLB-KS-etU"/>
+                            <constraint firstItem="m1e-E1-367" firstAttribute="centerX" secondItem="oVE-7K-h2x" secondAttribute="centerX" id="v7Y-jN-s0p"/>
+                            <constraint firstItem="7xV-Ql-7zF" firstAttribute="top" secondItem="Ddl-hn-9WL" secondAttribute="top" constant="50" id="z0K-R9-Jho"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countLabel" destination="Q5s-Rh-9CP" id="qeJ-cg-e6e"/>
+                        <outlet property="downloadButton" destination="7xV-Ql-7zF" id="9Zc-ne-Gk2"/>
+                        <outlet property="tableView" destination="Q0O-YV-TN9" id="3cn-j8-p8J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RB2-0j-gz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106.1068702290077" y="1114.7887323943662"/>
+        </scene>
         <!--Overview-->
         <scene sceneID="9w4-SR-z4f">
             <objects>
@@ -645,13 +719,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVF-sF-Lnv" userLabel="Header" customClass="CommentListHeader" customModule="U_watch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="P3I-EP-kbC"/>
-                                </constraints>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-tL-FTy">
                                 <rect key="frame" x="16" y="115" width="361" height="32"/>
                                 <segments>
@@ -669,25 +736,63 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1I-5U-bvn" customClass="CommentSearchBar" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="325" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="cqB-nM-zxf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHd-WT-Zab" customClass="DownloadButton" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="345" y="13" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Sul-MK-eb4"/>
+                                    <constraint firstAttribute="height" constant="40" id="n35-3B-XDB"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title=""/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 900개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-wd-HKi">
+                                <rect key="frame" x="12" y="72" width="180" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="BKx-Rn-am0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igK-Xs-3rY" customClass="CurseSwitch" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="332" y="69" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wpD-Ol-ZJ4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cVF-sF-Lnv" firstAttribute="top" secondItem="sBw-CL-zML" secondAttribute="top" id="A3c-9a-Lsh"/>
+                            <constraint firstItem="igK-Xs-3rY" firstAttribute="top" secondItem="cHd-WT-Zab" secondAttribute="bottom" constant="16" id="B4j-6N-vI2"/>
+                            <constraint firstItem="V1I-5U-bvn" firstAttribute="top" secondItem="sBw-CL-zML" secondAttribute="top" constant="8" id="CGa-8n-E1Y"/>
                             <constraint firstItem="ZKh-LS-Ze0" firstAttribute="trailing" secondItem="wpD-Ol-ZJ4" secondAttribute="trailing" id="FcP-aT-GBc"/>
                             <constraint firstItem="wpD-Ol-ZJ4" firstAttribute="trailing" secondItem="Wea-tL-FTy" secondAttribute="trailing" constant="16" id="Ni5-zR-0th"/>
+                            <constraint firstItem="wpD-Ol-ZJ4" firstAttribute="trailing" secondItem="igK-Xs-3rY" secondAttribute="trailing" constant="12" id="TUp-sB-MhW"/>
+                            <constraint firstItem="Wea-tL-FTy" firstAttribute="top" secondItem="igK-Xs-3rY" secondAttribute="bottom" constant="15" id="UHN-vT-TXx"/>
+                            <constraint firstItem="V1I-5U-bvn" firstAttribute="leading" secondItem="sBw-CL-zML" secondAttribute="leading" constant="8" id="UkU-Yo-qxi"/>
+                            <constraint firstItem="cHd-WT-Zab" firstAttribute="top" secondItem="sBw-CL-zML" secondAttribute="top" constant="13" id="WU5-j1-Ljw"/>
+                            <constraint firstItem="fRS-wd-HKi" firstAttribute="leading" secondItem="wpD-Ol-ZJ4" secondAttribute="leading" constant="12" id="Wka-33-cye"/>
+                            <constraint firstItem="cHd-WT-Zab" firstAttribute="leading" secondItem="V1I-5U-bvn" secondAttribute="trailing" constant="12" id="bjY-gs-SQe"/>
                             <constraint firstItem="ZKh-LS-Ze0" firstAttribute="top" secondItem="Wea-tL-FTy" secondAttribute="bottom" constant="7" id="eI7-2b-NG9"/>
-                            <constraint firstItem="Wea-tL-FTy" firstAttribute="top" secondItem="cVF-sF-Lnv" secondAttribute="bottom" constant="8" id="jRe-MP-cbE"/>
-                            <constraint firstItem="cVF-sF-Lnv" firstAttribute="leading" secondItem="wpD-Ol-ZJ4" secondAttribute="leading" id="mrp-DN-3Ge"/>
+                            <constraint firstItem="fRS-wd-HKi" firstAttribute="top" secondItem="V1I-5U-bvn" secondAttribute="bottom" constant="16" id="euv-iC-h46"/>
                             <constraint firstItem="Wea-tL-FTy" firstAttribute="leading" secondItem="wpD-Ol-ZJ4" secondAttribute="leading" constant="16" id="pwY-Vk-oaS"/>
                             <constraint firstItem="ZKh-LS-Ze0" firstAttribute="leading" secondItem="wpD-Ol-ZJ4" secondAttribute="leading" id="u8a-uv-Pqs"/>
-                            <constraint firstItem="cVF-sF-Lnv" firstAttribute="trailing" secondItem="wpD-Ol-ZJ4" secondAttribute="trailing" id="ymC-03-vRc"/>
+                            <constraint firstAttribute="trailing" secondItem="cHd-WT-Zab" secondAttribute="trailing" constant="8" id="x9O-DF-s7I"/>
                             <constraint firstAttribute="bottom" secondItem="ZKh-LS-Ze0" secondAttribute="bottom" id="zIe-YD-c7p"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="categorySegmentControl" destination="Wea-tL-FTy" id="skX-xv-2hF"/>
-                        <outlet property="header" destination="cVF-sF-Lnv" id="h7F-6Q-DQs"/>
+                        <outlet property="countLabel" destination="fRS-wd-HKi" id="vdT-kk-YMj"/>
+                        <outlet property="curseSwitch" destination="igK-Xs-3rY" id="cHd-up-KgU"/>
+                        <outlet property="downloadButton" destination="cHd-WT-Zab" id="YX1-nk-oe3"/>
+                        <outlet property="searchBar" destination="V1I-5U-bvn" id="tKv-wD-dVK"/>
                         <outlet property="tableView" destination="ZKh-LS-Ze0" id="kgd-Bh-5h2"/>
                     </connections>
                 </viewController>
@@ -710,13 +815,6 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-0X-vlD" userLabel="Header" customClass="CommentListHeader" customModule="U_watch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="h7h-7U-sRs"/>
-                                </constraints>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="66d-MO-ul1">
                                 <rect key="frame" x="16" y="115" width="361" height="32"/>
                                 <segments>
@@ -728,26 +826,64 @@
                                     <segment title="역겨움"/>
                                 </segments>
                             </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m98-ty-z3O" customClass="CommentSearchBar" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="325" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="nhS-rK-CW5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itc-sw-IXf" customClass="DownloadButton" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="345" y="13" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cfk-zm-SMF"/>
+                                    <constraint firstAttribute="width" constant="40" id="mVv-Dh-Let"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title=""/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 900개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09q-5O-8gG">
+                                <rect key="frame" x="12" y="72" width="180" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="475-rQ-gJQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ffh-VF-C6o" customClass="CurseSwitch" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="332" y="69" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dm8-MT-JsP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="V5h-0X-vlD" firstAttribute="trailing" secondItem="dm8-MT-JsP" secondAttribute="trailing" id="1fg-Sv-tRm"/>
+                            <constraint firstItem="09q-5O-8gG" firstAttribute="leading" secondItem="dm8-MT-JsP" secondAttribute="leading" constant="12" id="3Om-yQ-s08"/>
+                            <constraint firstItem="m98-ty-z3O" firstAttribute="top" secondItem="P6H-V0-mg0" secondAttribute="top" constant="8" id="5wj-GV-er7"/>
                             <constraint firstAttribute="bottom" secondItem="M1r-po-lDM" secondAttribute="bottom" id="BC3-qN-wrf"/>
                             <constraint firstItem="M1r-po-lDM" firstAttribute="trailing" secondItem="dm8-MT-JsP" secondAttribute="trailing" id="CKF-W9-Ag2"/>
-                            <constraint firstItem="66d-MO-ul1" firstAttribute="top" secondItem="V5h-0X-vlD" secondAttribute="bottom" constant="8" id="DN7-2G-ebw"/>
-                            <constraint firstItem="V5h-0X-vlD" firstAttribute="leading" secondItem="dm8-MT-JsP" secondAttribute="leading" id="TDW-46-Mse"/>
+                            <constraint firstItem="itc-sw-IXf" firstAttribute="leading" secondItem="m98-ty-z3O" secondAttribute="trailing" constant="12" id="GrE-64-tNr"/>
+                            <constraint firstItem="Ffh-VF-C6o" firstAttribute="top" secondItem="itc-sw-IXf" secondAttribute="bottom" constant="16" id="HZn-Rf-hqW"/>
+                            <constraint firstAttribute="trailing" secondItem="itc-sw-IXf" secondAttribute="trailing" constant="8" id="IhP-zn-91o"/>
+                            <constraint firstItem="m98-ty-z3O" firstAttribute="leading" secondItem="P6H-V0-mg0" secondAttribute="leading" constant="8" id="JTe-kK-jbG"/>
                             <constraint firstItem="M1r-po-lDM" firstAttribute="top" secondItem="66d-MO-ul1" secondAttribute="bottom" constant="7" id="bTB-2G-lAh"/>
                             <constraint firstAttribute="bottom" secondItem="M1r-po-lDM" secondAttribute="bottom" id="bmh-PM-hYj"/>
+                            <constraint firstItem="itc-sw-IXf" firstAttribute="top" secondItem="P6H-V0-mg0" secondAttribute="top" constant="13" id="eR2-B2-GAi"/>
+                            <constraint firstItem="dm8-MT-JsP" firstAttribute="trailing" secondItem="Ffh-VF-C6o" secondAttribute="trailing" constant="12" id="gDh-Eu-bi0"/>
                             <constraint firstItem="66d-MO-ul1" firstAttribute="leading" secondItem="dm8-MT-JsP" secondAttribute="leading" constant="16" id="hsF-9W-AaM"/>
                             <constraint firstItem="dm8-MT-JsP" firstAttribute="trailing" secondItem="66d-MO-ul1" secondAttribute="trailing" constant="16" id="iW4-9Q-FTU"/>
+                            <constraint firstItem="66d-MO-ul1" firstAttribute="top" secondItem="Ffh-VF-C6o" secondAttribute="bottom" constant="15" id="kvz-5Z-Ryq"/>
                             <constraint firstItem="M1r-po-lDM" firstAttribute="leading" secondItem="dm8-MT-JsP" secondAttribute="leading" id="r6h-xv-hZg"/>
-                            <constraint firstItem="V5h-0X-vlD" firstAttribute="top" secondItem="P6H-V0-mg0" secondAttribute="top" id="xon-24-74o"/>
+                            <constraint firstItem="09q-5O-8gG" firstAttribute="top" secondItem="m98-ty-z3O" secondAttribute="bottom" constant="16" id="rfX-Dl-OFl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countLabel" destination="09q-5O-8gG" id="X2O-f4-ev9"/>
+                        <outlet property="curseSwitch" destination="Ffh-VF-C6o" id="b8N-8X-hek"/>
+                        <outlet property="downloadButton" destination="itc-sw-IXf" id="JeL-7G-Ii4"/>
                         <outlet property="emotionSegmentControl" destination="66d-MO-ul1" id="fav-3D-v2P"/>
-                        <outlet property="header" destination="V5h-0X-vlD" id="xhZ-lP-NEM"/>
+                        <outlet property="searchBar" destination="m98-ty-z3O" id="tBh-IX-FYB"/>
                         <outlet property="tableView" destination="M1r-po-lDM" id="YVi-IQ-bRC"/>
                     </connections>
                 </viewController>
@@ -770,28 +906,58 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzm-tp-sk3" userLabel="Header" customClass="CommentListHeader" customModule="U_watch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="107"/>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQn-Al-U7R" customClass="CommentSearchBar" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="325" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="107" id="Lao-dI-CcA"/>
+                                    <constraint firstAttribute="height" constant="48" id="L2d-lO-dqy"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FP-rW-Q4k" customClass="DownloadButton" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="345" y="12" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="83W-T0-Qif"/>
+                                    <constraint firstAttribute="height" constant="40" id="pC5-Z2-LbX"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title=""/>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ujs-c3-L2J" customClass="CurseSwitch" customModule="U_watch" customModuleProvider="target">
+                                <rect key="frame" x="332" y="68" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="댓글 900개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sde-P1-GQl">
+                                <rect key="frame" x="12" y="72" width="180" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="I4n-VO-bhe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="2R9-QH-WXQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3mH-uB-TTK" firstAttribute="leading" secondItem="2R9-QH-WXQ" secondAttribute="leading" id="8lQ-9A-GEq"/>
-                            <constraint firstItem="Wzm-tp-sk3" firstAttribute="top" secondItem="hzW-jz-4vv" secondAttribute="top" id="eux-1a-Uza"/>
-                            <constraint firstAttribute="bottom" secondItem="3mH-uB-TTK" secondAttribute="bottom" id="fdP-vP-u8Y"/>
-                            <constraint firstItem="3mH-uB-TTK" firstAttribute="top" secondItem="Wzm-tp-sk3" secondAttribute="bottom" id="fzG-r1-Rj6"/>
-                            <constraint firstItem="3mH-uB-TTK" firstAttribute="trailing" secondItem="2R9-QH-WXQ" secondAttribute="trailing" id="iTE-Fu-W4a"/>
-                            <constraint firstItem="Wzm-tp-sk3" firstAttribute="trailing" secondItem="2R9-QH-WXQ" secondAttribute="trailing" id="lQi-m5-0EJ"/>
-                            <constraint firstItem="Wzm-tp-sk3" firstAttribute="leading" secondItem="2R9-QH-WXQ" secondAttribute="leading" id="x8D-rw-zYN"/>
+                            <constraint firstItem="hQn-Al-U7R" firstAttribute="top" secondItem="hzW-jz-4vv" secondAttribute="top" constant="8" id="38Q-xj-BJx"/>
+                            <constraint firstAttribute="bottom" secondItem="3mH-uB-TTK" secondAttribute="bottom" id="6Wn-BA-tfA"/>
+                            <constraint firstItem="Sde-P1-GQl" firstAttribute="top" secondItem="hQn-Al-U7R" secondAttribute="bottom" constant="16" id="Dyn-hD-tOJ"/>
+                            <constraint firstItem="6FP-rW-Q4k" firstAttribute="top" secondItem="hzW-jz-4vv" secondAttribute="top" constant="12" id="Emz-BD-xSJ"/>
+                            <constraint firstItem="hQn-Al-U7R" firstAttribute="leading" secondItem="hzW-jz-4vv" secondAttribute="leading" constant="8" id="Jzl-cY-bg6"/>
+                            <constraint firstItem="Ujs-c3-L2J" firstAttribute="top" secondItem="6FP-rW-Q4k" secondAttribute="bottom" constant="16" id="M6P-Aa-fnP"/>
+                            <constraint firstItem="3mH-uB-TTK" firstAttribute="top" secondItem="hzW-jz-4vv" secondAttribute="top" constant="107" id="N5m-Ad-ypQ"/>
+                            <constraint firstAttribute="trailing" secondItem="6FP-rW-Q4k" secondAttribute="trailing" constant="8" id="P80-7u-JR1"/>
+                            <constraint firstItem="3mH-uB-TTK" firstAttribute="trailing" secondItem="hzW-jz-4vv" secondAttribute="trailing" id="kea-DW-MGN"/>
+                            <constraint firstItem="3mH-uB-TTK" firstAttribute="leading" secondItem="hzW-jz-4vv" secondAttribute="leading" id="lCA-e2-6LT"/>
+                            <constraint firstItem="Sde-P1-GQl" firstAttribute="leading" secondItem="hzW-jz-4vv" secondAttribute="leading" constant="12" id="pg0-xi-Eb9"/>
+                            <constraint firstAttribute="trailing" secondItem="Ujs-c3-L2J" secondAttribute="trailing" constant="12" id="tms-IF-i5q"/>
+                            <constraint firstItem="6FP-rW-Q4k" firstAttribute="leading" secondItem="hQn-Al-U7R" secondAttribute="trailing" constant="12" id="zTN-kX-7AA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="header" destination="Wzm-tp-sk3" id="N8G-rn-Zku"/>
+                        <outlet property="countLabel" destination="Sde-P1-GQl" id="k26-qk-Ojb"/>
+                        <outlet property="curseSwitch" destination="Ujs-c3-L2J" id="zPO-LO-x77"/>
+                        <outlet property="downloadButton" destination="6FP-rW-Q4k" id="84Y-NP-UTk"/>
+                        <outlet property="searchBar" destination="hQn-Al-U7R" id="RnA-X1-A1D"/>
                         <outlet property="tableView" destination="3mH-uB-TTK" id="a7B-i4-1oz"/>
                     </connections>
                 </viewController>
@@ -801,6 +967,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
         <image name="video" catalog="system" width="128" height="82"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -810,9 +977,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

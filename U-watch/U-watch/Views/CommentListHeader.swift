@@ -7,15 +7,8 @@
 
 import UIKit
 
-protocol CommentListHeaderDelegate: AnyObject {
-    func searchBarTextChanged(to text: String?)
-    func downloadButtonPressed()
-    func curseSwitchValueChanged(to value: Bool)
-}
 
 class CommentListHeader: UIView, UITextFieldDelegate {
-    
-    var headerDelegate: CommentListHeaderDelegate?
     
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var curseSwitch: UISwitch!
@@ -53,29 +46,29 @@ class CommentListHeader: UIView, UITextFieldDelegate {
         searchBar.leftViewMode = .always
         searchBar.delegate = self
         
-        downloadButton.addTarget(self, action: #selector(downloadButtonPressed), for: .touchUpInside)
-        
-        curseSwitch.addTarget(self, action: #selector(curseSwitchValueChanged(_:)), for: .valueChanged)
+//        downloadButton.addTarget(self, action: #selector(downloadButtonPressed), for: .touchUpInside)
+//        
+//        curseSwitch.addTarget(self, action: #selector(curseSwitchValueChanged(_:)), for: .valueChanged)
         
         curseSwitch.layer.cornerRadius = curseSwitch.frame.height / 2
         curseSwitch.backgroundColor = .systemRed
         curseSwitch.clipsToBounds = true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        headerDelegate?.searchBarTextChanged(to: searchBar.text)
-        return true
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchBar.resignFirstResponder()
-    }
-    
-    @objc private func downloadButtonPressed() {
-        headerDelegate?.downloadButtonPressed()
-    }
-    
-    @objc private func curseSwitchValueChanged(_ sender: UISwitch) {
-        headerDelegate?.curseSwitchValueChanged(to: sender.isOn)
-    }
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        headerDelegate?.searchBarTextChanged(to: searchBar.text)
+//        return true
+//    }
+//    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        searchBar.resignFirstResponder()
+//    }
+//    
+//    @objc private func downloadButtonPressed() {
+//        headerDelegate?.downloadButtonPressed()
+//    }
+//    
+//    @objc private func curseSwitchValueChanged(_ sender: UISwitch) {
+//        headerDelegate?.curseSwitchValueChanged(to: sender.isOn)
+//    }
 }

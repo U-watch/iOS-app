@@ -29,6 +29,11 @@
 		26B37A232D02A53900E06716 /* TopKeywordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B37A222D02A53900E06716 /* TopKeywordCell.xib */; };
 		26B37A252D02A84D00E06716 /* TopKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A242D02A84A00E06716 /* TopKeyword.swift */; };
 		26B37A282D02B27F00E06716 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A272D02B27800E06716 /* UIViewExtensions.swift */; };
+		26B37A2A2D02D08C00E06716 /* KeywordCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A292D02D07800E06716 /* KeywordCommentsViewController.swift */; };
+		26B37A2E2D02D4DA00E06716 /* CommentSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A2D2D02D4DA00E06716 /* CommentSearchBar.swift */; };
+		26B37A302D02DC2100E06716 /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A2F2D02DC2100E06716 /* DownloadButton.swift */; };
+		26B37A322D02DD5300E06716 /* CurseSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A312D02DD5300E06716 /* CurseSwitch.swift */; };
+		26B37A342D02DEDA00E06716 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A332D02DED400E06716 /* UIColorExtensions.swift */; };
 		26D0A3BF2CFC2ECC00E01A52 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; };
 		26D0A3C02CFC2ECC00E01A52 /* Pods_U_watch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F4F5492CF9B9B200B5D215 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */; };
@@ -83,6 +88,11 @@
 		26B37A222D02A53900E06716 /* TopKeywordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopKeywordCell.xib; sourceTree = "<group>"; };
 		26B37A242D02A84A00E06716 /* TopKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopKeyword.swift; sourceTree = "<group>"; };
 		26B37A272D02B27800E06716 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		26B37A292D02D07800E06716 /* KeywordCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCommentsViewController.swift; sourceTree = "<group>"; };
+		26B37A2D2D02D4DA00E06716 /* CommentSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSearchBar.swift; sourceTree = "<group>"; };
+		26B37A2F2D02DC2100E06716 /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		26B37A312D02DD5300E06716 /* CurseSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurseSwitch.swift; sourceTree = "<group>"; };
+		26B37A332D02DED400E06716 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		26F4F54A2CF9CDD400B5D215 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		26F4F5512CF9D8DF00B5D215 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -144,6 +154,7 @@
 		26B37A262D02B26F00E06716 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				26B37A332D02DED400E06716 /* UIColorExtensions.swift */,
 				26B37A272D02B27800E06716 /* UIViewExtensions.swift */,
 			);
 			path = Extensions;
@@ -161,6 +172,9 @@
 				26953FE12CFE2C7C00E64706 /* CommentListHeader.xib */,
 				26953FEA2CFF2D4600E64706 /* CommentViewCell.xib */,
 				26B37A222D02A53900E06716 /* TopKeywordCell.xib */,
+				26B37A2D2D02D4DA00E06716 /* CommentSearchBar.swift */,
+				26B37A2F2D02DC2100E06716 /* DownloadButton.swift */,
+				26B37A312D02DD5300E06716 /* CurseSwitch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +182,7 @@
 		26F4F5542CF9EA5400B5D215 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26B37A292D02D07800E06716 /* KeywordCommentsViewController.swift */,
 				26953FD52CFE10D200E64706 /* OverviewViewController.swift */,
 				26953FD72CFE110600E64706 /* AllCommentsViewController.swift */,
 				26953FD92CFE111F00E64706 /* EmotionViewController.swift */,
@@ -370,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B37A342D02DEDA00E06716 /* UIColorExtensions.swift in Sources */,
 				26B37A282D02B27F00E06716 /* UIViewExtensions.swift in Sources */,
 				26B37A252D02A84D00E06716 /* TopKeyword.swift in Sources */,
 				26953FDC2CFE113800E64706 /* CategoryViewController.swift in Sources */,
@@ -379,11 +395,15 @@
 				E7F53FB62CB5B92300FD76B0 /* ViewController.swift in Sources */,
 				26F4F5522CF9D8E400B5D215 /* Video.swift in Sources */,
 				26953FE42CFEEACA00E64706 /* CommentViewCell.swift in Sources */,
+				26B37A302D02DC2100E06716 /* DownloadButton.swift in Sources */,
 				26F4F54B2CF9CDE200B5D215 /* VideoTableViewCell.swift in Sources */,
 				26F4F5572CF9EB1900B5D215 /* AnalyzeButton.swift in Sources */,
 				E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */,
 				26953FD22CFDC99300E64706 /* DetailTabBar.swift in Sources */,
+				26B37A322D02DD5300E06716 /* CurseSwitch.swift in Sources */,
+				26B37A2A2D02D08C00E06716 /* KeywordCommentsViewController.swift in Sources */,
 				26953FDA2CFE111F00E64706 /* EmotionViewController.swift in Sources */,
+				26B37A2E2D02D4DA00E06716 /* CommentSearchBar.swift in Sources */,
 				26953FE02CFE2C4D00E64706 /* CommentListHeader.swift in Sources */,
 				26953FDE2CFE220900E64706 /* Comment.swift in Sources */,
 				2688F3ED2CFB5D8C007A9C24 /* VideoService.swift in Sources */,

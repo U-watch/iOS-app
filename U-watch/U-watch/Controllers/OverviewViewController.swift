@@ -24,6 +24,15 @@ class OverviewViewController: UIViewController {
     }
     
     func onTopKeywordTap(topKeyword: TopKeyword) {
-        print(topKeyword)
+        let storyboard = UIStoryboard(name: "Videos", bundle: nil)
+        let modalVC = storyboard.instantiateViewController(identifier: "KeywordCommentsViewController") as! KeywordCommentsViewController
+        
+        modalVC.modalPresentationStyle = .popover
+        modalVC.modalTransitionStyle = .coverVertical
+        
+        present(modalVC, animated: true, completion: nil)
+        
+        modalVC.video = video!
+        modalVC.updateComment(forVideoId: video!.id)
     }
 }

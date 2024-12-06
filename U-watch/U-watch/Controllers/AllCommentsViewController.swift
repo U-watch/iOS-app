@@ -11,20 +11,21 @@ import SkeletonView
 
 class AllCommentsViewController:
     UIViewController, SkeletonTableViewDataSource, UITableViewDelegate,
-    CommentViewCellDelegate, CommentListHeaderDelegate, CommentHolder {
+    CommentViewCellDelegate, CommentHolder {
     
     
     var video: Video?
     var comments = [Comment]()
     let cellIdentifier = "CommentViewCell"
     
-    @IBOutlet weak var header: CommentListHeader!
+    @IBOutlet weak var searchBar: CommentSearchBar!
+    @IBOutlet weak var downloadButton: DownloadButton!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var curseSwitch: CurseSwitch!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        header.headerDelegate = self
         
         tableView.rowHeight = 72
         tableView.estimatedRowHeight = 72

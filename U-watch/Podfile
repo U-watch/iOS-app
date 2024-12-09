@@ -8,4 +8,5 @@ pod 'DGCharts'
 pod 'GoogleSignIn'
 pod 'AppAuth'
 pod 'SkeletonView'
+pod 'SDWebImage'
 end

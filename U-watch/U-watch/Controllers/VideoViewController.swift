@@ -12,22 +12,6 @@ import SkeletonView
 
 class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate, VideoTableViewCellDelegate {
     
-    func cellButtonPressed(forVideo video: Video) {
-        if (video.status == Status.notAnalyzed) {
-            Task {
-                VideoService.shared.analyzeVideo(withId: video.id, executeAfterFinished: {
-                    self.completeLoading()
-                })
-                self.completeLoading()
-            }
-        } else if (video.status == Status.analyzed) {
-            if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-                detailVC.video = video
-                navigationController?.pushViewController(detailVC, animated: true)
-            }
-        }
-    }
-    
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,6 +56,22 @@ class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITabl
             self.view.hideSkeleton()
             
             self.tableView.reloadData()
+        }
+    }
+    
+    func cellButtonPressed(forVideo video: Video) {
+        if (video.analyzingStatus == Status.NOT_STARTED) {
+            Task {
+                VideoService.shared.analyzeVideo(withId: video.videoId, executeAfterFinished: {
+                    self.completeLoading()
+                })
+                self.completeLoading()
+            }
+        } else if (video.analyzingStatus == Status.COMPLETED) {
+            if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+                detailVC.video = video
+                navigationController?.pushViewController(detailVC, animated: true)
+            }
         }
     }
 }

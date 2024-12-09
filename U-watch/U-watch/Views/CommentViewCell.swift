@@ -44,10 +44,10 @@ class CommentViewCell: UITableViewCell {
             return
         }
         
-        idLabel.text = comment.writerId
-        contentLabel.text = comment.content
-        dateLabel.text = TextUtils.getDayPassed(from: comment.updatedAt)
-        profileImage.sd_setImage(with: comment.profileUrl, placeholderImage: UIImage(named: "placeholder"))
+        idLabel.text = comment.authorName
+        contentLabel.text = comment.commentText
+        dateLabel.text = TextUtils.getDayPassed(from: comment.publishedAt)
+        profileImage.sd_setImage(with: comment.authorProfileImage, placeholderImage: UIImage(named: "placeholder"))
     }
     
     @objc private func buttonPressed() {

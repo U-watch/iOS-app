@@ -7,7 +7,12 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
-    var video: Video?
+class CategoryViewController: CommonCommentViewController {
 
+    @IBOutlet weak var categorySegmentControl: UISegmentedControl!
+    
+    override func viewDidLoad() {
+        category = CommentCategory.reaction
+        super.viewDidLoad()
+    }
 }

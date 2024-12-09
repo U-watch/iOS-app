@@ -7,9 +7,29 @@
 
 import Foundation
 
-struct Comment {
-    var writerId: String
-    var content: String
-    var profileUrl: URL
-    var updatedAt: Date
+struct Comment: Codable {
+    var authorName: String
+    var authorProfileImage: URL
+    var commentText: String
+    var publishedAt: Date
+    var likeCount: Int
+//    var emotion: CommentEmotion
+//    var cateogry: CommentCategory
+}
+
+enum CommentEmotion: String, Codable {
+    case joy = "JOY"
+    case anger = "ANGER"
+    case sadness = "SADNESS"
+    case suprise = "SUPRISE"
+    case fear = "FEAR"
+    case disgust = "DIGUST"
+}
+
+enum CommentCategory: String, Codable {
+    case reaction = "REACTION"
+    case feedback = "FEEDBACK"
+    case question = "QUESTION"
+    case spam = "SPAM"
+    case curse = "INSULT"
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26508D722D07016D0072461C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26508D712D0701690072461C /* APIClient.swift */; };
+		26508D752D072B1F0072461C /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26508D742D072B1A0072461C /* CustomError.swift */; };
 		2688F3ED2CFB5D8C007A9C24 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */; };
 		26953FD02CFD744100E64706 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26953FCF2CFD743B00E64706 /* DetailViewController.swift */; };
 		26953FD22CFDC99300E64706 /* DetailTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26953FD12CFDC98A00E64706 /* DetailTabBar.swift */; };
@@ -25,6 +27,18 @@
 		26953FF22CFF4F8800E64706 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26953FF12CFF4F8800E64706 /* Home.storyboard */; };
 		26953FF52CFF4FA300E64706 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26953FF42CFF4FA300E64706 /* Live.storyboard */; };
 		26953FF72CFF4FB500E64706 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26953FF62CFF4FB500E64706 /* My.storyboard */; };
+		26B37A212D02A51700E06716 /* TopKeywordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A202D02A50C00E06716 /* TopKeywordCell.swift */; };
+		26B37A232D02A53900E06716 /* TopKeywordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B37A222D02A53900E06716 /* TopKeywordCell.xib */; };
+		26B37A252D02A84D00E06716 /* TopKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A242D02A84A00E06716 /* TopKeyword.swift */; };
+		26B37A282D02B27F00E06716 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A272D02B27800E06716 /* UIViewExtensions.swift */; };
+		26B37A2A2D02D08C00E06716 /* KeywordCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A292D02D07800E06716 /* KeywordCommentsViewController.swift */; };
+		26B37A2E2D02D4DA00E06716 /* CommentSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A2D2D02D4DA00E06716 /* CommentSearchBar.swift */; };
+		26B37A302D02DC2100E06716 /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A2F2D02DC2100E06716 /* DownloadButton.swift */; };
+		26B37A322D02DD5300E06716 /* CurseSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A312D02DD5300E06716 /* CurseSwitch.swift */; };
+		26B37A342D02DEDA00E06716 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A332D02DED400E06716 /* UIColorExtensions.swift */; };
+		26B37A362D035C6D00E06716 /* CommonCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A352D035C6D00E06716 /* CommonCommentViewController.swift */; };
+		26B37A382D03A41D00E06716 /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A372D03A41200E06716 /* AnalysisResult.swift */; };
+		26B37A3A2D03A55B00E06716 /* AnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B37A392D03A55200E06716 /* AnalysisService.swift */; };
 		26D0A3BF2CFC2ECC00E01A52 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; };
 		26D0A3C02CFC2ECC00E01A52 /* Pods_U_watch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F4F5492CF9B9B200B5D215 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */; };
@@ -57,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		094656F3650C11AE7668030B /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
+		26508D712D0701690072461C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		26508D742D072B1A0072461C /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		26953FCF2CFD743B00E64706 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		26953FD12CFDC98A00E64706 /* DetailTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabBar.swift; sourceTree = "<group>"; };
@@ -75,6 +91,18 @@
 		26953FF12CFF4F8800E64706 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		26953FF42CFF4FA300E64706 /* Live.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		26953FF62CFF4FB500E64706 /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
+		26B37A202D02A50C00E06716 /* TopKeywordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopKeywordCell.swift; sourceTree = "<group>"; };
+		26B37A222D02A53900E06716 /* TopKeywordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopKeywordCell.xib; sourceTree = "<group>"; };
+		26B37A242D02A84A00E06716 /* TopKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopKeyword.swift; sourceTree = "<group>"; };
+		26B37A272D02B27800E06716 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		26B37A292D02D07800E06716 /* KeywordCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCommentsViewController.swift; sourceTree = "<group>"; };
+		26B37A2D2D02D4DA00E06716 /* CommentSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSearchBar.swift; sourceTree = "<group>"; };
+		26B37A2F2D02DC2100E06716 /* DownloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		26B37A312D02DD5300E06716 /* CurseSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurseSwitch.swift; sourceTree = "<group>"; };
+		26B37A332D02DED400E06716 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		26B37A352D035C6D00E06716 /* CommonCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCommentViewController.swift; sourceTree = "<group>"; };
+		26B37A372D03A41200E06716 /* AnalysisResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
+		26B37A392D03A55200E06716 /* AnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisService.swift; sourceTree = "<group>"; };
 		26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		26F4F54A2CF9CDD400B5D215 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		26F4F5512CF9D8DF00B5D215 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -105,9 +133,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26508D732D072AE60072461C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				26508D742D072B1A0072461C /* CustomError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		2688F3EB2CFB5D71007A9C24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				26B37A392D03A55200E06716 /* AnalysisService.swift */,
+				26508D712D0701690072461C /* APIClient.swift */,
 				26953FE82CFF0CDA00E64706 /* CommentService.swift */,
 				2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */,
 			);
@@ -133,9 +171,19 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		26B37A262D02B26F00E06716 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				26B37A332D02DED400E06716 /* UIColorExtensions.swift */,
+				26B37A272D02B27800E06716 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		26F4F5532CF9EA2400B5D215 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26B37A202D02A50C00E06716 /* TopKeywordCell.swift */,
 				26953FE32CFEEAC600E64706 /* CommentViewCell.swift */,
 				26953FDF2CFE2C4400E64706 /* CommentListHeader.swift */,
 				26953FD12CFDC98A00E64706 /* DetailTabBar.swift */,
@@ -143,6 +191,10 @@
 				26F4F5562CF9EB1900B5D215 /* AnalyzeButton.swift */,
 				26953FE12CFE2C7C00E64706 /* CommentListHeader.xib */,
 				26953FEA2CFF2D4600E64706 /* CommentViewCell.xib */,
+				26B37A222D02A53900E06716 /* TopKeywordCell.xib */,
+				26B37A2D2D02D4DA00E06716 /* CommentSearchBar.swift */,
+				26B37A2F2D02DC2100E06716 /* DownloadButton.swift */,
+				26B37A312D02DD5300E06716 /* CurseSwitch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,8 +202,10 @@
 		26F4F5542CF9EA5400B5D215 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26B37A292D02D07800E06716 /* KeywordCommentsViewController.swift */,
 				26953FD52CFE10D200E64706 /* OverviewViewController.swift */,
 				26953FD72CFE110600E64706 /* AllCommentsViewController.swift */,
+				26B37A352D035C6D00E06716 /* CommonCommentViewController.swift */,
 				26953FD92CFE111F00E64706 /* EmotionViewController.swift */,
 				26953FDB2CFE113800E64706 /* CategoryViewController.swift */,
 				26953FCF2CFD743B00E64706 /* DetailViewController.swift */,
@@ -164,6 +218,8 @@
 		26F4F5552CF9EA7100B5D215 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				26B37A372D03A41200E06716 /* AnalysisResult.swift */,
+				26B37A242D02A84A00E06716 /* TopKeyword.swift */,
 				26953FDD2CFE220600E64706 /* Comment.swift */,
 				26F4F5512CF9D8DF00B5D215 /* Video.swift */,
 			);
@@ -199,6 +255,8 @@
 		E7F53FB02CB5B92300FD76B0 /* U-watch */ = {
 			isa = PBXGroup;
 			children = (
+				26508D732D072AE60072461C /* Errors */,
+				26B37A262D02B26F00E06716 /* Extensions */,
 				26953FE52CFEEE4F00E64706 /* Utils */,
 				2688F3EB2CFB5D71007A9C24 /* Services */,
 				26F4F5552CF9EA7100B5D215 /* Models */,
@@ -295,6 +353,7 @@
 				26953FE22CFE2C7C00E64706 /* CommentListHeader.xib in Resources */,
 				26953FF02CFF4B4300E64706 /* Main.storyboard in Resources */,
 				26953FEB2CFF2D4600E64706 /* CommentViewCell.xib in Resources */,
+				26B37A232D02A53900E06716 /* TopKeywordCell.xib in Resources */,
 				26953FF52CFF4FA300E64706 /* Live.storyboard in Resources */,
 				E7F53FB92CB5B92300FD76B0 /* Base in Resources */,
 			);
@@ -349,18 +408,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26B37A342D02DEDA00E06716 /* UIColorExtensions.swift in Sources */,
+				26B37A382D03A41D00E06716 /* AnalysisResult.swift in Sources */,
+				26B37A282D02B27F00E06716 /* UIViewExtensions.swift in Sources */,
+				26B37A252D02A84D00E06716 /* TopKeyword.swift in Sources */,
 				26953FDC2CFE113800E64706 /* CategoryViewController.swift in Sources */,
+				26B37A362D035C6D00E06716 /* CommonCommentViewController.swift in Sources */,
 				26953FD02CFD744100E64706 /* DetailViewController.swift in Sources */,
 				26953FE72CFEEE6200E64706 /* TextUtils.swift in Sources */,
 				26953FD62CFE10E600E64706 /* OverviewViewController.swift in Sources */,
 				E7F53FB62CB5B92300FD76B0 /* ViewController.swift in Sources */,
 				26F4F5522CF9D8E400B5D215 /* Video.swift in Sources */,
 				26953FE42CFEEACA00E64706 /* CommentViewCell.swift in Sources */,
+				26B37A302D02DC2100E06716 /* DownloadButton.swift in Sources */,
 				26F4F54B2CF9CDE200B5D215 /* VideoTableViewCell.swift in Sources */,
 				26F4F5572CF9EB1900B5D215 /* AnalyzeButton.swift in Sources */,
 				E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */,
 				26953FD22CFDC99300E64706 /* DetailTabBar.swift in Sources */,
+				26508D752D072B1F0072461C /* CustomError.swift in Sources */,
+				26B37A322D02DD5300E06716 /* CurseSwitch.swift in Sources */,
+				26B37A2A2D02D08C00E06716 /* KeywordCommentsViewController.swift in Sources */,
 				26953FDA2CFE111F00E64706 /* EmotionViewController.swift in Sources */,
+				26B37A2E2D02D4DA00E06716 /* CommentSearchBar.swift in Sources */,
+				26B37A3A2D03A55B00E06716 /* AnalysisService.swift in Sources */,
 				26953FE02CFE2C4D00E64706 /* CommentListHeader.swift in Sources */,
 				26953FDE2CFE220900E64706 /* Comment.swift in Sources */,
 				2688F3ED2CFB5D8C007A9C24 /* VideoService.swift in Sources */,
@@ -368,6 +438,8 @@
 				26F4F5492CF9B9B200B5D215 /* VideoViewController.swift in Sources */,
 				26953FE92CFF0CDD00E64706 /* CommentService.swift in Sources */,
 				E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */,
+				26B37A212D02A51700E06716 /* TopKeywordCell.swift in Sources */,
+				26508D722D07016D0072461C /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

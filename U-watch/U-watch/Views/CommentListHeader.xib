@@ -49,7 +49,7 @@
                         <constraint firstAttribute="height" constant="48" id="pvV-BW-BDD"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="12"/>
@@ -76,7 +76,7 @@
                 <constraint firstItem="5ph-Ta-5eM" firstAttribute="leading" secondItem="fbi-cB-tHI" secondAttribute="trailing" constant="10" id="w3o-qR-wBs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-77.099236641221367" y="17.605633802816904"/>
+            <point key="canvasLocation" x="-77.099236641221367" y="17.253521126760564"/>
         </view>
     </objects>
     <resources>

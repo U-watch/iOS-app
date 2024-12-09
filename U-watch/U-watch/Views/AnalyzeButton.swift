@@ -17,18 +17,18 @@ class AnalyzeButton: UIButton {
     
     func updateUI() {
         switch status {
-        case .analyzed:
+        case .COMPLETED:
             setTitleColor(UIColor.darkGray, for: .normal)
             setTitleColor(UIColor.gray, for: .highlighted)
             setTitle("결과 보기", for: .normal)
             tintColor = UIColor.secondarySystemBackground
             isEnabled = true
-        case .analyzing:
+        case .IN_PROGRESS:
             setTitleColor(UIColor.lightGray, for: .normal)
             setTitle("분석중", for: .normal)
             tintColor = UIColor.secondarySystemBackground
             isEnabled = false
-        case .notAnalyzed:
+        case .NOT_STARTED:
             setTitleColor(UIColor.white, for: .normal)
             setTitleColor(UIColor.lightText, for: .highlighted)
             setTitle("분석", for: .normal)

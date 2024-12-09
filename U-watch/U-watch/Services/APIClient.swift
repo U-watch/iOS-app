@@ -2,55 +2,56 @@
 //  APIClient.swift
 //  U-watch
 //
-//  Created by 이승규 on 11/30/24.
+//  Created by 이승규 on 12/9/24.
 //
 
 import Foundation
 
+struct APIResponse<T: Decodable>: Decodable {
+    let code: String
+    let message: String
+    let data: T
+}
+
 class APIClient {
-    static let shared = APIClient() // Singleton instance
-    
-    private init() {}
-    
-    // Fetch users from the API
-    func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void) {
-        // Define the API endpoint
-        let urlString = "https://example.com/api/users"
-        guard let url = URL(string: urlString) else {
-            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
-            return
+   
+    static func fetch<T: Decodable> (from path: String) async throws -> APIResponse<T> {
+        guard let url = URL(string: "https://coherent-midge-probably.ngrok-free.app/api/v1/\(path)") else {
+            throw CustomError.network(message: "Invalid URL")
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("", forHTTPHeaderField: "ngrok-skip-browser-warning")
+        
+        let data: Data
+        let response: URLResponse
+        
+        do {
+            (data, response) = try await URLSession.shared.data(for: request)
+        } catch {
+            throw CustomError.network(message: error.localizedDescription)
         }
         
-        // Create a URL session data task
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            // Handle errors
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            // Validate response status code
-            if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
-                let statusError = NSError(domain: "HTTP Error", code: httpResponse.statusCode, userInfo: nil)
-                completion(.failure(statusError))
-                return
-            }
-            
-            // Decode JSON data
-            guard let data = data else {
-                completion(.failure(NSError(domain: "No Data", code: -1, userInfo: nil)))
-                return
-            }
-            
-            do {
-                let users = try JSONDecoder().decode([User].self, from: data)
-                completion(.success(users))
-            } catch {
-                completion(.failure(error))
+        if let httpResponse = response as? HTTPURLResponse {
+            if httpResponse.statusCode / 100 != 2 {
+                let dataString = String(data: data, encoding: .utf8)
+                throw CustomError.response(code: httpResponse.statusCode, message: dataString ?? "")
             }
         }
         
-        // Start the task
-        task.resume()
+        let decoder = JSONDecoder()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+
+        // Set the custom date decoding strategy
+        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        let apiResponse: APIResponse<T>
+        do {
+            apiResponse = try decoder.decode(APIResponse<T>.self, from: data)
+        } catch {
+            throw CustomError.validation(message: error.localizedDescription)
+        }
+        return apiResponse
     }
 }

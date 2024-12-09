@@ -40,6 +40,7 @@
 		E7F82BB32D070F2100F8607C /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		E7F82BB72D0710F800F8607C /* My.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My.swift; sourceTree = "<group>"; };
 		E7F82BBB2D0743C300F8607C /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,13 +48,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				95923F563D494FF31A3A8CA8 /* Pods_U_watch.framework in Frameworks */,
+=======
+				EC9B7EBBA80CCF9EFDFD5D49 /* Pods_U_watch.framework in Frameworks */,
+>>>>>>> feature/google-login
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		A7AC71C3BB74A9007D3B772E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -67,10 +73,18 @@
 			children = (
 				88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */,
 				5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */,
+=======
+		67F3A7FDBA2CED8133FFF2B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A32B92C622E1432F52E984B4 /* Pods-U-watch.debug.xcconfig */,
+				97177AAA9FF6D348813F3ABF /* Pods-U-watch.release.xcconfig */,
+>>>>>>> feature/google-login
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		E775D5672CFB0D61005A804E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,20 +92,43 @@
 				E775D5692CFB109F005A804E /* Info.swift */,
 				E7EECE762CFF3D5D0059ECD1 /* SuperFan.swift */,
 				E7EECE782CFF401B0059ECD1 /* Sentiment.swift */,
+=======
+		82C8AEE03CA176109234442C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCED55543B16D295E28482E9 /* Pods_U_watch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E72294592D009952003654A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E722945C2D00998E003654A2 /* OnBoard.swift */,
+>>>>>>> feature/google-login
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		E77957412CF89BC1006FF707 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E7F82BBB2D0743C300F8607C /* LiveViewController.swift */,
 				E7F82BB32D070F2100F8607C /* MyViewController.swift */,
 				E7F53FB52CB5B92300FD76B0 /* HomeViewController.swift */,
+=======
+		E722945A2D009964003654A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E7F82BB92D07380400F8607C /* OnBoardViewController.swift */,
+				E7F53FB52CB5B92300FD76B0 /* LoginViewController.swift */,
+>>>>>>> feature/google-login
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		E77957422CF89DC4006FF707 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +136,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> feature/google-login
 		E7F53FA52CB5B92300FD76B0 = {
 			isa = PBXGroup;
 			children = (
 				E7F53FB02CB5B92300FD76B0 /* U-watch */,
 				E7F53FAF2CB5B92300FD76B0 /* Products */,
+<<<<<<< HEAD
 				DCBD67B9E984F5750C99F2C3 /* Pods */,
 				A7AC71C3BB74A9007D3B772E /* Frameworks */,
+=======
+				67F3A7FDBA2CED8133FFF2B6 /* Pods */,
+				82C8AEE03CA176109234442C /* Frameworks */,
+>>>>>>> feature/google-login
 			);
 			sourceTree = "<group>";
 		};
@@ -120,12 +164,20 @@
 		E7F53FB02CB5B92300FD76B0 /* U-watch */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				E775D5672CFB0D61005A804E /* Models */,
 				E77957422CF89DC4006FF707 /* Views */,
 				E77957412CF89BC1006FF707 /* Controllers */,
 				E7F53FB72CB5B92300FD76B0 /* Home.storyboard */,
 				E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */,
 				E7F53FB32CB5B92300FD76B0 /* SceneDelegate.swift */,
+=======
+				E722945A2D009964003654A2 /* Controllers */,
+				E72294592D009952003654A2 /* Models */,
+				E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */,
+				E7F53FB32CB5B92300FD76B0 /* SceneDelegate.swift */,
+				E7F53FB72CB5B92300FD76B0 /* Login.storyboard */,
+>>>>>>> feature/google-login
 				E7F53FBA2CB5B92400FD76B0 /* Assets.xcassets */,
 				E7F53FBC2CB5B92400FD76B0 /* LaunchScreen.storyboard */,
 				E7F53FBF2CB5B92400FD76B0 /* Info.plist */,
@@ -140,11 +192,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7F53FC22CB5B92400FD76B0 /* Build configuration list for PBXNativeTarget "U-watch" */;
 			buildPhases = (
+<<<<<<< HEAD
 				84F2951FB4215CD43751105A /* [CP] Check Pods Manifest.lock */,
 				E7F53FAA2CB5B92300FD76B0 /* Sources */,
 				E7F53FAB2CB5B92300FD76B0 /* Frameworks */,
 				E7F53FAC2CB5B92300FD76B0 /* Resources */,
 				EF5BEA4FDD1820FB1EA5A8CF /* [CP] Embed Pods Frameworks */,
+=======
+				2D0CE2D48D9D1D59D665D664 /* [CP] Check Pods Manifest.lock */,
+				E7F53FAA2CB5B92300FD76B0 /* Sources */,
+				E7F53FAB2CB5B92300FD76B0 /* Frameworks */,
+				E7F53FAC2CB5B92300FD76B0 /* Resources */,
+				F07797233BA50ADB2460416E /* [CP] Embed Pods Frameworks */,
+>>>>>>> feature/google-login
 			);
 			buildRules = (
 			);
@@ -202,7 +262,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+<<<<<<< HEAD
 		84F2951FB4215CD43751105A /* [CP] Check Pods Manifest.lock */ = {
+=======
+		2D0CE2D48D9D1D59D665D664 /* [CP] Check Pods Manifest.lock */ = {
+>>>>>>> feature/google-login
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -224,7 +288,11 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+<<<<<<< HEAD
 		EF5BEA4FDD1820FB1EA5A8CF /* [CP] Embed Pods Frameworks */ = {
+=======
+		F07797233BA50ADB2460416E /* [CP] Embed Pods Frameworks */ = {
+>>>>>>> feature/google-login
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -248,27 +316,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				E7F53FB62CB5B92300FD76B0 /* HomeViewController.swift in Sources */,
 				E775D56A2CFB109F005A804E /* Info.swift in Sources */,
 				E7F82BB82D0710FC00F8607C /* My.swift in Sources */,
 				E7F82BB42D070F2400F8607C /* MyViewController.swift in Sources */,
 				E7EECE772CFF3D5D0059ECD1 /* SuperFan.swift in Sources */,
+=======
+				E7F53FB62CB5B92300FD76B0 /* LoginViewController.swift in Sources */,
+>>>>>>> feature/google-login
 				E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */,
 				E7EECE792CFF401B0059ECD1 /* Sentiment.swift in Sources */,
 				E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */,
+<<<<<<< HEAD
 				E7F82BBC2D0743C600F8607C /* LiveViewController.swift in Sources */,
+=======
+				E7F82BBA2D07380F00F8607C /* OnBoardViewController.swift in Sources */,
+				E722945D2D00998E003654A2 /* OnBoard.swift in Sources */,
+>>>>>>> feature/google-login
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+<<<<<<< HEAD
 		E7F53FB72CB5B92300FD76B0 /* Home.storyboard */ = {
+=======
+		E7F53FB72CB5B92300FD76B0 /* Login.storyboard */ = {
+>>>>>>> feature/google-login
 			isa = PBXVariantGroup;
 			children = (
 				E7F53FB82CB5B92300FD76B0 /* Base */,
 			);
+<<<<<<< HEAD
 			name = Home.storyboard;
+=======
+			name = Login.storyboard;
+>>>>>>> feature/google-login
 			sourceTree = "<group>";
 		};
 		E7F53FBC2CB5B92400FD76B0 /* LaunchScreen.storyboard */ = {
@@ -319,7 +404,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -334,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -382,7 +467,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -391,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -403,7 +488,11 @@
 		};
 		E7F53FC32CB5B92400FD76B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */;
+=======
+			baseConfigurationReference = A32B92C622E1432F52E984B4 /* Pods-U-watch.debug.xcconfig */;
+>>>>>>> feature/google-login
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -424,7 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Gteam1.U-watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Gteam1.U-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -434,7 +523,11 @@
 		};
 		E7F53FC42CB5B92400FD76B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */;
+=======
+			baseConfigurationReference = 97177AAA9FF6D348813F3ABF /* Pods-U-watch.release.xcconfig */;
+>>>>>>> feature/google-login
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -455,7 +548,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Gteam1.U-watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Gteam1.U-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

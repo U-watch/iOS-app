@@ -4,5 +4,8 @@ target 'U-watch' do
   use_frameworks!
 
   # Charts 대신 DGCharts
-  pod 'DGCharts'
+pod 'DGCharts'
+pod 'GoogleSignIn'
+pod 'AppAuth'
+
 end

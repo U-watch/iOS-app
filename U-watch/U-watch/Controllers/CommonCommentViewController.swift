@@ -115,11 +115,14 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
     
     private func startLoading() {
         tableView.showAnimatedSkeleton()
+        countLabel?.showAnimatedSkeleton()
     }
     
     private func finishLoading() {
         tableView.stopSkeletonAnimation()
         tableView.hideSkeleton()
+        countLabel?.stopSkeletonAnimation()
+        countLabel?.hideSkeleton()
     }
     
     private func fetchInitialData() {
@@ -140,6 +143,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
             self.comments = comments
             self.tableView.reloadData()
             self.finishLoading()
+            self.countLabel?.text = "댓글 \(comments.count)개"
         }
     }
 }

@@ -25,8 +25,8 @@ actor CommentService {
         var apiResponse: APIResponse<[Comment]>
         do {
             apiResponse = try await APIClient.fetch(from: "comments/\(id)/all")
-        } catch {
-            print("Error occured: \(error)")
+        } catch CustomError.response(let code, let message) {
+            print("Response Error: \(code)")
             return []
         }
         

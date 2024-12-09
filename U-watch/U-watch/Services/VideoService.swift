@@ -16,7 +16,7 @@ class VideoService {
 
     func fetchVideos(atPage: Int, withSize: Int = 10) async throws {
         do {
-            let response: APIResponse<[Video]> = try await APIClient.fetch(from: "video/top-videos?channelId=UClRNDVO8093rmRTtLe4GEPw")
+            let response: APIResponse<[Video]> = try await APIClient.fetch(from: "video/top-videos?channelId=UCsJ6RuBiTVWRX156FVbeaGg")
             videos = response.data
         } catch {
 //            print("Error occured: \(error)")

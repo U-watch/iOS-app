@@ -18,12 +18,15 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var firstKeywordCell: TopKeywordCell!
     @IBOutlet weak var secondKeywordSell: TopKeywordCell!
     @IBOutlet weak var thirdKeywordCell: TopKeywordCell!
+    @IBOutlet weak var distributionBar: DistributionViewBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         firstKeywordCell.tapCallback = onTopKeywordTap(topKeyword:)
         secondKeywordSell.tapCallback = onTopKeywordTap(topKeyword:)
         thirdKeywordCell.tapCallback = onTopKeywordTap(topKeyword:)
+        distributionBar?.key = "기쁨"
+        distributionBar?.value = 100.0
         
         Task {
             guard let video = self.video else {
@@ -40,17 +43,19 @@ class OverviewViewController: UIViewController {
             guard let result = self.result else {
                 return
             }
+            
+            self.view.stopSkeletonAnimation()
+            self.view.hideSkeleton()
+            
             self.wordCloudImage.sd_setImage(with: result.wordCloundUrl)
             
-            self.positiveGuage.progress = result.positiveGauge
-            self.positiveGuageLabel.text = "\(Int(result.positiveGauge * 100))%"
+            self.positiveGuage.progress = result.positiveGauge / 100
+            self.positiveGuageLabel.text = "\(Int(result.positiveGauge))%"
+            self.positiveGuageDescription.text = TextUtils.getDiscription(of: result.positiveGauge)
             
             self.firstKeywordCell.topKeyword = result.topKeywords[0]
             self.secondKeywordSell.topKeyword = result.topKeywords[1]
             self.thirdKeywordCell.topKeyword = result.topKeywords[2]
-            
-            self.view.stopSkeletonAnimation()
-            self.view.hideSkeleton()
         }
     }
     

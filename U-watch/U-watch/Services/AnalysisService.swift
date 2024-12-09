@@ -11,32 +11,53 @@ class AnalysisService {
     static let shared = AnalysisService()
     private init() {}
     
+    var results = [String: AnalysisResult]()
+    
     func getResult(for video: Video) async throws -> AnalysisResult {
-        try await Task.sleep(nanoseconds: 1_000_000_000 * 3)
+        let analysisResponse: APIResponse<VideoAnalysis>
+        do {
+            analysisResponse = try await APIClient.fetch(from: "video/analysis?videoId=\(video.videoId)")
+        } catch {
+            throw error
+        }
+        let topKeywordsResponse: APIResponse<TopKeywords>
+        do {
+            topKeywordsResponse = try await APIClient.fetch(from: "video/keywords?videoId=\(video.videoId)")
+        } catch {
+            throw error
+        }
+        let videoInfoResponse: APIResponse<VideoInfo>
+        do {
+            videoInfoResponse = try await APIClient.fetch(from: "video/info?videoId=\(video.videoId)")
+        } catch {
+            throw error
+        }
         
-        return AnalysisResult(analysisDate: Date(),
+        results[video.videoId] = AnalysisResult(analysisDate: videoInfoResponse.data.lastUpdated,
                               commentCountHistory: [:],
-                              wordCloundUrl: URL(string: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnanx.me%2Fimage%2Fwordcloud.png&f=1&nofb=1&ipt=862b329ca19a4a82819f0b3be8a0036294a8b9fe9980398b4709529e6aec6c0a&ipo=images")!,
+                              wordCloundUrl: videoInfoResponse.data.wordCloudUrl,
                               topKeywords: [
-                                TopKeyword(keyword: "keyword1", grade: Grade.first, count: 3952),
-                                TopKeyword(keyword: "keyword2", grade: Grade.second, count: 552),
-                                TopKeyword(keyword: "keyword3", grade: Grade.third, count: 203)
+                                TopKeyword(keyword: topKeywordsResponse.data.topKeyword1, grade: Grade.first, count: topKeywordsResponse.data.topKeyword1Count),
+                                TopKeyword(keyword: topKeywordsResponse.data.topKeyword2, grade: Grade.second, count: topKeywordsResponse.data.topKeyword2Count),
+                                TopKeyword(keyword: topKeywordsResponse.data.topKeyword3, grade: Grade.third, count: topKeywordsResponse.data.topKeyword3Count),
                               ],
-                              positiveGauge: 0.78,
+                              positiveGauge: analysisResponse.data.positiveRate,
                               countByEmotion: [
-                                CommentEmotion.joy: 203,
-                                CommentEmotion.anger: 20,
-                                CommentEmotion.disgust: 2,
-                                CommentEmotion.fear: 101,
-                                CommentEmotion.sadness: 39,
-                                CommentEmotion.suprise: 59
+                                CommentEmotion.joy: analysisResponse.data.sentimentDistribution.JOY,
+                                CommentEmotion.anger: analysisResponse.data.sentimentDistribution.ANGER,
+                                CommentEmotion.sadness: analysisResponse.data.sentimentDistribution.SADNESS,
+                                CommentEmotion.suprise: analysisResponse.data.sentimentDistribution.SURPRISE,
+                                CommentEmotion.fear: analysisResponse.data.sentimentDistribution.FEAR,
+                                CommentEmotion.disgust: analysisResponse.data.sentimentDistribution.DISGUST,
                               ],
                               countByCategory: [
-                                CommentCategory.reaction: 350,
-                                CommentCategory.curse: 30,
-                                CommentCategory.feedback: 29,
-                                CommentCategory.question: 59,
-                                CommentCategory.spam: 10
+                                CommentCategory.reaction: analysisResponse.data.categoryDistribution.REACTION,
+                                CommentCategory.feedback: analysisResponse.data.categoryDistribution.FEEDBACK,
+                                CommentCategory.question: analysisResponse.data.categoryDistribution.QUESTION,
+                                CommentCategory.spam: analysisResponse.data.categoryDistribution.SPAM,
+                                CommentCategory.curse: analysisResponse.data.categoryDistribution.INSULT,
                               ])
+        
+        return results[video.videoId]!
     }
 }

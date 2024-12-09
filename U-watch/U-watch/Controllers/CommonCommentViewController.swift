@@ -113,16 +113,19 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         print("Curse switch value changed to \(value)")
     }
     
-    private func startLoading() {
+    func startLoading() {
         tableView.showAnimatedSkeleton()
+        countLabel?.showAnimatedSkeleton()
     }
     
-    private func finishLoading() {
+    func finishLoading() {
         tableView.stopSkeletonAnimation()
         tableView.hideSkeleton()
+        countLabel?.stopSkeletonAnimation()
+        countLabel?.hideSkeleton()
     }
     
-    private func fetchInitialData() {
+    func fetchInitialData() {
         Task {
             guard let id = video?.videoId else {
                 return
@@ -140,6 +143,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
             self.comments = comments
             self.tableView.reloadData()
             self.finishLoading()
+            self.countLabel?.text = "댓글 \(comments.count)개"
         }
     }
 }

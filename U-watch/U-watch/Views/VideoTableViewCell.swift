@@ -49,19 +49,9 @@ class VideoTableViewCell: UITableViewCell {
         guard let video = video else { return }
         
         titleLabel.text = video.title
-        let viewCount = if (video.viewCount < 1_0000) {
-            "\(video.viewCount)"
-        } else {
-            "\(video.viewCount / 1_0000)만"
-        }
         
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: video.publishedAt, to: Date())
-        let date = if (components.day == 0) {
-            "오늘"
-        } else {
-            "\(components.day ?? 0)일전"
-        }
+        let viewCount = TextUtils.getFormatedNumber(of: video.viewCount)
+        let date = TextUtils.getDayPassed(from: video.publishedAt)
         infoLabel.text = "조회수 \(viewCount)회 / \(date)"
         
         thumbnail.sd_setImage(with: video.thumbnail, placeholderImage: UIImage(named: "placeholder"))

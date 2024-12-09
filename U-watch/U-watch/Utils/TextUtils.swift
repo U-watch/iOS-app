@@ -11,10 +11,15 @@ class TextUtils {
     static func getDayPassed(from startDate: Date, to endDate: Date = Date()) -> String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: startDate, to: endDate)
-        return if (components.day == 0) {
+        guard let day = components.day else {
+            return "잘못된 날짜"
+        }
+        return if day == 0 {
             "오늘"
+        } else if day >= 365 {
+            "\(Int(day / 365))년전"
         } else {
-            "\(components.day ?? 0)일전"
+            "\(day)일전"
         }
     }
     
@@ -37,5 +42,19 @@ class TextUtils {
         formatter.dateFormat = "yyyy/MM/dd"
         
         return formatter.string(from: date)
+    }
+    
+    static func getDiscription(of guage: Float) -> String {
+        if guage > 80 {
+            "매우 긍정적"
+        } else if guage > 60 {
+            "긍정적"
+        } else if guage > 40 {
+            "중립"
+        } else if guage > 20 {
+            "부정적"
+        } else {
+            "매우 부정적"
+        }
     }
 }

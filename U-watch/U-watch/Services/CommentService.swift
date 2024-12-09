@@ -22,19 +22,18 @@ actor CommentService {
                        atPage page: Int,
                        withSize size: Int = 10) async throws -> [Comment] {
         isFetching = true
-        var apiResponse: APIResponse<[Comment]>
-        do {
-            apiResponse = try await APIClient.fetch(from: "comments/\(id)/all")
-        } catch CustomError.response(let code, let message) {
-            print("Response Error: \(code)")
-            return []
+        let path = if emotion != nil {
+            "comments/\(id)/detail/sentiment?sentiment=\(emotion!.rawValue)"
+        } else if category != nil {
+            "comments/\(id)/detail/category?category=\(category!.rawValue)"
+        } else {
+            "comments/\(id)/all"
         }
         
-        let secondKey = getSecondKey(forEmotion: emotion, forCategory: category)
-        if commentDict[id] == nil { commentDict[id] = [:] }
-        if commentDict[id]![secondKey] == nil { commentDict[id]![secondKey] = [] }
+        let comments = await fetch(from: path, at: page, with: size)
         
-        commentDict[id]![secondKey] = apiResponse.data
+        let secondKey = getSecondKey(forEmotion: emotion, forCategory: category)
+        store(comments, to: id, and: secondKey)
         
         isFetching = false
         return commentDict[id]![secondKey]!
@@ -54,4 +53,26 @@ actor CommentService {
             "All"
         }
     }
+    
+    private func fetch(from path: String, at page: Int, with size: Int) async -> [Comment] {
+        var apiResponse: APIResponse<[Comment]>
+        do {
+            apiResponse = try await APIClient.fetch(from: path)
+        } catch CustomError.response(let code, let message) {
+            print("Response Error: \(code)")
+            return []
+        } catch {
+            print(error)
+            return []
+        }
+        return apiResponse.data
+    }
+    
+    private func store(_ data: [Comment], to id: String, and secondKey: AnyHashable) {
+        if commentDict[id] == nil { commentDict[id] = [:] }
+        if commentDict[id]![secondKey] == nil { commentDict[id]![secondKey] = [] }
+        
+        commentDict[id]![secondKey] = data
+    }
+
 }

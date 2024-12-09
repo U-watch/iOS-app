@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -177,8 +178,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 분석일: 2024/10/23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLh-ae-K3S">
-                                <rect key="frame" x="8" y="75" width="377" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="8" y="75" width="377" height="14.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -186,36 +187,36 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-GC-zGf">
-                                <rect key="frame" x="16" y="112" width="172.66666666666666" height="110"/>
+                                <rect key="frame" x="16" y="105.33333333333331" width="172.66666666666666" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 댓글" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9a-WW-LlP">
-                                        <rect key="frame" x="24.000000000000007" y="24" width="124.66666666666669" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 댓글" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9a-WW-LlP">
+                                        <rect key="frame" x="24.000000000000007" y="8" width="124.66666666666669" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.91372549530000002" green="0.92941176889999999" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6S-oI-fgR">
-                                        <rect key="frame" x="24.000000000000007" y="57" width="124.66666666666669" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="900" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6S-oI-fgR">
+                                        <rect key="frame" x="24.000000000000007" y="28.000000000000014" width="124.66666666666669" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.91372549530000002" green="0.92941176889999999" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="P6S-oI-fgR" firstAttribute="leading" secondItem="xiY-GC-zGf" secondAttribute="leading" constant="24" id="JFt-Kc-JAi"/>
                                     <constraint firstAttribute="trailing" secondItem="W9a-WW-LlP" secondAttribute="trailing" constant="24" id="PlQ-x0-TEc"/>
-                                    <constraint firstItem="P6S-oI-fgR" firstAttribute="leading" secondItem="xiY-GC-zGf" secondAttribute="leading" constant="24" id="ViH-lZ-zib"/>
-                                    <constraint firstAttribute="trailing" secondItem="P6S-oI-fgR" secondAttribute="trailing" constant="24" id="Ww7-Mb-ftG"/>
-                                    <constraint firstItem="W9a-WW-LlP" firstAttribute="top" secondItem="xiY-GC-zGf" secondAttribute="top" constant="24" id="cPa-K3-PRI"/>
-                                    <constraint firstAttribute="bottom" secondItem="P6S-oI-fgR" secondAttribute="bottom" constant="24" id="jmA-PH-G9y"/>
-                                    <constraint firstAttribute="height" constant="110" id="nBG-p5-wsO"/>
+                                    <constraint firstItem="P6S-oI-fgR" firstAttribute="top" secondItem="W9a-WW-LlP" secondAttribute="bottom" id="SpX-xU-hz6"/>
+                                    <constraint firstItem="W9a-WW-LlP" firstAttribute="top" secondItem="xiY-GC-zGf" secondAttribute="top" constant="8" id="cPa-K3-PRI"/>
+                                    <constraint firstAttribute="height" constant="62" id="nBG-p5-wsO"/>
+                                    <constraint firstAttribute="trailing" secondItem="P6S-oI-fgR" secondAttribute="trailing" constant="24" id="qQX-Ue-Vgw"/>
                                     <constraint firstItem="W9a-WW-LlP" firstAttribute="leading" secondItem="xiY-GC-zGf" secondAttribute="leading" constant="24" id="wNz-74-OMq"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -226,37 +227,37 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d56-S1-8aF">
-                                <rect key="frame" x="204.66666666666663" y="112" width="172.33333333333337" height="110"/>
+                                <rect key="frame" x="204.66666666666663" y="105.33333333333331" width="172.33333333333337" height="62"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 조회수" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92t-Nt-kWh">
-                                        <rect key="frame" x="23.999999999999993" y="24" width="124.33333333333331" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 조회수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92t-Nt-kWh">
+                                        <rect key="frame" x="23.999999999999993" y="8" width="124.33333333333331" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.91372549530000002" green="0.92941176889999999" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.8k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-c0-VeF">
-                                        <rect key="frame" x="23.999999999999993" y="57" width="124.33333333333331" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.8k" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-c0-VeF">
+                                        <rect key="frame" x="23.999999999999993" y="28.000000000000014" width="124.33333333333331" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.91372549530000002" green="0.92941176889999999" blue="0.94901967050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="92t-Nt-kWh" firstAttribute="leading" secondItem="d56-S1-8aF" secondAttribute="leading" constant="24" id="6X9-5q-q6d"/>
-                                    <constraint firstAttribute="height" constant="110" id="N5o-aK-ind"/>
+                                    <constraint firstItem="nBz-c0-VeF" firstAttribute="top" secondItem="92t-Nt-kWh" secondAttribute="bottom" id="Eg1-ZG-cK3"/>
+                                    <constraint firstAttribute="height" constant="62" id="N5o-aK-ind"/>
                                     <constraint firstAttribute="trailing" secondItem="92t-Nt-kWh" secondAttribute="trailing" constant="24" id="RhW-zt-gNI"/>
-                                    <constraint firstItem="92t-Nt-kWh" firstAttribute="top" secondItem="d56-S1-8aF" secondAttribute="top" constant="24" id="YQs-fp-5vg"/>
-                                    <constraint firstAttribute="trailing" secondItem="nBz-c0-VeF" secondAttribute="trailing" constant="24" id="hYd-wK-4Q9"/>
-                                    <constraint firstAttribute="bottom" secondItem="nBz-c0-VeF" secondAttribute="bottom" constant="24" id="vEz-dE-FEc"/>
-                                    <constraint firstItem="nBz-c0-VeF" firstAttribute="leading" secondItem="d56-S1-8aF" secondAttribute="leading" constant="24" id="vXE-z0-DZG"/>
+                                    <constraint firstAttribute="trailing" secondItem="nBz-c0-VeF" secondAttribute="trailing" constant="24" id="ScF-nj-IGk"/>
+                                    <constraint firstItem="92t-Nt-kWh" firstAttribute="top" secondItem="d56-S1-8aF" secondAttribute="top" constant="8" id="YQs-fp-5vg"/>
+                                    <constraint firstItem="nBz-c0-VeF" firstAttribute="leading" secondItem="d56-S1-8aF" secondAttribute="leading" constant="24" id="bd2-9K-MF5"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -266,7 +267,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8j-mg-Wio" customClass="DetailTabBar" customModule="U_watch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="246" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="191.33333333333334" width="393" height="44"/>
                                 <items>
                                     <barButtonItem title="개요" id="2iA-Zk-Fjc">
                                         <userDefinedRuntimeAttributes>
@@ -291,7 +292,7 @@
                                 </items>
                             </toolbar>
                             <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nyy-Uy-Q7U" userLabel="Overview Container View">
-                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <rect key="frame" x="0.0" y="235.33333333333331" width="393" height="582.66666666666674"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -300,7 +301,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBU-I5-C7X" userLabel="All Comments Container View">
-                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <rect key="frame" x="0.0" y="235.33333333333331" width="393" height="582.66666666666674"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -309,7 +310,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1p4-ZU-QBG" userLabel="Emotion Container View">
-                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <rect key="frame" x="0.0" y="235.33333333333331" width="393" height="582.66666666666674"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -318,7 +319,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eof-CQ-bPa" userLabel="Category Container View">
-                                <rect key="frame" x="0.0" y="290" width="393" height="528"/>
+                                <rect key="frame" x="0.0" y="235.33333333333331" width="393" height="582.66666666666674"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -822,7 +823,7 @@
             <objects>
                 <viewController id="3Wu-i9-Vxc" userLabel="Category" customClass="CategoryViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sBw-CL-zML">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="582.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-tL-FTy">
@@ -836,7 +837,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZKh-LS-Ze0">
-                                <rect key="frame" x="0.0" y="153" width="393" height="375"/>
+                                <rect key="frame" x="0.0" y="153.00000000000003" width="393" height="429.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -914,11 +915,11 @@
             <objects>
                 <viewController id="wdM-y6-8kr" userLabel="Emotion" customClass="EmotionViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P6H-V0-mg0">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="582.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="M1r-po-lDM">
-                                <rect key="frame" x="0.0" y="153" width="393" height="375"/>
+                                <rect key="frame" x="0.0" y="153.00000000000003" width="393" height="429.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -1008,11 +1009,11 @@
             <objects>
                 <viewController id="FSh-65-Vua" userLabel="All Comments" customClass="AllCommentsViewController" customModule="U_watch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hzW-jz-4vv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="528"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="582.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3mH-uB-TTK">
-                                <rect key="frame" x="0.0" y="107" width="393" height="421"/>
+                                <rect key="frame" x="0.0" y="107.00000000000003" width="393" height="475.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -1085,6 +1086,9 @@
     <resources>
         <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
         <image name="video" catalog="system" width="128" height="82"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -1093,9 +1097,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

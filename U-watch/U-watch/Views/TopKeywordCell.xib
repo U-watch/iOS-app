@@ -29,22 +29,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="235회" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3wn-4Y-wG3">
-                    <rect key="frame" x="240" y="5" width="89" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="키워드 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="faz-UF-fgX">
-                    <rect key="frame" x="41" y="2" width="191" height="24"/>
+                    <rect key="frame" x="41" y="2" width="176" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbk-3C-yJ6">
-                    <rect key="frame" x="337" y="4" width="20" height="20"/>
+                    <rect key="frame" x="333" y="4" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="Z0O-ph-iq3"/>
                     </constraints>
@@ -52,15 +45,22 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="chevron.forward" catalog="system"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="235회" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3wn-4Y-wG3">
+                    <rect key="frame" x="222" y="4" width="89" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Ltn-tY-nac" secondAttribute="bottom" constant="2" id="71N-lT-J8B"/>
                 <constraint firstAttribute="bottom" secondItem="fbk-3C-yJ6" secondAttribute="bottom" constant="4" id="7Nh-px-HoI"/>
+                <constraint firstAttribute="trailing" secondItem="fbk-3C-yJ6" secondAttribute="trailing" constant="8" id="9Rb-tm-9Wm"/>
                 <constraint firstItem="Ltn-tY-nac" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="IHW-3f-sYg"/>
                 <constraint firstItem="Ltn-tY-nac" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="Ohd-Fl-Ijl"/>
                 <constraint firstItem="fbk-3C-yJ6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="Yg2-AM-72Q"/>
-                <constraint firstItem="fbk-3C-yJ6" firstAttribute="leading" secondItem="3wn-4Y-wG3" secondAttribute="trailing" constant="8" id="eAW-eJ-xbA"/>
                 <constraint firstItem="faz-UF-fgX" firstAttribute="leading" secondItem="Ltn-tY-nac" secondAttribute="trailing" constant="8" id="k3q-U3-CxP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

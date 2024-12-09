@@ -379,21 +379,15 @@
             </objects>
             <point key="canvasLocation" x="-1550.3816793893129" y="494.36619718309862"/>
         </scene>
-        <!--Videos-->
-        <scene sceneID="tg0-mH-I7y">
+        <!--VideosController-->
+        <scene sceneID="2FY-Ja-KJa">
             <objects>
-                <viewController id="K5z-ne-o0U" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lKX-vM-ouf">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="9zR-bT-hWO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Videos" image="video" catalog="system" id="a9i-RU-EOX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="stb-cc-2Qw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Videos" referencedIdentifier="VideosController" id="831-bw-o8R" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vyK-0k-7TN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvh-fO-EjB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-724" y="494"/>
+            <point key="canvasLocation" x="-1274" y="-19"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kc7-fA-8GO">
@@ -406,9 +400,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="IWw-ah-PZy"/>
-                        <segue destination="K5z-ne-o0U" kind="relationship" relationship="viewControllers" id="Ede-z7-tNW"/>
-                        <segue destination="Hhi-bA-D8X" kind="relationship" relationship="viewControllers" id="KRQ-3H-tOb"/>
-                        <segue destination="bUs-g8-hiQ" kind="relationship" relationship="viewControllers" id="6VN-Ek-Mei"/>
+                        <segue destination="831-bw-o8R" kind="relationship" relationship="viewControllers" id="SvO-uk-uxE"/>
+                        <segue destination="Hhi-bA-D8X" kind="relationship" relationship="viewControllers" id="Kdk-ZR-uDO"/>
+                        <segue destination="bUs-g8-hiQ" kind="relationship" relationship="viewControllers" id="7iv-76-NeT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSw-be-fzR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -453,12 +447,11 @@
         <image name="livephoto.play" catalog="system" width="128" height="124"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="usersum" width="194" height="180"/>
-        <image name="video" catalog="system" width="128" height="82"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

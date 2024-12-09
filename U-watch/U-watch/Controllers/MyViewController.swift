@@ -2,6 +2,17 @@ import UIKit
 
 class MyViewController: UIViewController {
     // MARK: - UI Components
+
+    private let pageTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "마이페이지"
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textColor = .black
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     private let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -73,6 +84,7 @@ class MyViewController: UIViewController {
         view.backgroundColor = .white
 
         // 상단 섹션
+        view.addSubview(pageTitleLabel)
         view.addSubview(profileImageView)
         view.addSubview(channelTitleLabel)
         view.addSubview(roleLabel)
@@ -102,27 +114,37 @@ class MyViewController: UIViewController {
     // MARK: - Setup Constraints
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            profileImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            // Page Title
+            pageTitleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            pageTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            // Profile Image
+            profileImageView.topAnchor.constraint(equalTo: pageTitleLabel.bottomAnchor, constant: 20),
             profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             profileImageView.widthAnchor.constraint(equalToConstant: 80),
             profileImageView.heightAnchor.constraint(equalToConstant: 80),
 
+            // Channel Title
             channelTitleLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 8),
             channelTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
+            // Role Label
             roleLabel.topAnchor.constraint(equalTo: channelTitleLabel.bottomAnchor, constant: 4),
             roleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             roleLabel.widthAnchor.constraint(equalToConstant: 100),
             roleLabel.heightAnchor.constraint(equalToConstant: 24),
 
+            // Info StackView
             infoStackView.topAnchor.constraint(equalTo: roleLabel.bottomAnchor, constant: 20),
             infoStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             infoStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
 
+            // Buttons StackView
             buttonsStackView.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 20),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
 
+            // Version Label
             versionLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             versionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])

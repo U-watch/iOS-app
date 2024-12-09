@@ -326,6 +326,8 @@
                                                                         <constraint firstAttribute="trailing" secondItem="Vid-4A-dyk" secondAttribute="trailing" constant="150" id="1PB-D6-Ebr"/>
                                                                         <constraint firstItem="Vid-4A-dyk" firstAttribute="top" secondItem="hXo-Mi-v7c" secondAttribute="top" constant="32" id="Bmn-5h-L9v"/>
                                                                         <constraint firstAttribute="bottom" secondItem="Vid-4A-dyk" secondAttribute="bottom" constant="29" id="Epe-EU-HFM"/>
+                                                                        <constraint firstItem="qKi-yR-Swr" firstAttribute="centerY" secondItem="Vid-4A-dyk" secondAttribute="centerY" id="QIz-X3-F9h"/>
+                                                                        <constraint firstItem="Vid-4A-dyk" firstAttribute="leading" secondItem="qKi-yR-Swr" secondAttribute="trailing" constant="69.666666666666629" id="j7g-RY-WFw"/>
                                                                     </constraints>
                                                                 </tableViewCellContentView>
                                                             </tableViewCell>
@@ -416,7 +418,7 @@
         <!--Live-->
         <scene sceneID="dx7-yQ-QOc">
             <objects>
-                <viewController id="Hhi-bA-D8X" sceneMemberID="viewController">
+                <viewController id="Hhi-bA-D8X" customClass="LiveViewController" customModule="U_watch" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JxO-5x-kHu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

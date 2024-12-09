@@ -18,15 +18,14 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var firstKeywordCell: TopKeywordCell!
     @IBOutlet weak var secondKeywordSell: TopKeywordCell!
     @IBOutlet weak var thirdKeywordCell: TopKeywordCell!
-    @IBOutlet weak var distributionBar: DistributionViewBar!
+    @IBOutlet weak var emotionDistribution: DistributionView!
+    @IBOutlet weak var categoryDistributionView: DistributionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         firstKeywordCell.tapCallback = onTopKeywordTap(topKeyword:)
         secondKeywordSell.tapCallback = onTopKeywordTap(topKeyword:)
         thirdKeywordCell.tapCallback = onTopKeywordTap(topKeyword:)
-        distributionBar?.key = "기쁨"
-        distributionBar?.value = 100.0
         
         Task {
             guard let video = self.video else {
@@ -56,6 +55,18 @@ class OverviewViewController: UIViewController {
             self.firstKeywordCell.topKeyword = result.topKeywords[0]
             self.secondKeywordSell.topKeyword = result.topKeywords[1]
             self.thirdKeywordCell.topKeyword = result.topKeywords[2]
+            
+            var data = [String: Float]()
+            for (key, value) in result.countByEmotion {
+                data[TextUtils.getDescription(of: key)] = value
+            }
+            self.emotionDistribution?.distData = data
+            
+            var data2 = [String: Float]()
+            for (key, value) in result.countByCategory {
+                data2[TextUtils.getDescription(of: key)] = value
+            }
+            self.categoryDistributionView?.distData = data2
         }
     }
     

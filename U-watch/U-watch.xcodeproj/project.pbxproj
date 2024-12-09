@@ -10,6 +10,8 @@
 		26508D722D07016D0072461C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26508D712D0701690072461C /* APIClient.swift */; };
 		26508D752D072B1F0072461C /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26508D742D072B1A0072461C /* CustomError.swift */; };
 		26508D782D0756B60072461C /* DistributionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26508D772D0756B60072461C /* DistributionView.swift */; };
+		26508D7B2D077B250072461C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 26508D7A2D077B250072461C /* SDWebImage */; };
+		26508D7D2D077B250072461C /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 26508D7C2D077B250072461C /* SDWebImageMapKit */; };
 		2688F3ED2CFB5D8C007A9C24 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */; };
 		26953FD02CFD744100E64706 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26953FCF2CFD743B00E64706 /* DetailViewController.swift */; };
 		26953FD22CFDC99300E64706 /* DetailTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26953FD12CFDC98A00E64706 /* DetailTabBar.swift */; };
@@ -44,8 +46,6 @@
 		26D0A3C02CFC2ECC00E01A52 /* Pods_U_watch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE2362D480D04060C248D7D3 /* Pods_U_watch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F4F5492CF9B9B200B5D215 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F5482CF9B9B200B5D215 /* VideoViewController.swift */; };
 		26F4F54B2CF9CDE200B5D215 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F54A2CF9CDD400B5D215 /* VideoTableViewCell.swift */; };
-		26F4F54E2CF9D77200B5D215 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 26F4F54D2CF9D77200B5D215 /* SDWebImage */; };
-		26F4F5502CF9D77200B5D215 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 26F4F54F2CF9D77200B5D215 /* SDWebImageMapKit */; };
 		26F4F5522CF9D8E400B5D215 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F5512CF9D8DF00B5D215 /* Video.swift */; };
 		26F4F5572CF9EB1900B5D215 /* AnalyzeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F4F5562CF9EB1900B5D215 /* AnalyzeButton.swift */; };
 		E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */; };
@@ -126,9 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26508D7B2D077B250072461C /* SDWebImage in Frameworks */,
+				26508D7D2D077B250072461C /* SDWebImageMapKit in Frameworks */,
 				26D0A3BF2CFC2ECC00E01A52 /* Pods_U_watch.framework in Frameworks */,
-				26F4F5502CF9D77200B5D215 /* SDWebImageMapKit in Frameworks */,
-				26F4F54E2CF9D77200B5D215 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +333,7 @@
 			);
 			mainGroup = E7F53FA52CB5B92300FD76B0;
 			packageReferences = (
-				26F4F54C2CF9D77200B5D215 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				26508D792D077B250072461C /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = E7F53FAF2CB5B92300FD76B0 /* Products */;
 			projectDirPath = "";
@@ -604,7 +604,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WAD38SLT2Y;
+				DEVELOPMENT_TEAM = YZ7WFT3995;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "U-watch/Info.plist";
@@ -619,7 +619,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Gteam1.U-watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "team1.U-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -635,7 +635,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WAD38SLT2Y;
+				DEVELOPMENT_TEAM = YZ7WFT3995;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "U-watch/Info.plist";
@@ -650,7 +650,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Gteam1.U-watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "team1.U-watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -682,7 +682,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		26F4F54C2CF9D77200B5D215 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		26508D792D077B250072461C /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
@@ -693,14 +693,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		26F4F54D2CF9D77200B5D215 /* SDWebImage */ = {
+		26508D7A2D077B250072461C /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26F4F54C2CF9D77200B5D215 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 26508D792D077B250072461C /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		26F4F54F2CF9D77200B5D215 /* SDWebImageMapKit */ = {
+		26508D7C2D077B250072461C /* SDWebImageMapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 26F4F54C2CF9D77200B5D215 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 26508D792D077B250072461C /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

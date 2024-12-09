@@ -72,6 +72,9 @@ class OnBoardViewController: UIViewController {
 
         // Back 버튼 숨기기
         self.navigationItem.hidesBackButton = true
+
+        // 버튼 액션 추가
+        startAnalysisButton.addTarget(self, action: #selector(didTapStartAnalysisButton), for: .touchUpInside)
     }
 
     // MARK: - Setup UI
@@ -119,7 +122,7 @@ class OnBoardViewController: UIViewController {
         let exampleResponse = OnBoardResponse(
             code: "200",
             message: "Success",
-            data: ChannelData(
+            data: OnBoardData(
                 channelId: "ChimChakMan_Official",
                 channelName: "침착맨",
                 thumbnail: "https://via.placeholder.com/100"
@@ -130,16 +133,16 @@ class OnBoardViewController: UIViewController {
     }
 
     private func updateUI(with response: OnBoardResponse) {
-        let channelData = response.data
+        let OnBoardData = response.data
 
         // Welcome Label 업데이트
-        welcomeLabel.text = "어서오세요, \(channelData.channelName)님!"
+        welcomeLabel.text = "어서오세요, \(OnBoardData.channelName)님!"
 
         // Channel ID 업데이트
-        channelIdLabel.text = "@\(channelData.channelId)"
+        channelIdLabel.text = "@\(OnBoardData.channelId)"
 
         // Profile Image 업데이트 (비동기 로드)
-        if let url = URL(string: channelData.thumbnail) {
+        if let url = URL(string: OnBoardData.thumbnail) {
             // URLSession을 사용하여 비동기적으로 이미지 로드
             URLSession.shared.dataTask(with: url) { data, response, error in
                 // 에러 처리
@@ -162,4 +165,19 @@ class OnBoardViewController: UIViewController {
         }
     }
 
+    // MARK: - Actions
+    @objc private func didTapStartAnalysisButton() {
+        // Home.storyboard를 로드
+        let storyboard = UIStoryboard(name: "Home", bundle: nil)
+
+        // MainTabBarController 인스턴스화
+        guard let tabBarVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? UITabBarController else {
+            print("Tab Bar Controller not found")
+            return
+        }
+
+        // 화면 전환
+        tabBarVC.modalPresentationStyle = .fullScreen
+        present(tabBarVC, animated: true, completion: nil)
+    }
 }

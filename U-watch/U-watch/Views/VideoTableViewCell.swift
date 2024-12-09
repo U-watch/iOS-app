@@ -56,7 +56,7 @@ class VideoTableViewCell: UITableViewCell {
         }
         
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: video.uploadDate, to: Date())
+        let components = calendar.dateComponents([.day], from: video.publishedAt, to: Date())
         let date = if (components.day == 0) {
             "오늘"
         } else {
@@ -66,9 +66,9 @@ class VideoTableViewCell: UITableViewCell {
         
         thumbnail.sd_setImage(with: video.thumbnail, placeholderImage: UIImage(named: "placeholder"))
         
-        button.status = video.status
+        button.status = video.analyzingStatus
         
-        if (video.status == Status.analyzing) {
+        if (video.analyzingStatus == Status.IN_PROGRESS) {
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
         } else {

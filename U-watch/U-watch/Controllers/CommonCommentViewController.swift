@@ -59,7 +59,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         if offsetY > contentHeight - height - 100 {
             Task {
                 if (await CommentService.shared.isFetching) { return }
-                guard let id = video?.id else {
+                guard let id = video?.videoId else {
                     return
                 }
                 self.comments = try await CommentService.shared.fetchComments(forVideoId: id,
@@ -98,7 +98,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         self.present(alert, animated: true) {
             // The alert was presented
         }
-        print("More button pressed for \(comment.writerId)")
+        print("More button pressed for \(comment.authorName)")
     }
     
     func searchBarTextChanged(to text: String?) {
@@ -124,7 +124,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
     
     private func fetchInitialData() {
         Task {
-            guard let id = video?.id else {
+            guard let id = video?.videoId else {
                 return
             }
             var comments = await CommentService.shared.getComments(forVideoId: id, forEmotion: emotion, forCategory: category)

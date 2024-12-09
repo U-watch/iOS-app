@@ -28,7 +28,7 @@ class DetailViewController: UIViewController, DetailTabBarDelegate {
     override func viewDidLoad() {
         navigationItem.title = video!.title
         
-        analyzedDateLabel.text = "최근 분석일: \(TextUtils.getFormattedDate(of: video!.uploadDate))"
+        analyzedDateLabel.text = "최근 분석일: \(TextUtils.getFormattedDate(of: video!.publishedAt))"
         commentCountLabel.text = TextUtils.getFormatedNumber(of: video!.commentCount)
         viewCountLabel.text = TextUtils.getFormatedNumber(of: video!.viewCount)
 

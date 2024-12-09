@@ -7,18 +7,19 @@
 
 import Foundation
 
-struct Video {
-    var id: Int64
+struct Video: Codable {
+    var videoId: String
     var title: String
-    var viewCount: Int
-    var commentCount: Int
-    var uploadDate: Date
     var thumbnail: URL
-    var status: Status
+    var viewCount: Int
+    var likeCount: Int
+    var commentCount: Int
+    var publishedAt: Date
+    var analyzingStatus: Status
 }
 
-enum Status {
-    case analyzed
-    case analyzing
-    case notAnalyzed
+enum Status: String, Codable {
+    case COMPLETED = "COMPLETED"
+    case IN_PROGRESS = "IN_PROGRESS"
+    case NOT_STARTED = "NOT_STARTED"
 }

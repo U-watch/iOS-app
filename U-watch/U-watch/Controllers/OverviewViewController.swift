@@ -60,6 +60,7 @@ class OverviewViewController: UIViewController {
         
         modalVC.modalPresentationStyle = .popover
         modalVC.modalTransitionStyle = .coverVertical
+        
         modalVC.video = video!
 
         present(modalVC, animated: true, completion: nil)

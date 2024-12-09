@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26508D722D07016D0072461C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26508D712D0701690072461C /* APIClient.swift */; };
+		26508D752D072B1F0072461C /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26508D742D072B1A0072461C /* CustomError.swift */; };
 		2688F3ED2CFB5D8C007A9C24 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */; };
 		26953FD02CFD744100E64706 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26953FCF2CFD743B00E64706 /* DetailViewController.swift */; };
 		26953FD22CFDC99300E64706 /* DetailTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26953FD12CFDC98A00E64706 /* DetailTabBar.swift */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		094656F3650C11AE7668030B /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
+		26508D712D0701690072461C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		26508D742D072B1A0072461C /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		26953FCF2CFD743B00E64706 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		26953FD12CFDC98A00E64706 /* DetailTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabBar.swift; sourceTree = "<group>"; };
@@ -129,10 +133,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26508D732D072AE60072461C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				26508D742D072B1A0072461C /* CustomError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		2688F3EB2CFB5D71007A9C24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				26B37A392D03A55200E06716 /* AnalysisService.swift */,
+				26508D712D0701690072461C /* APIClient.swift */,
 				26953FE82CFF0CDA00E64706 /* CommentService.swift */,
 				2688F3EC2CFB5D7E007A9C24 /* VideoService.swift */,
 			);
@@ -242,6 +255,7 @@
 		E7F53FB02CB5B92300FD76B0 /* U-watch */ = {
 			isa = PBXGroup;
 			children = (
+				26508D732D072AE60072461C /* Errors */,
 				26B37A262D02B26F00E06716 /* Extensions */,
 				26953FE52CFEEE4F00E64706 /* Utils */,
 				2688F3EB2CFB5D71007A9C24 /* Services */,
@@ -411,6 +425,7 @@
 				26F4F5572CF9EB1900B5D215 /* AnalyzeButton.swift in Sources */,
 				E7F53FB22CB5B92300FD76B0 /* AppDelegate.swift in Sources */,
 				26953FD22CFDC99300E64706 /* DetailTabBar.swift in Sources */,
+				26508D752D072B1F0072461C /* CustomError.swift in Sources */,
 				26B37A322D02DD5300E06716 /* CurseSwitch.swift in Sources */,
 				26B37A2A2D02D08C00E06716 /* KeywordCommentsViewController.swift in Sources */,
 				26953FDA2CFE111F00E64706 /* EmotionViewController.swift in Sources */,
@@ -424,6 +439,7 @@
 				26953FE92CFF0CDD00E64706 /* CommentService.swift in Sources */,
 				E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */,
 				26B37A212D02A51700E06716 /* TopKeywordCell.swift in Sources */,
+				26508D722D07016D0072461C /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

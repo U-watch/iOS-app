@@ -60,14 +60,14 @@ class VideoViewController: UIViewController, SkeletonTableViewDataSource, UITabl
     }
     
     func cellButtonPressed(forVideo video: Video) {
-        if (video.status == Status.notAnalyzed) {
+        if (video.analyzingStatus == Status.NOT_STARTED) {
             Task {
-                VideoService.shared.analyzeVideo(withId: video.id, executeAfterFinished: {
+                VideoService.shared.analyzeVideo(withId: video.videoId, executeAfterFinished: {
                     self.completeLoading()
                 })
                 self.completeLoading()
             }
-        } else if (video.status == Status.analyzed) {
+        } else if (video.analyzingStatus == Status.COMPLETED) {
             if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
                 detailVC.video = video
                 navigationController?.pushViewController(detailVC, animated: true)

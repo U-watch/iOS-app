@@ -3,8 +3,13 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var LogoImage: UIImageView!
+
+    @IBOutlet weak var projectName: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        LogoImage.image = UIImage(named: "logo")
     }
 
     @IBAction func signIn(sender: Any) {
@@ -28,6 +33,7 @@ class LoginViewController: UIViewController {
             let accessToken = user.accessToken.tokenString // Optional chaining 제거
             print("Access Token: \(accessToken)")
 
+
             // Refresh Token 출력
             let refreshToken = user.refreshToken.tokenString // Optional chaining 제거
             print("Refresh Token: \(refreshToken)")
@@ -41,6 +47,10 @@ class LoginViewController: UIViewController {
             }
 
             print("Sign in successful")
+
+            // 화면 전환 (Segue 호출)
+            self.performSegue(withIdentifier: "toOnBoard", sender: nil)
         }
+
     }
 }

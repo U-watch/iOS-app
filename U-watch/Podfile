@@ -7,5 +7,5 @@ target 'U-watch' do
 pod 'DGCharts'
 pod 'GoogleSignIn'
 pod 'AppAuth'
-
+pod 'SkeletonView'
 end

@@ -43,4 +43,18 @@ class TextUtils {
         
         return formatter.string(from: date)
     }
+    
+    static func getDiscription(of guage: Float) -> String {
+        if guage > 80 {
+            "매우 긍정적"
+        } else if guage > 60 {
+            "긍정적"
+        } else if guage > 40 {
+            "중립"
+        } else if guage > 20 {
+            "부정적"
+        } else {
+            "매우 부정적"
+        }
+    }
 }

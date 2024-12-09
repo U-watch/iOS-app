@@ -642,9 +642,21 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9PB-Aw-2mS" userLabel="감정 분포 그래프">
                                                 <rect key="frame" x="16" y="1018" width="361" height="180"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-TG-PH0" customClass="DistributionViewBar" customModule="U_watch" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="8" width="345" height="20"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="9Ft-4T-5r2"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="CVO-TG-PH0" firstAttribute="top" secondItem="9PB-Aw-2mS" secondAttribute="top" constant="8" id="AmL-i1-M6i"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CVO-TG-PH0" secondAttribute="trailing" constant="8" id="mgu-VX-EbP"/>
                                                     <constraint firstAttribute="height" constant="180" id="ni3-Td-BIs"/>
+                                                    <constraint firstItem="CVO-TG-PH0" firstAttribute="leading" secondItem="9PB-Aw-2mS" secondAttribute="leading" constant="8" id="vgg-Pz-Icr"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -786,6 +798,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="393" height="1600"/>
                     <connections>
+                        <outlet property="distributionBar" destination="CVO-TG-PH0" id="BVA-hf-X4n"/>
                         <outlet property="firstKeywordCell" destination="rFS-dE-d3G" id="gG7-77-5pB"/>
                         <outlet property="positiveGuage" destination="q8A-PA-van" id="RHX-DV-8oo"/>
                         <outlet property="positiveGuageDescription" destination="7Zp-Kd-2mR" id="9Fw-tD-Etv"/>

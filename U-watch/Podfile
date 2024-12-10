@@ -7,4 +7,5 @@ target 'U-watch' do
 
   # Pods for U-watch
   pod 'SkeletonView'
+  pod 'DGCharts'
 end

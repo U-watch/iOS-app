@@ -40,12 +40,30 @@ class APIClient {
         }
         
         let decoder = JSONDecoder()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let dateFormatter1 = DateFormatter()
+        dateFormatter1.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter1.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let dateFormatter2 = DateFormatter()
+        dateFormatter2.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter2.timeZone = TimeZone(abbreviation: "UTC")
 
         // Set the custom date decoding strategy
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+//        decoder.dateDecodingStrategy = .formatted(dateFormatter)
+        decoder.dateDecodingStrategy = .custom { decoder -> Date in
+            let container = try decoder.singleValueContainer()
+            let dateString = try container.decode(String.self)
+            
+            // Try each formatter until one succeeds
+            if let date = dateFormatter1.date(from: dateString) {
+                return date
+            }
+            if let date = dateFormatter2.date(from: dateString) {
+                return date
+            }
+            
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid date format: \(dateString)")
+        }
         let apiResponse: APIResponse<T>
         do {
             apiResponse = try decoder.decode(APIResponse<T>.self, from: data)

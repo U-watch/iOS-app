@@ -479,8 +479,8 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 10일간 +30%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O19-Vj-UkU">
-                                                <rect key="frame" x="16" y="66.333333333333329" width="131.33333333333334" height="20.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 10시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKi-Qh-ED1">
+                                                <rect key="frame" x="16" y="66.333333333333329" width="81" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -488,7 +488,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR7-wt-myw" userLabel="댓글 추이 그래프">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR7-wt-myw" userLabel="댓글 추이 그래프" customClass="LineChartView" customModule="DGCharts">
                                                 <rect key="frame" x="16" y="94.666666666666686" width="361" height="180"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
@@ -715,6 +715,15 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="280" id="hWz-bH-dPr"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+30%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O19-Vj-UkU">
+                                                <rect key="frame" x="101" y="66" width="46.333333333333343" height="20.333333333333258"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -722,14 +731,15 @@
                                             <constraint firstItem="TxH-FX-dpm" firstAttribute="top" secondItem="h0K-KA-URF" secondAttribute="bottom" constant="8" id="0J1-c1-Xsf"/>
                                             <constraint firstItem="IR7-wt-myw" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="0Qh-YQ-2lv"/>
                                             <constraint firstItem="tl3-h7-gDH" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="0pn-c5-Dd0"/>
+                                            <constraint firstItem="O19-Vj-UkU" firstAttribute="leading" secondItem="zKi-Qh-ED1" secondAttribute="trailing" constant="4" id="0x8-z2-ZbD"/>
                                             <constraint firstItem="yVe-Dg-n8J" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="1BC-tH-ngJ"/>
+                                            <constraint firstItem="O19-Vj-UkU" firstAttribute="top" secondItem="9ts-s1-6IL" secondAttribute="top" constant="66" id="1oX-Ix-yMR"/>
                                             <constraint firstAttribute="trailing" secondItem="IR7-wt-myw" secondAttribute="trailing" constant="16" id="2en-nE-aPJ"/>
                                             <constraint firstItem="Tkj-Cc-eKa" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="4If-aY-r8c"/>
                                             <constraint firstAttribute="trailing" secondItem="tl3-h7-gDH" secondAttribute="trailing" constant="16" id="4r1-IL-IpN"/>
                                             <constraint firstItem="aNz-Cb-j6A" firstAttribute="top" secondItem="BQQ-fS-lKz" secondAttribute="bottom" constant="8" id="5Ee-99-CxZ"/>
                                             <constraint firstItem="jhF-5M-Hwn" firstAttribute="top" secondItem="IR7-wt-myw" secondAttribute="bottom" constant="32" id="7Kn-Jv-CjC"/>
                                             <constraint firstItem="tl3-h7-gDH" firstAttribute="top" secondItem="3VY-NG-g2X" secondAttribute="bottom" constant="8" id="7xj-WX-mBX"/>
-                                            <constraint firstItem="O19-Vj-UkU" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="8fe-X5-XOm"/>
                                             <constraint firstItem="3VY-NG-g2X" firstAttribute="top" secondItem="Tkj-Cc-eKa" secondAttribute="bottom" constant="8" id="9AH-uQ-F9I"/>
                                             <constraint firstAttribute="height" constant="2000" id="9eS-z5-bHh"/>
                                             <constraint firstItem="de1-uS-VVi" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="ATo-Yp-40r"/>
@@ -739,10 +749,11 @@
                                             <constraint firstItem="SzX-ke-vKM" firstAttribute="top" secondItem="aNz-Cb-j6A" secondAttribute="bottom" constant="16" id="GBy-Z4-ncV"/>
                                             <constraint firstItem="fp4-Z6-JmD" firstAttribute="top" secondItem="jhF-5M-Hwn" secondAttribute="bottom" constant="8" id="GkX-GL-MMz"/>
                                             <constraint firstItem="BcV-eD-GwZ" firstAttribute="top" secondItem="ON6-hg-znh" secondAttribute="bottom" constant="8" id="Gw3-Dg-4nm"/>
-                                            <constraint firstItem="O19-Vj-UkU" firstAttribute="top" secondItem="2h9-Wd-Ymj" secondAttribute="bottom" constant="8" id="K57-fd-4cH"/>
+                                            <constraint firstItem="zKi-Qh-ED1" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="Id6-ic-H67"/>
                                             <constraint firstItem="aNz-Cb-j6A" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="LvA-Af-GLg"/>
                                             <constraint firstItem="2h9-Wd-Ymj" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="Mdj-Ev-Ysj"/>
                                             <constraint firstItem="tgr-RG-sp9" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="N3L-yQ-Gcc"/>
+                                            <constraint firstItem="IR7-wt-myw" firstAttribute="top" secondItem="zKi-Qh-ED1" secondAttribute="bottom" constant="8" id="PsT-ga-YWO"/>
                                             <constraint firstItem="8hr-f8-bQa" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="RKH-2r-8Aj"/>
                                             <constraint firstItem="2h9-Wd-Ymj" firstAttribute="top" secondItem="9ts-s1-6IL" secondAttribute="top" constant="32" id="Rfb-9x-p3c"/>
                                             <constraint firstItem="7Zp-Kd-2mR" firstAttribute="top" secondItem="q8A-PA-van" secondAttribute="bottom" constant="8" id="SeZ-fx-Wh1"/>
@@ -758,7 +769,6 @@
                                             <constraint firstItem="8hr-f8-bQa" firstAttribute="top" secondItem="tgr-RG-sp9" secondAttribute="bottom" constant="8" id="djw-QS-e6m"/>
                                             <constraint firstItem="TxH-FX-dpm" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="e8r-OD-3jU"/>
                                             <constraint firstItem="BcV-eD-GwZ" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="eWI-cQ-z8K"/>
-                                            <constraint firstItem="IR7-wt-myw" firstAttribute="top" secondItem="O19-Vj-UkU" secondAttribute="bottom" constant="8" id="g2m-IU-HWJ"/>
                                             <constraint firstItem="q8A-PA-van" firstAttribute="top" secondItem="Nwh-vt-iXc" secondAttribute="bottom" constant="8" id="hNh-7Q-cIV"/>
                                             <constraint firstItem="q8A-PA-van" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="iGP-s2-MOS"/>
                                             <constraint firstItem="SzX-ke-vKM" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="l7a-XM-yuQ"/>
@@ -768,6 +778,7 @@
                                             <constraint firstItem="fp4-Z6-JmD" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="rUb-2P-JIG"/>
                                             <constraint firstItem="yVe-Dg-n8J" firstAttribute="top" secondItem="BcV-eD-GwZ" secondAttribute="bottom" constant="16" id="sKM-Dv-vwF"/>
                                             <constraint firstItem="7Zp-Kd-2mR" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="scT-L2-m2r"/>
+                                            <constraint firstItem="zKi-Qh-ED1" firstAttribute="top" secondItem="2h9-Wd-Ymj" secondAttribute="bottom" constant="8" id="tuG-Uk-UwW"/>
                                             <constraint firstItem="de1-uS-VVi" firstAttribute="top" secondItem="yVe-Dg-n8J" secondAttribute="bottom" constant="8" id="vc7-R8-tSZ"/>
                                             <constraint firstItem="ON6-hg-znh" firstAttribute="leading" secondItem="9ts-s1-6IL" secondAttribute="leading" constant="16" id="wwz-jd-z1P"/>
                                             <constraint firstItem="Lqg-mF-8XT" firstAttribute="top" secondItem="8hr-f8-bQa" secondAttribute="bottom" constant="8" id="yk4-Yk-oae"/>
@@ -808,6 +819,8 @@
                     <size key="freeformSize" width="393" height="2000"/>
                     <connections>
                         <outlet property="categoryDistributionView" destination="tl3-h7-gDH" id="Noe-Lk-ecw"/>
+                        <outlet property="commentHistoryLabel" destination="O19-Vj-UkU" id="JLF-aM-bDk"/>
+                        <outlet property="commentHistoryView" destination="IR7-wt-myw" id="wfm-Nq-aFE"/>
                         <outlet property="emotionDistribution" destination="Lqg-mF-8XT" id="Xf4-Ud-fns"/>
                         <outlet property="firstKeywordCell" destination="rFS-dE-d3G" id="gG7-77-5pB"/>
                         <outlet property="positiveGuage" destination="q8A-PA-van" id="RHX-DV-8oo"/>
@@ -1104,6 +1117,9 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

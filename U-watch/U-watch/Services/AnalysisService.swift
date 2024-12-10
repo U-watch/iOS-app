@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DGCharts
 
 class AnalysisService {
     static let shared = AnalysisService()
@@ -32,9 +33,23 @@ class AnalysisService {
         } catch {
             throw error
         }
+        let trendResponse: APIResponse<CommentsTrend>
+        do {
+            trendResponse = try await APIClient.fetch(from: "video/comments/trend/interval?videoId=\(video.videoId)")
+        } catch {
+            throw error
+        }
         
+        let calendar = Calendar.current
+        var commentCountHistory = [Date: Int]()
+        var y = trendResponse.data.startedAt
+        for i in 0..<20 {
+            commentCountHistory[y] = trendResponse.data.commentCount[i]
+            y = calendar.date(byAdding: .minute, value: trendResponse.data.interval, to: y)!
+        }
+
         results[video.videoId] = AnalysisResult(analysisDate: videoInfoResponse.data.lastUpdated,
-                              commentCountHistory: [:],
+                              commentCountHistory: commentCountHistory,
                               wordCloundUrl: videoInfoResponse.data.wordCloudUrl,
                               topKeywords: [
                                 TopKeyword(keyword: topKeywordsResponse.data.topKeyword1, grade: Grade.first, count: topKeywordsResponse.data.topKeyword1Count),

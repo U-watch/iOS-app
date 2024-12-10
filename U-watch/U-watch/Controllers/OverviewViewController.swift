@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DGCharts
 
 class OverviewViewController: UIViewController {
     var video: Video?
@@ -20,6 +21,8 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var thirdKeywordCell: TopKeywordCell!
     @IBOutlet weak var emotionDistribution: DistributionView!
     @IBOutlet weak var categoryDistributionView: DistributionView!
+    @IBOutlet weak var commentHistoryView: LineChartView!
+    @IBOutlet weak var commentHistoryLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +49,20 @@ class OverviewViewController: UIViewController {
             self.view.stopSkeletonAnimation()
             self.view.hideSkeleton()
             
+            var entries = [ChartDataEntry]()
+            for key in result.commentCountHistory.keys.sorted() {
+                let y = result.commentCountHistory[key]!
+                entries.append(ChartDataEntry(x: key.timeIntervalSince1970, y: Double(y)))
+            }
+            let set = LineChartDataSet(entries: entries, label: "댓글 추이")
+            let chartData = LineChartData(dataSet: set)
+            self.commentHistoryView.data = chartData
+            self.commentHistoryView.xAxis.valueFormatter = DateAxisValueFormatter()
+            
+            let commentDelta = entries.last!.y - entries.first!.y
+            let deltaPercent = (commentDelta / entries.last!.y) * 100
+            self.commentHistoryLabel.text = "+\(Int(deltaPercent))%"
+
             self.wordCloudImage.sd_setImage(with: result.wordCloundUrl)
             
             self.positiveGuage.progress = result.positiveGauge / 100
@@ -83,3 +100,18 @@ class OverviewViewController: UIViewController {
         present(modalVC, animated: true, completion: nil)
     }
 }
+
+class DateAxisValueFormatter: IndexAxisValueFormatter {
+    private let dateFormatter = DateFormatter()
+    
+    override init() {
+        super.init()
+        dateFormatter.dateFormat = "HH:mm"
+    }
+    
+    override func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        let date = Date(timeIntervalSince1970: value)
+        return dateFormatter.string(from: date)
+    }
+}
+

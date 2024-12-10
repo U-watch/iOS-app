@@ -1,16 +1,22 @@
 PODS:
+  - DGCharts (5.1.0):
+    - DGCharts/Core (= 5.1.0)
+  - DGCharts/Core (5.1.0)
   - SkeletonView (1.30.4)
 
 DEPENDENCIES:
+  - DGCharts
   - SkeletonView
 
 SPEC REPOS:
   trunk:
+    - DGCharts
     - SkeletonView
 
 SPEC CHECKSUMS:
+  DGCharts: 1c6daf585b6cfc78807af44ea690d357c410627f
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
 
-PODFILE CHECKSUM: 2842da3957833b5b793661bca1525776b58c4296
+PODFILE CHECKSUM: 2ecc21aaa002316147be0a5892bb437ef4202bac
 
 COCOAPODS: 1.16.2

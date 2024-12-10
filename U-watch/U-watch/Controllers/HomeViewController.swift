@@ -42,38 +42,38 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func fetchData() {
         Task {
             do {
-                print("Starting data fetch...")
+                //print("Starting data fetch...")
 
                 // Step 1: 채널 상세 정보 가져오기
-                print("Fetching channel details...")
+                //print("Fetching channel details...")
                 try await dataProvider.fetchChannelDetails(forChannelId: "UCsJ6RuBiTVWRX156FVbeaGg")
                 if let details = dataProvider.channelDetails {
                     print("Channel Details: \(details)")
                 }
 
                 // Step 2: 감정 분석 데이터 가져오기
-                print("Fetching sentiment analysis...")
+                //print("Fetching sentiment analysis...")
                 try await dataProvider.fetchSentimentAnalysis(forChannelId: "UCsJ6RuBiTVWRX156FVbeaGg")
                 if let sentiment = dataProvider.sentimentData {
                     print("Sentiment Data: \(sentiment)")
                 }
 
                 // Step 3: 열혈 구독자 정보 가져오기
-                print("Fetching super fans...")
+                //print("Fetching super fans...")
                 try await dataProvider.fetchSuperFans(forChannelId: "UCsJ6RuBiTVWRX156FVbeaGg")
                 if !dataProvider.superFans.isEmpty {
-                    print("Super Fans: \(dataProvider.superFans)")
+                    //print("Super Fans: \(dataProvider.superFans)")
                 }
 
                 // UI 업데이트
                 DispatchQueue.main.async {
-                    print("Updating UI...")
+                    //print("Updating UI...")
                     self.updateUI()
                     self.setupRadarChart()
                 }
             } catch {
-                print("Failed to fetch data: \(error.localizedDescription)")
-                print("Error Details: \(error)") // 디버깅용으로 에러 전체 출력
+                //print("Failed to fetch data: \(error.localizedDescription)")
+                //print("Error Details: \(error)") // 디버깅용으로 에러 전체 출력
             }
         }
     }
@@ -81,13 +81,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Update UI
     private func updateUI() {
         guard let channelDetails = dataProvider.channelDetails else {
-            print("No channel details available to update UI.")
+            //print("No channel details available to update UI.")
             return
         }
 
         // 채널 썸네일 업데이트
         if let url = URL(string: channelDetails.thumbnail) {
-            print("Loading channel thumbnail from: \(url)")
+            //print("Loading channel thumbnail from: \(url)")
             loadImage(from: url, into: thumbnail)
         }
 
@@ -101,7 +101,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // 워드클라우드 업데이트
         if let wordCloudURL = URL(string: channelDetails.wordcloud) {
-            print("Loading word cloud from: \(wordCloudURL)")
+            //print("Loading word cloud from: \(wordCloudURL)")
             loadImage(from: wordCloudURL, into: wordCloud)
         }
 
@@ -111,11 +111,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     private func setupRadarChart() {
         guard let sentimentData = dataProvider.sentimentData else {
-            print("No sentiment data available to setup radar chart.")
+            //print("No sentiment data available to setup radar chart.")
             return
         }
 
-        print("Setting up radar chart with sentiment data: \(sentimentData)")
+        //print("Setting up radar chart with sentiment data: \(sentimentData)")
 
         radarChart.chartDescription.enabled = false
         radarChart.webLineWidth = 1.0
@@ -125,13 +125,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         radarChart.rotationEnabled = true
         radarChart.highlightPerTapEnabled = false
 
+        // 데이터의 최대값 계산
+        let values = [
+            sentimentData.joy,
+            sentimentData.anger,
+            sentimentData.sadness,
+            sentimentData.surprise,
+            sentimentData.fear,
+            sentimentData.disgust
+        ]
+        let maxValue = values.max() ?? 100
 
-
-        // Y축 범위 설정
+        // Y축 범위 설정: 데이터의 최대값으로 설정
         radarChart.yAxis.axisMinimum = 0
-        radarChart.yAxis.axisMaximum = 100
-        radarChart.yAxis.labelCount = 3 // 내부 간격 조정
+        radarChart.yAxis.axisMaximum = maxValue
+        radarChart.yAxis.labelCount = 3 // 단계 간격 조정
         radarChart.yAxis.drawLabelsEnabled = false
+
 
         // X축 (꼭지점 레이블) 설정
         radarChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: ["Joy", "Anger", "Sadness", "Surprise", "Fear", "Disgust"])
@@ -139,6 +149,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         radarChart.xAxis.labelTextColor = .black
         radarChart.xAxis.labelPosition = .bottom
 
+        // 데이터 입력
         let entries = [
             RadarChartDataEntry(value: Double(sentimentData.joy)),
             RadarChartDataEntry(value: Double(sentimentData.anger)),
@@ -148,15 +159,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             RadarChartDataEntry(value: Double(sentimentData.disgust))
         ]
 
+        // 데이터셋 스타일 설정
         let dataSet = RadarChartDataSet(entries: entries, label: "감정 분석")
         dataSet.colors = [.systemBlue]
         dataSet.fillColor = .systemBlue
         dataSet.drawFilledEnabled = true
         dataSet.lineWidth = 2.0
         dataSet.valueFont = .systemFont(ofSize: 12)
+        dataSet.drawValuesEnabled = false // 데이터 값 숨기기
+        dataSet.valueTextColor = .black
+
+        // 데이터 설정 및 업데이트
         radarChart.data = RadarChartData(dataSets: [dataSet])
         radarChart.notifyDataSetChanged()
+        radarChart.yAxis.resetCustomAxisMax()
     }
+
 
 
     // MARK: - Load Image Helper
@@ -167,7 +185,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return
             }
             guard let data = data, let image = UIImage(data: data) else {
-                print("Invalid image data for URL: \(url)")
+                //print("Invalid image data for URL: \(url)")
                 return
             }
             DispatchQueue.main.async {

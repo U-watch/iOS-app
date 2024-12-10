@@ -9,14 +9,17 @@ import UIKit
 import Foundation
 import SkeletonView
 
-class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate, CommentViewCellDelegate {
+class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource, UITableViewDelegate, CommentViewCellDelegate, UITextFieldDelegate {
     
     var video: Video?
     var emotion: CommentEmotion?
     var category: CommentCategory?
+    var keyword: String?
     var comments = [Comment]()
     
     let cellIdentifier = "CommentViewCell"
+    private var debounceTimer: Timer?
+    private let debounceInterval: TimeInterval = 1.0
     
     @IBOutlet weak var searchBar: CommentSearchBar!
     @IBOutlet weak var downloadButton: DownloadButton!
@@ -35,6 +38,8 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         tableView.dataSource = self
         tableView.delegate = self
         
+        searchBar?.delegate = self
+        
         fetchInitialData()
         startLoading()
     }
@@ -46,6 +51,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CommentViewCell
         cell.comment = comments[indexPath.row]
+        cell.keyword = keyword
         cell.cellDelegate = self
         return cell
     }
@@ -62,10 +68,13 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
                 guard let id = video?.videoId else {
                     return
                 }
-                self.comments = try await CommentService.shared.fetchComments(forVideoId: id,
-                                                                              forEmotion: emotion,
-                                                                              forCategory: category,
-                                                                              atPage: self.comments.count / 10)
+                self.comments = try await CommentService.shared.fetchComments(
+                    forVideoId: id,
+                    forEmotion: emotion,
+                    forCategory: category,
+                    forKeyword: keyword,
+                    atPage: self.comments.count / 10
+                )
                 tableView.reloadData()
             }
         }
@@ -101,8 +110,15 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         print("More button pressed for \(comment.authorName)")
     }
     
-    func searchBarTextChanged(to text: String?) {
-        print("SearchBar text changed to '\(text ?? "")'")
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let timer = self.debounceTimer {
+            timer.invalidate()
+        }
+        self.debounceTimer = Timer.scheduledTimer(withTimeInterval: self.debounceInterval, repeats: false) { timer in
+            self.keyword = self.searchBar.text
+            self.applyFilter(keyword: self.keyword)
+        }
+        return true
     }
     
     func downloadButtonPressed() {
@@ -130,10 +146,41 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
             guard let id = video?.videoId else {
                 return
             }
-            var comments = await CommentService.shared.getComments(forVideoId: id, forEmotion: emotion, forCategory: category)
+            var comments = await CommentService.shared.getComments(
+                forVideoId: id,
+                forEmotion: emotion,
+                forCategory: category,
+                forKeyword: keyword
+            )
             if comments.count == 0 {
-                comments = try await CommentService.shared.fetchComments(forVideoId: id, forEmotion: emotion, forCategory: category, atPage: 0)
+                comments = try await CommentService.shared.fetchComments(
+                    forVideoId: id,
+                    forEmotion: emotion,
+                    forCategory: category,
+                    forKeyword: keyword,
+                    atPage: 0
+                )
             }
+            updateComments(comments)
+        }
+    }
+    
+    private func applyFilter(keyword: String?, cursed: Bool = false) {
+        Task {
+            guard let id = video?.videoId else {
+                return
+            }
+            var comments = await CommentService.shared.getComments(
+                forVideoId: id,
+                forEmotion: emotion,
+                forCategory: category
+            )
+            
+            if keyword != nil && keyword!.isEmpty == false {
+                comments = comments.filter({ $0.commentText.contains(keyword!) })
+            }
+            // TODO: Need to fileter cursed predicate
+            
             updateComments(comments)
         }
     }

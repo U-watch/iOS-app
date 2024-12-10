@@ -19,6 +19,7 @@ actor CommentService {
     func fetchComments(forVideoId id: String,
                        forEmotion emotion: CommentEmotion? = nil,
                        forCategory category: CommentCategory? = nil,
+                       forKeyword keyword: String? = nil,
                        atPage page: Int,
                        withSize size: Int = 10) async throws -> [Comment] {
         isFetching = true
@@ -26,31 +27,40 @@ actor CommentService {
             "comments/\(id)/detail/sentiment?sentiment=\(emotion!.rawValue)"
         } else if category != nil {
             "comments/\(id)/detail/category?category=\(category!.rawValue)"
+        } else if keyword != nil {
+            "comments/\(id)/details/keyword?keyword=\(keyword!)"
         } else {
             "comments/\(id)/all"
         }
         
         let comments = await fetch(from: path, at: page, with: size)
         
-        let secondKey = getSecondKey(forEmotion: emotion, forCategory: category)
+        let secondKey = getSecondKey(forEmotion: emotion, forCategory: category, forKeyword: keyword)
         store(comments, to: id, and: secondKey)
         
         isFetching = false
         return commentDict[id]![secondKey]!
     }
     
-    func getComments(forVideoId id: String, forEmotion emotion: CommentEmotion? = nil, forCategory category: CommentCategory? = nil) -> [Comment] {
-        let secondKey = getSecondKey(forEmotion: emotion, forCategory: category)
+    func getComments(forVideoId id: String,
+                     forEmotion emotion: CommentEmotion? = nil,
+                     forCategory category: CommentCategory? = nil,
+                     forKeyword keyword: String? = nil) -> [Comment] {
+        let secondKey = getSecondKey(forEmotion: emotion, forCategory: category, forKeyword: keyword)
         return (commentDict[id] ?? [:])[secondKey] ?? []
     }
     
-    private func getSecondKey(forEmotion emotion: CommentEmotion? = nil, forCategory category: CommentCategory? = nil) -> AnyHashable {
+    private func getSecondKey(forEmotion emotion: CommentEmotion? = nil,
+                              forCategory category: CommentCategory? = nil,
+                              forKeyword keyword: String? = nil) -> AnyHashable {
         if emotion != nil {
             emotion
         } else if category != nil {
             category
+        } else if keyword != nil {
+            keyword
         } else {
-            "All"
+            ""
         }
     }
     

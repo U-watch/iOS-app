@@ -13,6 +13,12 @@ protocol CommentViewCellDelegate: AnyObject {
 
 class CommentViewCell: UITableViewCell {
     
+    var keyword: String? {
+        didSet {
+            updateUI()
+        }
+    }
+    
     var comment: Comment? {
         didSet {
              updateUI()
@@ -45,9 +51,22 @@ class CommentViewCell: UITableViewCell {
         }
         
         idLabel.text = comment.authorName
-        contentLabel.text = comment.commentText
         dateLabel.text = TextUtils.getDayPassed(from: comment.publishedAt)
         profileImage.sd_setImage(with: comment.authorProfileImage, placeholderImage: UIImage(named: "placeholder"))
+        
+        guard let keyword = self.keyword else {
+            contentLabel.text = comment.commentText
+            return
+        }
+        
+        let fullText = comment.commentText
+        let attributedString = NSMutableAttributedString(string: fullText)
+        if let range = fullText.range(of: keyword) {
+            let nsRange = NSRange(range, in: fullText)
+            attributedString.addAttribute(.backgroundColor, value: UIColor.systemYellow, range: nsRange)
+        }
+        
+        contentLabel.attributedText = attributedString
     }
     
     @objc private func buttonPressed() {

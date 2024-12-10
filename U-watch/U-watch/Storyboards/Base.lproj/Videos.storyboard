@@ -413,6 +413,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q0O-YV-TN9">
                                 <rect key="frame" x="0.0" y="161" width="393" height="657"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1e-E1-367">
                                 <rect key="frame" x="116.66666666666669" y="67" width="160" height="4"/>
@@ -788,6 +791,7 @@
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="g8w-X1-VJn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Mi7-e2-rQd" firstAttribute="width" secondItem="CTi-hF-tKk" secondAttribute="width" id="6N5-re-jL2"/>

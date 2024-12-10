@@ -76,6 +76,7 @@ class OverviewViewController: UIViewController {
         
         modalVC.modalPresentationStyle = .popover
         modalVC.modalTransitionStyle = .coverVertical
+        modalVC.keyword = topKeyword.keyword
         
         modalVC.video = video!
 

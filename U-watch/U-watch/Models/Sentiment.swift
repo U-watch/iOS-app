@@ -14,10 +14,10 @@ struct SentimentResponse: Codable {
 }
 
 struct SentimentData: Codable {
-    let joy: Int            // 기쁨
-    let anger: Int          // 분노
-    let sadness: Int        // 슬픔
-    let surprise: Int       // 놀람
-    let fear: Int           // 공포
-    let disgust: Int        // 혐오
+    let joy: Double            // 기쁨
+    let anger: Double          // 분노
+    let sadness: Double        // 슬픔
+    let surprise: Double       // 놀람
+    let fear: Double           // 공포
+    let disgust: Double        // 혐오
 }

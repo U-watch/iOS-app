@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  U-watch
 //
 //  Created by 손동현 on 10/9/24.
@@ -8,54 +8,211 @@
 import UIKit
 import DGCharts
 
-
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-    // 테스트용 데이터
-    let testSubscribers = [
-        ("kingmusle", "테스트 구독자 1"),
-        ("dogegotomoon", "테스트 구독자 2"),
-        ("catloversd", "테스트 구독자 32")
-    ]
-
-
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testSubscribers.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TestCell", for: indexPath)
-        _ = testSubscribers[indexPath.row]
-
-
-
-        return cell
-    }
-    
-
-    @IBOutlet weak var testimage: UIImageView!
-    
-    @IBOutlet weak var testimage2: UIImageView!
-
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    // MARK: - Outlets
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var channelName: UILabel!
+    @IBOutlet weak var customUrl: UILabel!
+    @IBOutlet weak var subscriberCount: UILabel!
+    @IBOutlet weak var viewCount: UILabel!
+    @IBOutlet weak var videoCount: UILabel!
+    @IBOutlet weak var likeCount: UILabel!
+    @IBOutlet weak var wordCloud: UIImageView!
+    @IBOutlet weak var radarChart: RadarChartView!
     @IBOutlet weak var subscriberTableView: UITableView!
-    
-    @IBOutlet weak var nameLabel: UILabel!
 
+    // MARK: - Data Source
+    let dataProvider = ChannelService.shared // 서버 연결을 위한 싱글톤 인스턴스 사용
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        testimage.image = UIImage(named: "testimage")
-        testimage2.image=UIImage(named: "testImage2")
 
         // 테이블 뷰 설정
         subscriberTableView.delegate = self
         subscriberTableView.dataSource = self
-        
 
+
+
+        // 데이터 로드
+        fetchData()
+    }
+
+    // MARK: - Fetch Data from Server
+    private func fetchData() {
+        Task {
+            do {
+                print("Starting data fetch...")
+
+                // Step 1: 채널 상세 정보 가져오기
+                print("Fetching channel details...")
+                try await dataProvider.fetchChannelDetails(forChannelId: "UCsJ6RuBiTVWRX156FVbeaGg")
+                if let details = dataProvider.channelDetails {
+                    print("Channel Details: \(details)")
+                }
+
+                // Step 2: 감정 분석 데이터 가져오기
+                print("Fetching sentiment analysis...")
+                try await dataProvider.fetchSentimentAnalysis(forChannelId: "UCsJ6RuBiTVWRX156FVbeaGg")
+                if let sentiment = dataProvider.sentimentData {
+                    print("Sentiment Data: \(sentiment)")
+                }
+
+                // Step 3: 열혈 구독자 정보 가져오기
+                print("Fetching super fans...")
+                try await dataProvider.fetchSuperFans(forChannelId: "UCsJ6RuBiTVWRX156FVbeaGg")
+                if !dataProvider.superFans.isEmpty {
+                    print("Super Fans: \(dataProvider.superFans)")
+                }
+
+                // UI 업데이트
+                DispatchQueue.main.async {
+                    print("Updating UI...")
+                    self.updateUI()
+                    self.setupRadarChart()
+                }
+            } catch {
+                print("Failed to fetch data: \(error.localizedDescription)")
+                print("Error Details: \(error)") // 디버깅용으로 에러 전체 출력
+            }
+        }
+    }
+
+    // MARK: - Update UI
+    private func updateUI() {
+        guard let channelDetails = dataProvider.channelDetails else {
+            print("No channel details available to update UI.")
+            return
+        }
+
+        // 채널 썸네일 업데이트
+        if let url = URL(string: channelDetails.thumbnail) {
+            print("Loading channel thumbnail from: \(url)")
+            loadImage(from: url, into: thumbnail)
+        }
+
+        // 채널 정보 업데이트
+        channelName.text = channelDetails.channelName
+        customUrl.text = channelDetails.customUrl
+        subscriberCount.text = "\(formatWithSuffix(channelDetails.subscriberCount))"
+        viewCount.text = "\(formatWithSuffix(channelDetails.viewCount))"
+        videoCount.text = "\(formatWithSuffix(channelDetails.videoCount))"
+        likeCount.text = "\(formatWithSuffix(channelDetails.likeCount))"
+
+        // 워드클라우드 업데이트
+        if let wordCloudURL = URL(string: channelDetails.wordcloud) {
+            print("Loading word cloud from: \(wordCloudURL)")
+            loadImage(from: wordCloudURL, into: wordCloud)
+        }
+
+        // 테이블 뷰 갱신
+        subscriberTableView.reloadData()
+    }
+
+    private func setupRadarChart() {
+        guard let sentimentData = dataProvider.sentimentData else {
+            print("No sentiment data available to setup radar chart.")
+            return
+        }
+
+        print("Setting up radar chart with sentiment data: \(sentimentData)")
+
+        radarChart.chartDescription.enabled = false
+        radarChart.webLineWidth = 1.0
+        radarChart.innerWebLineWidth = 1.0
+        radarChart.webColor = .lightGray
+        radarChart.innerWebColor = .lightGray
+        radarChart.rotationEnabled = true
+        radarChart.highlightPerTapEnabled = false
+
+
+
+        // Y축 범위 설정
+        radarChart.yAxis.axisMinimum = 0
+        radarChart.yAxis.axisMaximum = 100
+        radarChart.yAxis.labelCount = 3 // 내부 간격 조정
+        radarChart.yAxis.drawLabelsEnabled = false
+
+        // X축 (꼭지점 레이블) 설정
+        radarChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: ["Joy", "Anger", "Sadness", "Surprise", "Fear", "Disgust"])
+        radarChart.xAxis.labelFont = .systemFont(ofSize: 14, weight: .bold)
+        radarChart.xAxis.labelTextColor = .black
+        radarChart.xAxis.labelPosition = .bottom
+
+        let entries = [
+            RadarChartDataEntry(value: Double(sentimentData.joy)),
+            RadarChartDataEntry(value: Double(sentimentData.anger)),
+            RadarChartDataEntry(value: Double(sentimentData.sadness)),
+            RadarChartDataEntry(value: Double(sentimentData.surprise)),
+            RadarChartDataEntry(value: Double(sentimentData.fear)),
+            RadarChartDataEntry(value: Double(sentimentData.disgust))
+        ]
+
+        let dataSet = RadarChartDataSet(entries: entries, label: "감정 분석")
+        dataSet.colors = [.systemBlue]
+        dataSet.fillColor = .systemBlue
+        dataSet.drawFilledEnabled = true
+        dataSet.lineWidth = 2.0
+        dataSet.valueFont = .systemFont(ofSize: 12)
+        radarChart.data = RadarChartData(dataSets: [dataSet])
+        radarChart.notifyDataSetChanged()
     }
 
 
+    // MARK: - Load Image Helper
+    private func loadImage(from url: URL, into imageView: UIImageView) {
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print("Failed to load image: \(error.localizedDescription)")
+                return
+            }
+            guard let data = data, let image = UIImage(data: data) else {
+                print("Invalid image data for URL: \(url)")
+                return
+            }
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+        }.resume()
+    }
 
+    // MARK: - Table View Data Source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataProvider.superFans.count
+    }
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SubscriberCell", for: indexPath) as? TestCell else {
+            return UITableViewCell()
+        }
+
+        let superFan = dataProvider.superFans[indexPath.row]
+        cell.authorName.text = superFan.authorName
+        cell.commentCount.text = "댓글 수: \(superFan.commentCount)"
+        if let url = URL(string: superFan.authorProfileImageUrl) {
+            loadImage(from: url, into: cell.authorProfileImageUrl)
+        }
+        return cell
+    }
+
+    // MARK: - number format
+    private func formatWithSuffix(_ number: Int) -> String {
+        let thousand = 1_000
+        let million = 1_000_000
+        let billion = 1_000_000_000
+
+        if number >= billion {
+            let value = Double(number) / Double(billion)
+            return String(format: "%.1fB", value) // 10억 단위
+        } else if number >= million {
+            let value = Double(number) / Double(million)
+            return String(format: "%.1fM", value) // 백만 단위
+        } else if number >= thousand {
+            let value = Double(number) / Double(thousand)
+            return String(format: "%.1fK", value) // 천 단위
+        } else {
+            return "\(number)" // 천 단위 미만
+        }
+    }
 
 }

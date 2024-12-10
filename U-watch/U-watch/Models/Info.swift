@@ -21,5 +21,6 @@ struct ChannelData: Codable {
     let subscriberCount: Int     // 구독자 수
     let videoCount: Int          // 동영상 수
     let viewCount: Int           // 총 조회
+    let likeCount: Int // 영상 좋아요수
     let wordcloud: String        // 워드클라우드 이미지 URL
 }

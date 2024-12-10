@@ -140,7 +140,8 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         countLabel?.stopSkeletonAnimation()
         countLabel?.hideSkeleton()
     }
-    
+
+    // 이거 참고 1!!!!!
     func fetchInitialData() {
         Task {
             guard let id = video?.videoId else {
@@ -184,7 +185,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
             updateComments(comments)
         }
     }
-    
+    // 이거 참고 1!!!!!
     private func updateComments(_ comments: [Comment]) {
         DispatchQueue.main.async {
             self.comments = comments

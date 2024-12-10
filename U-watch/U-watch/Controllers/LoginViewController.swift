@@ -9,7 +9,18 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 로고 이미지 설정
+        setupCircularLogo()
         LogoImage.image = UIImage(named: "logo")
+    }
+
+
+    // MARK: - Setup Circular Logo
+    private func setupCircularLogo() {
+        // UIImageView를 원형으로 만들기
+        LogoImage.layer.cornerRadius = LogoImage.frame.size.width / 2
+        LogoImage.clipsToBounds = true
+        LogoImage.contentMode = .scaleAspectFill
     }
 
     @IBAction func signIn(sender: Any) {
@@ -22,7 +33,7 @@ class LoginViewController: UIViewController {
         // Sign-In 요청
         GIDSignIn.sharedInstance.signIn(withPresenting: self, hint: nil, additionalScopes: additionalScopes) { signInResult, error in
             guard error == nil else {
-                print("Error during sign in: \(String(describing: error?.localizedDescription))")
+                //print("Error during sign in: \(String(describing: error?.localizedDescription))")
                 return
             }
 
@@ -31,19 +42,19 @@ class LoginViewController: UIViewController {
 
             // Access Token 출력
             let accessToken = user.accessToken.tokenString // Optional chaining 제거
-            print("Access Token: \(accessToken)")
+            //print("Access Token: \(accessToken)")
 
 
             // Refresh Token 출력
             let refreshToken = user.refreshToken.tokenString // Optional chaining 제거
-            print("Refresh Token: \(refreshToken)")
+            //print("Refresh Token: \(refreshToken)")
 
             // Authorization Code 출력
             let authorizationCode = user.idToken?.tokenString // idToken은 Optional이므로 ? 유지
             if let authorizationCode = authorizationCode {
-                print("Authorization Code: \(authorizationCode)")
+                //print("Authorization Code: \(authorizationCode)")
             } else {
-                print("No authorization code received.")
+                //print("No authorization code received.")
             }
 
             print("Sign in successful")

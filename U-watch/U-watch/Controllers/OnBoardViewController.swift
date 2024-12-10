@@ -119,51 +119,75 @@ class OnBoardViewController: UIViewController {
 
     // MARK: - Fetch Data (API 연동)
     private func fetchData() {
-        let exampleResponse = OnBoardResponse(
-            code: "200",
-            message: "Success",
-            data: OnBoardData(
-                channelId: "ChimChakMan_Official",
-                channelName: "침착맨",
-                thumbnail: "https://via.placeholder.com/100"
-            )
-        )
+        Task {
+            do {
+                // Step 1: ChannelInfo 정보 가져오기
+                try await ChannelService.shared.fetchChannelInfo(forMemberId: 1)
+                if let channelInfo = ChannelService.shared.channelInfo {
+                    //print("Fetched Channel Info: \(channelInfo)")
+                }
 
-        updateUI(with: exampleResponse)
+                // Step 2: Channel ID 확인
+                guard let channelId = ChannelService.shared.channelInfo?.channelId else {
+                    //print("Channel ID not found")
+                    return
+                }
+                //print("Fetched Channel ID: \(channelId)")
+
+                // Step 3: ChannelDetails 정보 가져오기
+                try await ChannelService.shared.fetchChannelDetails(forChannelId: channelId)
+                if let channelDetails = ChannelService.shared.channelDetails {
+                    //print("Fetched Channel Details: \(channelDetails)")
+                }
+
+                // Step 4: 데이터 가져오기에 성공하면 UI 업데이트
+                if let channelInfo = ChannelService.shared.channelInfo,
+                   let channelDetails = ChannelService.shared.channelDetails {
+                    DispatchQueue.main.async {
+                        self.updateUI(with: channelInfo, and: channelDetails)
+                    }
+                }
+            } catch {
+                //print("Failed to fetch channel info: \(error.localizedDescription)")
+            }
+        }
     }
 
-    private func updateUI(with response: OnBoardResponse) {
-        let OnBoardData = response.data
+
+    private func updateUI(with channelInfo: OnBoardData, and channelDetails: ChannelData) {
+        //print("Updating UI with Channel Info: \(channelInfo)")
+        //print("Updating UI with Channel Details: \(channelDetails)")
 
         // Welcome Label 업데이트
-        welcomeLabel.text = "어서오세요, \(OnBoardData.channelName)님!"
+        welcomeLabel.text = "어서오세요, \(channelInfo.channelName)님!"
 
-        // Channel ID 업데이트
-        channelIdLabel.text = "@\(OnBoardData.channelId)"
+        // Custom URL 업데이트
+        channelIdLabel.text = "\(channelDetails.customUrl)"
 
-        // Profile Image 업데이트 (비동기 로드)
-        if let url = URL(string: OnBoardData.thumbnail) {
-            // URLSession을 사용하여 비동기적으로 이미지 로드
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                // 에러 처리
+        // Profile Image 업데이트
+        if let url = URL(string: channelInfo.thumbnail) {
+            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                guard let self = self else { return }
                 if let error = error {
-                    print("Failed to load image: \(error.localizedDescription)")
+                    //print("Failed to load image: \(error.localizedDescription)")
                     return
                 }
-
-                // 데이터 확인
                 guard let data = data, let image = UIImage(data: data) else {
-                    print("Invalid image data")
+                    //print("Invalid image data")
                     return
                 }
-
-                // 메인 스레드에서 UI 업데이트
                 DispatchQueue.main.async {
                     self.profileImageView.image = image
                 }
-            }.resume() // 작업 시작
+            }.resume()
+        } else {
+            //print("Invalid thumbnail URL")
         }
     }
+
+
+
+
 
     // MARK: - Actions
     @objc private func didTapStartAnalysisButton() {

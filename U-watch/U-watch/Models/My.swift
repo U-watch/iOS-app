@@ -1,5 +1,5 @@
 //
-//  info.swift
+//  My.swift
 //  U-watch
 //
 //  Created by 손동현 on 11/30/24.

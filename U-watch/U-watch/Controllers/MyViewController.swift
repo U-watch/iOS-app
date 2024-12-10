@@ -191,18 +191,51 @@ class MyViewController: UIViewController {
 
     // MARK: - Fetch User Data (API 연결)
     private func fetchUserData() {
-        let exampleEmail = "example@gmail.com" // 예시 데이터
+        Task {
+            do {
+                // API 호출
+                try await MyService.shared.fetchMyPage(memberId: 1)
 
-        // 이메일 업데이트
-        if let emailRow = infoStackView.arrangedSubviews.first(where: { ($0 as? UIView)?.subviews.first(where: { ($0 as? UILabel)?.text == "이메일" }) != nil }) as? UIView {
-            if let valueLabel = emailRow.subviews.last as? UILabel {
-                valueLabel.text = exampleEmail
+                // 데이터가 성공적으로 로드된 경우 UI 업데이트
+                if let userData = MyService.shared.userData {
+                    DispatchQueue.main.async {
+                        self.updateUI(with: userData)
+                    }
+                }
+            } catch {
+                //print("Failed to fetch user data: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    private func updateUI(with userData: UserData) {
+        // 프로필 이미지 업데이트 (URL 사용 시 비동기로 이미지 로드 가능)
+        if let profileImageUrl = URL(string: userData.profileImageUrl) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: profileImageUrl),
+                   let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.profileImageView.image = image
+                    }
+                }
             }
         }
 
-        // 기타 데이터 업데이트
-        profileImageView.image = UIImage(named: "placeholder")
-        channelTitleLabel.text = "침착맨"
-        roleLabel.text = "크리에이터"
+        // 채널 제목 및 역할 업데이트
+        channelTitleLabel.text = userData.channelTitle
+        roleLabel.text = userData.role
+
+        // 이메일 업데이트
+        if let emailRow = infoStackView.arrangedSubviews.first(where: { row in
+            row.subviews.first(where: { ($0 as? UILabel)?.text == "이메일" }) != nil
+        }) {
+            if let valueLabel = emailRow.subviews.last as? UILabel {
+                valueLabel.text = userData.email
+            }
+        }
+
     }
+
+
+    
 }

@@ -1,3 +1,7 @@
+
+
+//OnBoard.swift
+
 import Foundation
 
 // API 응답을 나타내는 구조체

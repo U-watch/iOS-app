@@ -21,11 +21,12 @@ class MyService {
             let response: APIResponse<UserData> = try await APIClient.fetch(from: "member/mypage?memberId=\(memberId)")
             userData = response.data
         } catch {
-            print("Error fetching my page: \(error.localizedDescription)")
+           // print("Error fetching my page: \(error.localizedDescription)")
             throw error
         }
     }
 
 
 }
+
 

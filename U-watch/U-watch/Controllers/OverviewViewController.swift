@@ -101,17 +101,3 @@ class OverviewViewController: UIViewController {
     }
 }
 
-class DateAxisValueFormatter: IndexAxisValueFormatter {
-    private let dateFormatter = DateFormatter()
-    
-    override init() {
-        super.init()
-        dateFormatter.dateFormat = "HH:mm"
-    }
-    
-    override func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        let date = Date(timeIntervalSince1970: value)
-        return dateFormatter.string(from: date)
-    }
-}
-

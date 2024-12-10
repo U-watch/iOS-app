@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		261889D52D086B6700B1061D /* CommentsTrend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889D42D086B6700B1061D /* CommentsTrend.swift */; };
 		261889D72D08702600B1061D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261889D62D08702600B1061D /* Main.storyboard */; };
+		261889D92D0882ED00B1061D /* DateAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889D82D0882E100B1061D /* DateAxisValueFormatter.swift */; };
+		261889DB2D0887DA00B1061D /* LiveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889DA2D0887D500B1061D /* LiveResult.swift */; };
+		261889DD2D088A8000B1061D /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889DC2D088A7C00B1061D /* LiveService.swift */; };
 		95923F563D494FF31A3A8CA8 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B170304F207EC5129BEDF227 /* Pods_U_watch.framework */; };
 		E775D5662CFB048C005A804E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F53FB72CB5B92300FD76B0 /* Home.storyboard */; };
 		E7A5C6B82D078A7C0082B309 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A5C6B42D078A7C0082B309 /* Sentiment.swift */; };
@@ -73,6 +76,9 @@
 /* Begin PBXFileReference section */
 		261889D42D086B6700B1061D /* CommentsTrend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTrend.swift; sourceTree = "<group>"; };
 		261889D62D08702600B1061D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		261889D82D0882E100B1061D /* DateAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatter.swift; sourceTree = "<group>"; };
+		261889DA2D0887D500B1061D /* LiveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResult.swift; sourceTree = "<group>"; };
+		261889DC2D088A7C00B1061D /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
 		5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
 		88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.debug.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.debug.xcconfig"; sourceTree = "<group>"; };
 		B170304F207EC5129BEDF227 /* Pods_U_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_U_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,7 @@
 		E775D5672CFB0D61005A804E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				261889DA2D0887D500B1061D /* LiveResult.swift */,
 				261889D42D086B6700B1061D /* CommentsTrend.swift */,
 				E7A5C6AF2D078A7C0082B309 /* AnalysisResult.swift */,
 				E7A5C6B02D078A7C0082B309 /* Comment.swift */,
@@ -230,6 +237,7 @@
 		E7A5C6E02D078A930082B309 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				261889D82D0882E100B1061D /* DateAxisValueFormatter.swift */,
 				E7A5C6DF2D078A930082B309 /* TextUtils.swift */,
 			);
 			path = Utils;
@@ -246,6 +254,7 @@
 		E7A5C6F02D078AA20082B309 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				261889DC2D088A7C00B1061D /* LiveService.swift */,
 				E7CBE3EC2D0840AF000F340C /* ChannelService.swift */,
 				E7A5C6EC2D078AA20082B309 /* AnalysisService.swift */,
 				E7A5C6ED2D078AA20082B309 /* APIClient.swift */,
@@ -307,19 +316,19 @@
 				E775D5672CFB0D61005A804E /* Models */,
 				E77957422CF89DC4006FF707 /* Views */,
 				E77957412CF89BC1006FF707 /* Controllers */,
+				E7A5C6F02D078AA20082B309 /* Services */,
+				E7A5C6FB2D078ACE0082B309 /* Errors */,
+				E7A5C6F72D078AC90082B309 /* Extensions */,
+				E7A5C6E02D078A930082B309 /* Utils */,
 				E7F53FB12CB5B92300FD76B0 /* AppDelegate.swift */,
 				E7F53FB32CB5B92300FD76B0 /* SceneDelegate.swift */,
 				E7F53FBA2CB5B92400FD76B0 /* Assets.xcassets */,
-				E7A5C6F02D078AA20082B309 /* Services */,
 				E7F53FBF2CB5B92400FD76B0 /* Info.plist */,
-				E7A5C6FB2D078ACE0082B309 /* Errors */,
-				E7A5C6F72D078AC90082B309 /* Extensions */,
 				E7F53FB72CB5B92300FD76B0 /* Home.storyboard */,
 				E7FD0C2D2D0753B300BFB8CC /* Login.storyboard */,
 				E7F53FBC2CB5B92400FD76B0 /* LaunchScreen.storyboard */,
 				E7A5C7232D078AEF0082B309 /* Base.lproj */,
 				E7A5C6E72D078A9C0082B309 /* Storyboards */,
-				E7A5C6E02D078A930082B309 /* Utils */,
 				261889D62D08702600B1061D /* Main.storyboard */,
 			);
 			path = "U-watch";
@@ -490,9 +499,11 @@
 				E7A5C7172D078AE00082B309 /* OnBoardViewController.swift in Sources */,
 				E7A5C7182D078AE00082B309 /* AllCommentsViewController.swift in Sources */,
 				E7A5C7192D078AE00082B309 /* VideoViewController.swift in Sources */,
+				261889DB2D0887DA00B1061D /* LiveResult.swift in Sources */,
 				E7A5C71A2D078AE00082B309 /* LiveViewController.swift in Sources */,
 				E7CBE3ED2D0840B8000F340C /* ChannelService.swift in Sources */,
 				E7A5C6C02D078A7C0082B309 /* AnalysisResult.swift in Sources */,
+				261889D92D0882ED00B1061D /* DateAxisValueFormatter.swift in Sources */,
 				E7A5C6FC2D078ACE0082B309 /* CustomError.swift in Sources */,
 				E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */,
 				E7CBE3EB2D083A45000F340C /* MyService.swift in Sources */,
@@ -500,6 +511,7 @@
 				E7A5C6F22D078AA20082B309 /* AnalysisService.swift in Sources */,
 				E7A5C6F32D078AA20082B309 /* CommentService.swift in Sources */,
 				E7A5C6F42D078AA20082B309 /* APIClient.swift in Sources */,
+				261889DD2D088A8000B1061D /* LiveService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -151,6 +151,12 @@ class LiveViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private let activeInidcator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
+    }()
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -209,6 +215,7 @@ class LiveViewController: UIViewController {
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(statusLabel)
+        contentView.addSubview(activeInidcator)
 
         contentView.addSubview(trendLabel)
         contentView.addSubview(increasePrefixLabel)
@@ -220,6 +227,8 @@ class LiveViewController: UIViewController {
         
         contentView.addSubview(radarChartLabal)
         contentView.addSubview(radarChart)
+        
+        activeInidcator.startAnimating()
 
         setupEnabledConstraints()
     }
@@ -247,6 +256,10 @@ class LiveViewController: UIViewController {
             statusLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             statusLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             
+            // Activity Indecator Constraitns
+            activeInidcator.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+            activeInidcator.leadingAnchor.constraint(equalTo: statusLabel.trailingAnchor, constant: 8),
+
             // Trend Label Constraints
             trendLabel.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 16),
             trendLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),

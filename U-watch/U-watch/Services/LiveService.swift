@@ -9,7 +9,7 @@ actor LiveService {
     static let shared = LiveService()
     private init() {}
     
-    let interval: UInt64 = 5
+    let interval: UInt64 = 30
     var index = 0
     let store = [
         LiveResult(viewCount: 32, wordCloudName: "wc1", emotionDistribution: [

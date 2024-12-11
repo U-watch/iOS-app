@@ -36,17 +36,33 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         subscriberTableView.delegate = self
         subscriberTableView.dataSource = self
         // 박스 스타일 설정
-        subscriberBox.layer.cornerRadius = 10 // 둥근 모서리
-        subscriberBox.backgroundColor = UIColor.systemBlue //  배경
-
-        viewBox.layer.cornerRadius = 10 // 둥근 모서리
-        viewBox.backgroundColor = UIColor.systemBlue //  배경
-
-        videoBox.layer.cornerRadius = 10 // 둥근 모서리
-        videoBox.backgroundColor = UIColor.systemBlue //  배경
-
-        likeBox.layer.cornerRadius = 10 // 둥근 모서리
-        likeBox.backgroundColor = UIColor.systemBlue //  배경
+//        subscriberBox.layer.cornerRadius = 10 // 둥근 모서리
+//        subscriberBox.backgroundColor = UIColor.systemBlue //  배경
+        subscriberBox.layer.borderWidth = 1.0
+        subscriberBox.layer.borderColor = UIColor.systemGray5.cgColor
+        
+        videoBox.layer.borderWidth = 1.0
+        videoBox.layer.borderColor = UIColor.systemGray5.cgColor
+        
+        viewBox.layer.borderWidth = 1.0
+        viewBox.layer.borderColor = UIColor.systemGray5.cgColor
+        
+        likeBox.layer.borderWidth = 1.0
+        likeBox.layer.borderColor = UIColor.systemGray5.cgColor
+        
+        thumbnail.layer.shadowColor = UIColor.black.cgColor // Shadow color
+        thumbnail.layer.shadowOpacity = 0.7                // Shadow opacity (0 to 1)
+        thumbnail.layer.shadowOffset = CGSize(width: 5, height: 5) // Shadow position
+        thumbnail.layer.shadowRadius = 69
+//
+//        viewBox.layer.cornerRadius = 10 // 둥근 모서리
+//        viewBox.backgroundColor = UIColor.systemBlue //  배경
+//
+//        videoBox.layer.cornerRadius = 10 // 둥근 모서리
+//        videoBox.backgroundColor = UIColor.systemBlue //  배경
+//
+//        likeBox.layer.cornerRadius = 10 // 둥근 모서리
+//        likeBox.backgroundColor = UIColor.systemBlue //  배경
 
 
         // 데이터 로드
@@ -220,7 +236,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
 
         let superFan = dataProvider.superFans[indexPath.row]
-        cell.authorName.text = superFan.authorName
+        cell.authorName.text = superFan.authorName + getGradeIcon(grade: indexPath.row + 1)
         cell.commentCount.text = "댓글 수: \(superFan.commentCount)"
         if let url = URL(string: superFan.authorProfileImageUrl) {
             loadImage(from: url, into: cell.authorProfileImageUrl)
@@ -248,4 +264,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    private func getGradeIcon(grade: Int) -> String {
+        switch grade {
+        case 1: "🥇"
+        case 2: "🥈"
+        case 3: "🥉"
+        default: ""
+        }
+    }
 }

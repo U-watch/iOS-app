@@ -86,7 +86,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
     
     func moreButtonPushed(for comment: Comment) {
         let wrongClassificationAction = UIAlertAction(title: "잘못된 분류", style: .default) { (action) in
-            // Respond to user selection of the action
+            self.handleWrongClassification()
         }
         let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
             // Respond to user selection of the action
@@ -108,6 +108,10 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
             // The alert was presented
         }
         print("More button pressed for \(comment.authorName)")
+    }
+    
+    func handleWrongClassification() {
+        // TODO: Implement this in child class
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

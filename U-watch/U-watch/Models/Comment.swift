@@ -13,17 +13,17 @@ struct Comment: Codable {
     var commentText: String
     var publishedAt: Date
     var likeCount: Int
-//    var emotion: CommentEmotion
-//    var cateogry: CommentCategory
+    var sentiment: CommentEmotion
+    var category: CommentCategory
 }
 
 enum CommentEmotion: String, Codable {
     case joy = "JOY"
     case anger = "ANGER"
     case sadness = "SADNESS"
-    case suprise = "SUPRISE"
+    case suprise = "SURPRISE"
     case fear = "FEAR"
-    case disgust = "DIGUST"
+    case disgust = "DISGUST"
 }
 
 enum CommentCategory: String, Codable {

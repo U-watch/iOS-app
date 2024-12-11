@@ -211,15 +211,21 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="워드 클라우드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO3-wy-sKG">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="24"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="210"/>
                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gRu-DI-K6e">
-                                                                        <rect key="frame" x="0.0" y="34" width="393" height="366"/>
+                                                                        <rect key="frame" x="0.0" y="220" width="393" height="180"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="180" id="NrF-5Z-ih6"/>
+                                                                        </constraints>
                                                                     </imageView>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="gRu-DI-K6e" firstAttribute="top" secondItem="TO3-wy-sKG" secondAttribute="bottom" constant="-100" id="9Rh-Tr-p3U"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>

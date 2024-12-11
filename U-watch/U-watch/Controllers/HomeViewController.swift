@@ -13,6 +13,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var channelName: UILabel!
     @IBOutlet weak var customUrl: UILabel!
+    @IBOutlet weak var subscriberBox: UIView!
+    @IBOutlet weak var viewBox: UIView!
+    @IBOutlet weak var videoBox: UIView!
+    @IBOutlet weak var likeBox: UIView!
     @IBOutlet weak var subscriberCount: UILabel!
     @IBOutlet weak var viewCount: UILabel!
     @IBOutlet weak var videoCount: UILabel!
@@ -31,7 +35,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // 테이블 뷰 설정
         subscriberTableView.delegate = self
         subscriberTableView.dataSource = self
+        // 박스 스타일 설정
+        subscriberBox.layer.cornerRadius = 10 // 둥근 모서리
+        subscriberBox.backgroundColor = UIColor.systemBlue //  배경
 
+        viewBox.layer.cornerRadius = 10 // 둥근 모서리
+        viewBox.backgroundColor = UIColor.systemBlue //  배경
+
+        videoBox.layer.cornerRadius = 10 // 둥근 모서리
+        videoBox.backgroundColor = UIColor.systemBlue //  배경
+
+        likeBox.layer.cornerRadius = 10 // 둥근 모서리
+        likeBox.backgroundColor = UIColor.systemBlue //  배경
 
 
         // 데이터 로드

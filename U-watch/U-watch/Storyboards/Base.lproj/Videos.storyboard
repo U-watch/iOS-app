@@ -887,19 +887,14 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igK-Xs-3rY" customClass="CurseSwitch" customModule="U_watch" customModuleProvider="target">
-                                <rect key="frame" x="332" y="69" width="51" height="31"/>
-                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wpD-Ol-ZJ4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="igK-Xs-3rY" firstAttribute="top" secondItem="cHd-WT-Zab" secondAttribute="bottom" constant="16" id="B4j-6N-vI2"/>
+                            <constraint firstItem="Wea-tL-FTy" firstAttribute="top" secondItem="fRS-wd-HKi" secondAttribute="bottom" constant="21" id="1P1-mx-ssf"/>
                             <constraint firstItem="V1I-5U-bvn" firstAttribute="top" secondItem="sBw-CL-zML" secondAttribute="top" constant="8" id="CGa-8n-E1Y"/>
                             <constraint firstItem="ZKh-LS-Ze0" firstAttribute="trailing" secondItem="wpD-Ol-ZJ4" secondAttribute="trailing" id="FcP-aT-GBc"/>
                             <constraint firstItem="wpD-Ol-ZJ4" firstAttribute="trailing" secondItem="Wea-tL-FTy" secondAttribute="trailing" constant="16" id="Ni5-zR-0th"/>
-                            <constraint firstItem="wpD-Ol-ZJ4" firstAttribute="trailing" secondItem="igK-Xs-3rY" secondAttribute="trailing" constant="12" id="TUp-sB-MhW"/>
-                            <constraint firstItem="Wea-tL-FTy" firstAttribute="top" secondItem="igK-Xs-3rY" secondAttribute="bottom" constant="15" id="UHN-vT-TXx"/>
                             <constraint firstItem="V1I-5U-bvn" firstAttribute="leading" secondItem="sBw-CL-zML" secondAttribute="leading" constant="8" id="UkU-Yo-qxi"/>
                             <constraint firstItem="cHd-WT-Zab" firstAttribute="top" secondItem="sBw-CL-zML" secondAttribute="top" constant="13" id="WU5-j1-Ljw"/>
                             <constraint firstItem="fRS-wd-HKi" firstAttribute="leading" secondItem="wpD-Ol-ZJ4" secondAttribute="leading" constant="12" id="Wka-33-cye"/>
@@ -915,7 +910,6 @@
                     <connections>
                         <outlet property="categorySegmentControl" destination="Wea-tL-FTy" id="skX-xv-2hF"/>
                         <outlet property="countLabel" destination="fRS-wd-HKi" id="vdT-kk-YMj"/>
-                        <outlet property="curseSwitch" destination="igK-Xs-3rY" id="cHd-up-KgU"/>
                         <outlet property="downloadButton" destination="cHd-WT-Zab" id="YX1-nk-oe3"/>
                         <outlet property="searchBar" destination="V1I-5U-bvn" id="tKv-wD-dVK"/>
                         <outlet property="tableView" destination="ZKh-LS-Ze0" id="kgd-Bh-5h2"/>

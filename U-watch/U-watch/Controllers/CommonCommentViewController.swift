@@ -15,6 +15,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
     var emotion: CommentEmotion?
     var category: CommentCategory?
     var keyword: String?
+    var cursed: Bool = false
     var comments = [Comment]()
     
     let cellIdentifier = "CommentViewCell"
@@ -40,6 +41,8 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         
         searchBar?.delegate = self
         
+        curseSwitch?.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
+        
         fetchInitialData()
         startLoading()
     }
@@ -62,22 +65,22 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         let height = scrollView.frame.size.height
         
         // Trigger load more when the user is within 100 points of the bottom
-        if offsetY > contentHeight - height - 100 {
-            Task {
-                if (await CommentService.shared.isFetching) { return }
-                guard let id = video?.videoId else {
-                    return
-                }
-                self.comments = try await CommentService.shared.fetchComments(
-                    forVideoId: id,
-                    forEmotion: emotion,
-                    forCategory: category,
-                    forKeyword: keyword,
-                    atPage: self.comments.count / 10
-                )
-                tableView.reloadData()
-            }
-        }
+//        if offsetY > contentHeight - height - 100 {
+//            Task {
+//                if (await CommentService.shared.isFetching) { return }
+//                guard let id = video?.videoId else {
+//                    return
+//                }
+//                self.comments = try await CommentService.shared.fetchComments(
+//                    forVideoId: id,
+//                    forEmotion: emotion,
+//                    forCategory: category,
+//                    forKeyword: keyword,
+//                    atPage: self.comments.count / 10
+//                )
+//                tableView.reloadData()
+//            }
+//        }
     }
     
     func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
@@ -86,7 +89,7 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
     
     func moreButtonPushed(for comment: Comment) {
         let wrongClassificationAction = UIAlertAction(title: "잘못된 분류", style: .default) { (action) in
-            // Respond to user selection of the action
+            self.handleWrongClassification()
         }
         let reportAction = UIAlertAction(title: "신고하기", style: .destructive) { (action) in
             // Respond to user selection of the action
@@ -110,13 +113,17 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         print("More button pressed for \(comment.authorName)")
     }
     
+    func handleWrongClassification() {
+        // TODO: Implement this in child class
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let timer = self.debounceTimer {
             timer.invalidate()
         }
         self.debounceTimer = Timer.scheduledTimer(withTimeInterval: self.debounceInterval, repeats: false) { timer in
             self.keyword = self.searchBar.text
-            self.applyFilter(keyword: self.keyword)
+            self.applyFilter()
         }
         return true
     }
@@ -125,8 +132,14 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
         print("Download Button Pressed")
     }
     
-    func curseSwitchValueChanged(to value: Bool) {
-        print("Curse switch value changed to \(value)")
+    @objc private func switchValueChanged(_ sender: UISwitch) {
+        if sender.isOn {
+            self.cursed = false
+            applyFilter()
+        } else {
+            self.cursed = true
+            applyFilter()
+        }
     }
     
     func startLoading() {
@@ -162,11 +175,11 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
                     atPage: 0
                 )
             }
-            updateComments(comments)
+            applyFilter()
         }
     }
     
-    private func applyFilter(keyword: String?, cursed: Bool = false) {
+    private func applyFilter() {
         Task {
             guard let id = video?.videoId else {
                 return
@@ -180,7 +193,9 @@ class CommonCommentViewController: UIViewController, SkeletonTableViewDataSource
             if keyword != nil && keyword!.isEmpty == false {
                 comments = comments.filter({ $0.commentText.contains(keyword!) })
             }
-            // TODO: Need to fileter cursed predicate
+            if cursed == false {
+                comments = comments.filter({ $0.category != CommentCategory.curse })
+            }
             
             updateComments(comments)
         }

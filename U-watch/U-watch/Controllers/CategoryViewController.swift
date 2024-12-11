@@ -13,6 +13,7 @@ class CategoryViewController: CommonCommentViewController {
     
     override func viewDidLoad() {
         category = CommentCategory.reaction
+        cursed = true
         
         categorySegmentControl.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
         super.viewDidLoad()

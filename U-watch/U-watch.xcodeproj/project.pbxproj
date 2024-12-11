@@ -12,6 +12,7 @@
 		261889D92D0882ED00B1061D /* DateAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889D82D0882E100B1061D /* DateAxisValueFormatter.swift */; };
 		261889DB2D0887DA00B1061D /* LiveResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889DA2D0887D500B1061D /* LiveResult.swift */; };
 		261889DD2D088A8000B1061D /* LiveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889DC2D088A7C00B1061D /* LiveService.swift */; };
+		261889DF2D09A24000B1061D /* CorrectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261889DE2D09A22C00B1061D /* CorrectionViewController.swift */; };
 		95923F563D494FF31A3A8CA8 /* Pods_U_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B170304F207EC5129BEDF227 /* Pods_U_watch.framework */; };
 		E775D5662CFB048C005A804E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F53FB72CB5B92300FD76B0 /* Home.storyboard */; };
 		E7A5C6B82D078A7C0082B309 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A5C6B42D078A7C0082B309 /* Sentiment.swift */; };
@@ -80,6 +81,7 @@
 		261889D82D0882E100B1061D /* DateAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatter.swift; sourceTree = "<group>"; };
 		261889DA2D0887D500B1061D /* LiveResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResult.swift; sourceTree = "<group>"; };
 		261889DC2D088A7C00B1061D /* LiveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveService.swift; sourceTree = "<group>"; };
+		261889DE2D09A22C00B1061D /* CorrectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionViewController.swift; sourceTree = "<group>"; };
 		5B24EC44A7B083A5B1B8CB29 /* Pods-U-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.release.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.release.xcconfig"; sourceTree = "<group>"; };
 		88837C73B31E7570C5B7E5C7 /* Pods-U-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-U-watch.debug.xcconfig"; path = "Target Support Files/Pods-U-watch/Pods-U-watch.debug.xcconfig"; sourceTree = "<group>"; };
 		B170304F207EC5129BEDF227 /* Pods_U_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_U_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 		E77957412CF89BC1006FF707 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				261889DE2D09A22C00B1061D /* CorrectionViewController.swift */,
 				E7A5C6FD2D078AE00082B309 /* AllCommentsViewController.swift */,
 				E7A5C6FE2D078AE00082B309 /* CategoryViewController.swift */,
 				E7A5C6FF2D078AE00082B309 /* CommonCommentViewController.swift */,
@@ -509,6 +512,7 @@
 				E7A5C6C02D078A7C0082B309 /* AnalysisResult.swift in Sources */,
 				261889D92D0882ED00B1061D /* DateAxisValueFormatter.swift in Sources */,
 				E7A5C6FC2D078ACE0082B309 /* CustomError.swift in Sources */,
+				261889DF2D09A24000B1061D /* CorrectionViewController.swift in Sources */,
 				E7F53FB42CB5B92300FD76B0 /* SceneDelegate.swift in Sources */,
 				E7CBE3EB2D083A45000F340C /* MyService.swift in Sources */,
 				E7A5C6F12D078AA20082B309 /* VideoService.swift in Sources */,
